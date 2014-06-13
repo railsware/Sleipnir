@@ -8,6 +8,26 @@
 
 import Foundation
 
+func beforeAll( () -> () )
+{
+
+}
+
+func beforeEach( () -> () )
+{
+
+}
+
+func afterAll( () -> () )
+{
+
+}
+
+func afterEach( () -> () )
+{
+
+}
+
 func describe(label: String, block: () -> ()) -> NilType
 {
     var group = Internal.ExampleGroup(label, block)
