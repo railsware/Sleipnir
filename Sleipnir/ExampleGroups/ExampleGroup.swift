@@ -8,29 +8,30 @@
 
 import Foundation
 
-func beforeAll( () -> () )
+func beforeAll(block: () -> () )
 {
-
+    Internal.handleBeforeAll(block)
 }
 
-func beforeEach( () -> () )
+func beforeEach(block: () -> () )
 {
-
+    Internal.handleBeforeEach(block)
 }
 
-func afterAll( () -> () )
+func afterAll(block: () -> () )
 {
-
+    Internal.handleAfterAll(block)
 }
 
-func afterEach( () -> () )
+func afterEach(block: () -> () )
 {
-
+    Internal.handleAfterEach(block)
 }
 
 func describe(label: String, block: () -> ()) -> NilType
 {
     var group = Internal.ExampleGroup(label, block)
+    Internal.handleGroup(group)
     
     return nil
 }
@@ -38,6 +39,7 @@ func describe(label: String, block: () -> ()) -> NilType
 func fdescribe(label: String, block: () -> ()) -> NilType
 {
     var group = Internal.ExampleGroup(label, block, Internal.ExampleType.Focused)
+    Internal.handleGroup(group)
     
     return nil
 }
@@ -45,6 +47,7 @@ func fdescribe(label: String, block: () -> ()) -> NilType
 func xdescribe(label: String, block: () -> ()) -> NilType
 {
     var group = Internal.ExampleGroup(label, block, Internal.ExampleType.Excluded)
+    Internal.handleGroup(group)
     
     return nil
 }
