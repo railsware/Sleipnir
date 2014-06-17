@@ -52,6 +52,10 @@ extension Internal {
         currentGroup?.addAfterAll(block)
     }
 
+    static func handleExample(example: Example) {
+        currentGroup?.addExample(example)
+    }
+    
 }
 
 extension Internal {
@@ -89,6 +93,8 @@ extension Internal {
         var parentGroup: ExampleGroup?
         var childGroups: ExampleGroup[] = ExampleGroup[]()
         
+        var examples: Example[] = Example[]()
+        
         var beforeEachBlocks: SleipnirBlock[] = SleipnirBlock[]()
         var afterEachBlocks: SleipnirBlock[] = SleipnirBlock[]()
         var beforeAllBlocks: SleipnirBlock[] = SleipnirBlock[]()
@@ -123,6 +129,10 @@ extension Internal {
             afterAllBlocks.append(block)
         }
         
+        func addExample(example: Example) {
+            examples.append(example)
+        }
+        
     }
     
 }
@@ -148,3 +158,40 @@ extension Internal {
     
 }
 
+// Dump
+
+extension Internal {
+    static func printWithPadding(string: String, level: Int) {
+        var spaces = level * 2
+        var padding = String(count: spaces, repeatedValue: Character(" "))
+        println(padding + string)
+    }
+}
+
+extension Internal.SpecTable {
+    
+    func dump() {
+        for exampleGroup in topLevelGroups {
+            exampleGroup.dump()
+        }
+    }
+    
+}
+
+extension Internal.ExampleGroup {
+    
+    func dump(level: Int = 0) {
+        Internal.printWithPadding("beforeAll: \(beforeAllBlocks.count)", level: level)
+        Internal.printWithPadding("afterAll: \(afterAllBlocks.count)", level: level)
+        
+        Internal.printWithPadding("beforeEach: \(beforeEachBlocks.count)", level: level)
+        Internal.printWithPadding("afterEach: \(afterEachBlocks.count)", level: level)
+        
+        Internal.printWithPadding("examples: \(examples.count)", level: level)
+        
+        for exampleGroup in childGroups {
+            println()
+            exampleGroup.dump(level: level + 1)
+        }
+    }
+}

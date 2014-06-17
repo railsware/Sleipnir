@@ -28,26 +28,20 @@ func afterEach(block: () -> () )
     Internal.handleAfterEach(block)
 }
 
-func describe(label: String, block: () -> ()) -> NilType
+func describe(label: String, block: () -> ())
 {
     var group = Internal.ExampleGroup(label, block)
     Internal.handleGroup(group)
-    
-    return nil
 }
 
-func fdescribe(label: String, block: () -> ()) -> NilType
+func fdescribe(label: String, block: () -> ())
 {
     var group = Internal.ExampleGroup(label, block, Internal.ExampleType.Focused)
     Internal.handleGroup(group)
-    
-    return nil
 }
 
-func xdescribe(label: String, block: () -> ()) -> NilType
+func xdescribe(label: String, block: () -> ())
 {
     var group = Internal.ExampleGroup(label, block, Internal.ExampleType.Excluded)
     Internal.handleGroup(group)
-    
-    return nil
 }

@@ -8,23 +8,20 @@
 
 import Foundation
 
-func it(label: String, block: () -> ()) -> NilType
+func it(label: String, block: () -> ())
 {
     var example = Internal.Example(label, block)
-    
-    return nil
+    Internal.handleExample(example)
 }
 
-func fit(label: String, block: () -> ()) -> NilType
+func fit(label: String, block: () -> ())
 {
     var example = Internal.Example(label, block, Internal.ExampleType.Focused)
-    
-    return nil
+    Internal.handleExample(example)
 }
 
-func xit(label: String, block: () -> ()) -> NilType
+func xit(label: String, block: () -> ())
 {
     var example = Internal.Example(label, block, Internal.ExampleType.Excluded)
-    
-    return nil
+    Internal.handleExample(example)
 }
