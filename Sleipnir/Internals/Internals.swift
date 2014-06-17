@@ -53,6 +53,7 @@ extension Internal {
     }
 
     static func handleExample(example: Example) {
+        example.group = currentGroup
         currentGroup?.addExample(example)
     }
     
@@ -144,6 +145,7 @@ extension Internal {
         var label: String
         var type: ExampleType
         var block: SleipnirBlock
+        var group: ExampleGroup!
         
         init(_ label: String,
              _ block: SleipnirBlock,
