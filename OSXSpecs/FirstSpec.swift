@@ -11,21 +11,21 @@ import Foundation
 class FirstSpec : SleipnirSpec {
     var x : () = describe("hello") {
 
-        beforeAll {}
+        beforeAll { println("BEFORE ALL RUN") }
 
         describe("goodbye") {
-
-            beforeAll {}
+            
+            beforeAll { println("BEFORE ALL RUN") }
             
         }
         
         describe("hello again") {
             
-            beforeEach {}
-            afterEach {}
+            beforeEach { println("BEFORE EACH RUN") }
+            afterEach { println("AFTER EACH RUN") }
             
-            it("should") {}
-            it("work") {}
+            it("should") { println("EXAMPLE RUN") }
+            it("work") { println("EXAMPLE RUN") }
             
         }
         
