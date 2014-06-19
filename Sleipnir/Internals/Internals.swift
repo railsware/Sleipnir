@@ -13,12 +13,6 @@ struct Internal
     typealias SleipnirBlock = () -> ()
 }
 
-protocol Callable {
-    
-    func call()
-    
-}
-
 extension Internal {
     
     static let specTable = SpecTable()
@@ -67,18 +61,12 @@ extension Internal {
 
 extension Internal {
     
-    class SpecTable : Callable {
+    class SpecTable {
         
         var topLevelGroups: ExampleGroup[] = ExampleGroup[]()
         
         func addGroup(group: ExampleGroup) {
             topLevelGroups.append(group)
-        }
-        
-        func call() {
-            for exampleGroup in topLevelGroups {
-                exampleGroup.call()
-            }
         }
     }
     
@@ -96,7 +84,7 @@ extension Internal {
 
 extension Internal {
     
-    class ExampleGroup : Callable {
+    class ExampleGroup {
         
         var label: String
         var type: ExampleType
@@ -145,45 +133,26 @@ extension Internal {
             examples.append(example)
         }
 
-        func callBeforeEach() {
-            parentGroup?.callBeforeEach()
+        func runBeforeEach() {
+            parentGroup?.runBeforeEach()
             for beforeEachBlock in beforeEachBlocks {
                 beforeEachBlock()
             }
         }
         
-        func callAfterEach() {
+        func runAfterEach() {
             for afterEachBlock in afterEachBlocks {
                 afterEachBlock()
             }
-            parentGroup?.callAfterEach()
+            parentGroup?.runAfterEach()
         }
-        
-        func call() {
-            for beforeAll in beforeAllBlocks {
-                beforeAll()
-            }
-            
-            for example in examples {
-                example.call()
-            }
-            
-            for afterAll in afterAllBlocks {
-                afterAll()
-            }
-            
-            for childGroup in childGroups {
-                childGroup.call()
-            }
-        }
-        
     }
     
 }
 
 extension Internal {
     
-    class Example : Callable {
+    class Example {
         
         var label: String
         var type: ExampleType
@@ -192,19 +161,11 @@ extension Internal {
         
         init(_ label: String,
              _ block: SleipnirBlock,
-             _ type: ExampleType = ExampleType.Normal)
-        {
+             _ type: ExampleType = ExampleType.Normal) {
             self.label = label
             self.block = block
             self.type = type
         }
-        
-        func call() {
-            group.callBeforeEach()
-            block()
-            group.callAfterEach()
-        }
-        
     }
     
 }
@@ -247,15 +208,4 @@ extension Internal.ExampleGroup {
             exampleGroup.dump(level: level + 1)
         }
     }
-}
-
-
-// Runner
-
-extension Internal.SpecTable {
-    
-    func run() {
-        call()
-    }
-    
 }

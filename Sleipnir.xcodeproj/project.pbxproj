@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31F33EFD1953101000421A59 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
+		31F33EFE1953101000421A59 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
 		46718B5A194B6A2C006E8A18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B59194B6A2C006E8A18 /* main.swift */; };
 		46718B81194B8A57006E8A18 /* Internals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B80194B8A57006E8A18 /* Internals.swift */; };
 		46718B84194B8AAF006E8A18 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B83194B8AAF006E8A18 /* ExampleGroup.swift */; };
@@ -44,6 +46,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		31F33EFC1953101000421A59 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		46718B56194B6A2C006E8A18 /* Sleipnir */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sleipnir; sourceTree = BUILT_PRODUCTS_DIR; };
 		46718B59194B6A2C006E8A18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		46718B80194B8A57006E8A18 /* Internals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internals.swift; sourceTree = "<group>"; };
@@ -105,6 +108,7 @@
 		46718B7F194B8A39006E8A18 /* Internals */ = {
 			isa = PBXGroup;
 			children = (
+				31F33EFC1953101000421A59 /* Runner.swift */,
 				46718B80194B8A57006E8A18 /* Internals.swift */,
 				46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */,
 			);
@@ -213,6 +217,7 @@
 				46718B84194B8AAF006E8A18 /* ExampleGroup.swift in Sources */,
 				46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */,
 				46718B5A194B6A2C006E8A18 /* main.swift in Sources */,
+				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46718BB0194E03E5006E8A18 /* ExampleGroup.swift in Sources */,
+				31F33EFE1953101000421A59 /* Runner.swift in Sources */,
 				46718BAF194E03CC006E8A18 /* SleipnirLoader.m in Sources */,
 				46718BB2194E0426006E8A18 /* Example.swift in Sources */,
 				46718BB4194EA3FE006E8A18 /* FirstSpec.swift in Sources */,
@@ -377,6 +383,7 @@
 				46718BAA194E00AB006E8A18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

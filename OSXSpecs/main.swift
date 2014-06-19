@@ -12,4 +12,5 @@ Internal.specTable.dump()
 
 println("\n================RUN==============\n")
 
-Internal.specTable.run()
+Runner.run()
+
