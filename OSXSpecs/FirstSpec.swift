@@ -9,30 +9,34 @@
 import Foundation
 
 class FirstSpec : SleipnirSpec {
-    var x : () = describe("hello") {
+    var x : () = describe("toplevel first") {
         
-        beforeAll { println("BEFORE ALL RUN") }
+        beforeAll { println("BEFORE ALL RUN, describe = toplevel first") }
 
-        describe("goodbye") {
+        describe("first") {
             
-            beforeAll { println("BEFORE ALL RUN") }
+            beforeAll { println("BEFORE ALL RUN, describe = first") }
             
         }
         
-        describe("hello again") {
+        describe("second") {
+            
+            beforeAll { println("BEFORE ALL RUN, describe = second") }
             
             beforeEach { println("BEFORE EACH RUN") }
             afterEach { println("AFTER EACH RUN") }
             
-            it("should") { println("EXAMPLE RUN") }
-            it("work") { println("EXAMPLE RUN") }
+            it("should") { println("EXAMPLE RUN FIRST") }
+            it("work") { println("EXAMPLE RUN SECOND") }
             
-            describe("internal hello") {
+            describe("internal second") {
+                
+                beforeAll { println("BEFORE ALL RUN, describe = internal second") }
                 
                 beforeEach { println("INTERNAL BEFORE EACH RUN") }
                 afterEach { println("INTERNAL AFTER EACH RUN") }
                 
-                it("internal") { println("INTERNAL EXAMPLE RUN") }
+                it("internal") { println("INTERNAL EXAMPLE RUN FIRST") }
             }
             
         }

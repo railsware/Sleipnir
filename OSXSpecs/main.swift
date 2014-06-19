@@ -12,5 +12,5 @@ Internal.specTable.dump()
 
 println("\n================RUN==============\n")
 
-Runner.run()
+Runner.run(runOrder: Runner.RunOrder.Random)
 

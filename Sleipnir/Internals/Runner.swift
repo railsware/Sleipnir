@@ -10,10 +10,20 @@ import Foundation
 
 class Runner {
     
-    class func run() {
+    enum RunOrder {
+        case Normal
+        case Random
+    }
+    
+    class func run(runOrder: RunOrder = RunOrder.Normal) {
         let specs = Internal.specTable
+        
+        if (runOrder == RunOrder.Random) {
+            specs.topLevelGroups.shuffle()
+        }
+        
         for exampleGroup in specs.topLevelGroups {
-            runExampleGroup(exampleGroup)
+            runExampleGroup(exampleGroup, runOrder: runOrder)
         }
     }
     
@@ -25,7 +35,12 @@ class Runner {
     }
     
     // Make this function private when access modifiers are available
-    class func runExampleGroup(group: Internal.ExampleGroup) {
+    class func runExampleGroup(group: Internal.ExampleGroup, runOrder: RunOrder = RunOrder.Normal) {
+        if (runOrder == RunOrder.Random) {
+            group.examples.shuffle()
+            group.childGroups.shuffle()
+        }
+        
         for beforeAll in group.beforeAllBlocks {
             beforeAll()
         }
@@ -38,8 +53,9 @@ class Runner {
             afterAll()
         }
         
+        
         for childGroup in group.childGroups {
-            runExampleGroup(childGroup)
+            runExampleGroup(childGroup, runOrder: runOrder)
         }
     }
 
