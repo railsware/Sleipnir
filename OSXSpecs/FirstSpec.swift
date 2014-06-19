@@ -10,7 +10,7 @@ import Foundation
 
 class FirstSpec : SleipnirSpec {
     var x : () = describe("hello") {
-
+        
         beforeAll { println("BEFORE ALL RUN") }
 
         describe("goodbye") {
@@ -26,6 +26,14 @@ class FirstSpec : SleipnirSpec {
             
             it("should") { println("EXAMPLE RUN") }
             it("work") { println("EXAMPLE RUN") }
+            
+            describe("internal hello") {
+                
+                beforeEach { println("INTERNAL BEFORE EACH RUN") }
+                afterEach { println("INTERNAL AFTER EACH RUN") }
+                
+                it("internal") { println("INTERNAL EXAMPLE RUN") }
+            }
             
         }
         

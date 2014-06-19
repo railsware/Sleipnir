@@ -144,6 +144,20 @@ extension Internal {
         func addExample(example: Example) {
             examples.append(example)
         }
+
+        func callBeforeEach() {
+            parentGroup?.callBeforeEach()
+            for beforeEachBlock in beforeEachBlocks {
+                beforeEachBlock()
+            }
+        }
+        
+        func callAfterEach() {
+            for afterEachBlock in afterEachBlocks {
+                afterEachBlock()
+            }
+            parentGroup?.callAfterEach()
+        }
         
         func call() {
             for beforeAll in beforeAllBlocks {
@@ -151,15 +165,7 @@ extension Internal {
             }
             
             for example in examples {
-                for beforeEachBlock in beforeEachBlocks {
-                    beforeEachBlock()
-                }
-                
                 example.call()
-                
-                for afterEachBlock in afterEachBlocks {
-                    afterEachBlock()
-                }
             }
             
             for afterAll in afterAllBlocks {
@@ -194,7 +200,9 @@ extension Internal {
         }
         
         func call() {
+            group.callBeforeEach()
             block()
+            group.callAfterEach()
         }
         
     }
