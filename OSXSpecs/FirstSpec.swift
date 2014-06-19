@@ -26,8 +26,11 @@ class FirstSpec : SleipnirSpec {
             beforeEach { println("BEFORE EACH RUN") }
             afterEach { println("AFTER EACH RUN") }
             
-            it("should") { println("EXAMPLE RUN FIRST") }
-            it("work") { println("EXAMPLE RUN SECOND") }
+            it("first") { println("EXAMPLE RUN 1") }
+            it("second") { println("EXAMPLE RUN 2") }
+            it("third") { println("EXAMPLE RUN 3") }
+            it("fourth") { println("EXAMPLE RUN 4") }
+            it("fifth") { println("EXAMPLE RUN 5") }
             
             describe("internal second") {
                 
@@ -36,7 +39,7 @@ class FirstSpec : SleipnirSpec {
                 beforeEach { println("INTERNAL BEFORE EACH RUN") }
                 afterEach { println("INTERNAL AFTER EACH RUN") }
                 
-                it("internal") { println("INTERNAL EXAMPLE RUN FIRST") }
+                it("internal") { println("INTERNAL EXAMPLE RUN 1") }
             }
             
         }

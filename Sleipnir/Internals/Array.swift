@@ -10,9 +10,9 @@ import Foundation
 
 extension Array {
     
-    func shuffle() {
+    func shuffle() {        
         for var i = self.count - 1; i >= 1; i-- {
-            let j = Int(arc4random_uniform(UInt32(i + 1)))
+            let j = Int(random() % (i+1))
             swap(&self[i], &self[j])
         }
     }

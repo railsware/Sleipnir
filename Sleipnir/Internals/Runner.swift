@@ -15,10 +15,16 @@ class Runner {
         case Random
     }
     
-    class func run(runOrder: RunOrder = RunOrder.Normal) {
+    class func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
         let specs = Internal.specTable
         
         if (runOrder == RunOrder.Random) {
+            if seed {
+                srandom(UInt32(seed!))
+            } else {
+                srandomdev()
+            }
+            
             specs.topLevelGroups.shuffle()
         }
         
