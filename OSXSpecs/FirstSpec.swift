@@ -17,6 +17,13 @@ class FirstSpec : SleipnirSpec {
             
             beforeAll { println("BEFORE ALL RUN, describe = first") }
             
+            it("expect test") {
+                println("EXAMPLE RUN 1.1, expect test")
+                var value = [1,2,3]
+
+                expect(value).to(equal([1,2,4]))
+            }
+            
         }
         
         describe("second") {
@@ -26,11 +33,11 @@ class FirstSpec : SleipnirSpec {
             beforeEach { println("BEFORE EACH RUN") }
             afterEach { println("AFTER EACH RUN") }
             
-            it("first") { println("EXAMPLE RUN 1") }
-            it("second") { println("EXAMPLE RUN 2") }
-            it("third") { println("EXAMPLE RUN 3") }
-            it("fourth") { println("EXAMPLE RUN 4") }
-            it("fifth") { println("EXAMPLE RUN 5") }
+            it("first") { println("EXAMPLE RUN 2.1") }
+            it("second") { println("EXAMPLE RUN 2.2") }
+            it("third") { println("EXAMPLE RUN 2.3") }
+            it("fourth") { println("EXAMPLE RUN 2.4") }
+            it("fifth") { println("EXAMPLE RUN 2.5") }
             
             describe("internal second") {
                 
@@ -39,7 +46,7 @@ class FirstSpec : SleipnirSpec {
                 beforeEach { println("INTERNAL BEFORE EACH RUN") }
                 afterEach { println("INTERNAL AFTER EACH RUN") }
                 
-                it("internal") { println("INTERNAL EXAMPLE RUN 1") }
+                it("internal") { println("INTERNAL EXAMPLE RUN 2.1.1") }
             }
             
         }
