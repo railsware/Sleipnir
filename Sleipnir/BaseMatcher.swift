@@ -8,12 +8,12 @@
 
 import Foundation
 
-class BaseMatcher<T: NSObject> {
+class BaseMatcher<T> {
     
-    var expected: T
+    var expected: T[] = T[]()
     
     init(expected: T) {
-        self.expected = expected
+        self.expected.append(expected)
     }
     
     func failureMessage() -> String {

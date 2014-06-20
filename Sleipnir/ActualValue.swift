@@ -8,16 +8,16 @@
 
 import Foundation
 
-class ActualValue<T: NSObject> {
+class ActualValue<T> {
     
-    var value: T
+    var value: T[] = T[]()
 
     init(value: T) {
-        self.value = value
+        self.value.append(value)
     }
     
     func to(matcher: BaseMatcher<T>) {
-        var result = matcher.match(matcher.expected, actual: value)
+        var result = matcher.match(matcher.expected[0], actual: value[0])
         if result {
             success()
         } else {
@@ -34,6 +34,6 @@ class ActualValue<T: NSObject> {
     }
 }
 
-func expect<T: NSObject>(value: T) -> ActualValue<T> {
+func expect<T>(value: T) -> ActualValue<T> {
     return ActualValue(value: value)
 }

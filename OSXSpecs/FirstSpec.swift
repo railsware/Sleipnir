@@ -19,9 +19,8 @@ class FirstSpec : SleipnirSpec {
             
             it("expect test") {
                 println("EXAMPLE RUN 1.1, expect test")
-                var value = [1,2,3]
-
-                expect(value).to(equal([1,2,4]))
+                            
+                expect([1, 2, 3]).to(equal([1, 2, 3]))
             }
             
         }

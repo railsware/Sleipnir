@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Equal<T: NSObject>: BaseMatcher<T> {
+class Equal<T: Equatable>: BaseMatcher<T> {
     
     init(expected: T) {
         super.init(expected: expected)
@@ -23,6 +23,6 @@ class Equal<T: NSObject>: BaseMatcher<T> {
     }
 }
 
-func equal<T: NSObject>(expected: T) -> Equal<T> {
+func equal<T>(expected: T) -> Equal<T> {
     return Equal(expected: expected)
 }
