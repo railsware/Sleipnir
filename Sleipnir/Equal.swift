@@ -14,6 +14,10 @@ class Equal<T: Equatable>: BaseMatcher<T> {
         super.init(expected: expected)
     }
     
+    init(expected: T[]) {
+        super.init(expected: expected)
+    }
+    
     override func failureMessage() -> String {
         return "FAIL EQUAL"
     }
@@ -21,8 +25,16 @@ class Equal<T: Equatable>: BaseMatcher<T> {
     override func match(expected: T, actual: T) -> Bool {
         return actual == expected
     }
+    
+    override func match(expected: T[], actual: T[]) -> Bool {
+        return actual == expected
+    }
 }
 
 func equal<T>(expected: T) -> Equal<T> {
+    return Equal(expected: expected)
+}
+
+func equal<T: Equatable>(expected: T[]) -> Equal<T> {
     return Equal(expected: expected)
 }

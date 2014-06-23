@@ -11,13 +11,19 @@ import Foundation
 class ActualValue<T> {
     
     var value: T[] = T[]()
+    
+    var arrValue: T[]?
 
     init(value: T) {
         self.value.append(value)
     }
     
+    init(arrValue: T[]) {
+        self.arrValue = arrValue
+    }
+    
     func to(matcher: BaseMatcher<T>) {
-        var result = matcher.match(matcher.expected[0], actual: value[0])
+        var result = match(matcher)
         if result {
             success()
         } else {
@@ -32,8 +38,20 @@ class ActualValue<T> {
     func success() {
         println("SUCCESS")
     }
+    
+    func match(matcher: BaseMatcher<T>) -> Bool {
+        if arrValue {
+            return matcher.match(matcher.expectedArr!, actual: arrValue!)
+        } else {
+            return matcher.match(matcher.expected[0], actual: value[0])
+        }
+    }
 }
 
 func expect<T>(value: T) -> ActualValue<T> {
     return ActualValue(value: value)
+}
+
+func expect<T>(arrValue: T[]) -> ActualValue<T> {
+    return ActualValue(arrValue: arrValue)
 }

@@ -12,8 +12,14 @@ class BaseMatcher<T> {
     
     var expected: T[] = T[]()
     
+    var expectedArr: T[]?
+    
     init(expected: T) {
         self.expected.append(expected)
+    }
+    
+    init(expected: T[]) {
+        self.expectedArr = expected
     }
     
     func failureMessage() -> String {
@@ -24,4 +30,7 @@ class BaseMatcher<T> {
         return false
     }
     
+    func match(expected: T[], actual: T[]) -> Bool {
+        return false
+    }
 }
