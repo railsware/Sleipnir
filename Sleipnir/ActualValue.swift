@@ -41,9 +41,9 @@ class ActualValue<T> {
     
     func match(matcher: BaseMatcher<T>) -> Bool {
         if arrValue {
-            return matcher.match(matcher.expectedArr!, actual: arrValue!)
+            return matcher.match(arrValue!)
         } else {
-            return matcher.match(matcher.expected[0], actual: value[0])
+            return matcher.match(value[0])
         }
     }
 }

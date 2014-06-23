@@ -22,12 +22,12 @@ class Equal<T: Equatable>: BaseMatcher<T> {
         return "FAIL EQUAL"
     }
     
-    override func match(expected: T, actual: T) -> Bool {
-        return actual == expected
+    override func match(actual: T) -> Bool {
+        return actual == self.expected[0]
     }
     
-    override func match(expected: T[], actual: T[]) -> Bool {
-        return actual == expected
+    override func match(actual: T[]) -> Bool {
+        return actual == self.expectedArr!
     }
 }
 

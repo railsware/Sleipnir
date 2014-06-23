@@ -26,11 +26,11 @@ class BaseMatcher<T> {
         return "FAIL"
     }
     
-    func match(expected: T, actual: T) -> Bool {
+    func match(actual: T) -> Bool {
         return false
     }
     
-    func match(expected: T[], actual: T[]) -> Bool {
+    func match(actual: T[]) -> Bool {
         return false
     }
 }
