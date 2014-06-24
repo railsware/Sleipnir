@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		310644E219587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
 		310644E319587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
+		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
+		314C79C8195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
@@ -57,6 +59,7 @@
 
 /* Begin PBXFileReference section */
 		310644E119587965007629A0 /* BeTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeTrue.swift; sourceTree = "<group>"; };
+		314C79C6195995F400E52DF0 /* BeFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeFalse.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 				318098B71954605200ADEAF3 /* BaseMatcher.swift */,
 				318098BA1954609B00ADEAF3 /* Equal.swift */,
 				310644E119587965007629A0 /* BeTrue.swift */,
+				314C79C6195995F400E52DF0 /* BeFalse.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -248,6 +252,7 @@
 				46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */,
 				31F33F0019531B5B00421A59 /* Array.swift in Sources */,
 				46718B5A194B6A2C006E8A18 /* main.swift in Sources */,
+				314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 				310644E219587965007629A0 /* BeTrue.swift in Sources */,
 				318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */,
@@ -268,6 +273,7 @@
 				46718BB4194EA3FE006E8A18 /* FirstSpec.swift in Sources */,
 				46718BAB194E00D1006E8A18 /* Internals.swift in Sources */,
 				46718BA7194E00AB006E8A18 /* main.swift in Sources */,
+				314C79C8195995F400E52DF0 /* BeFalse.swift in Sources */,
 				318098B91954605200ADEAF3 /* BaseMatcher.swift in Sources */,
 				318098BC1954609B00ADEAF3 /* Equal.swift in Sources */,
 				46718BAE194E03C9006E8A18 /* SleipnirSpec.swift in Sources */,
