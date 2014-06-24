@@ -24,7 +24,7 @@ class FirstSpec : SleipnirSpec {
                 
                 expect(actual).to(equal(expected))
                 
-                expect(4 % 2 == 0).to(beTrue())
+                expect(5 % 2 == 0).notTo(beTrue())
             }
             
         }

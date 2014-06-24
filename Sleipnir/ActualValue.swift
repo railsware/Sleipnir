@@ -23,8 +23,15 @@ class ActualValue<T> {
     }
     
     func to(matcher: BaseMatcher<T>) {
-        var result = match(matcher)
-        if result {
+        if match(matcher) {
+            success()
+        } else {
+            fail(matcher)
+        }
+    }
+    
+    func notTo(matcher: BaseMatcher<T>) {
+        if !match(matcher) {
             success()
         } else {
             fail(matcher)
