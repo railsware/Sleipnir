@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		310644E219587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
+		310644E319587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
@@ -54,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		310644E119587965007629A0 /* BeTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeTrue.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 				318098B419545DD700ADEAF3 /* ActualValue.swift */,
 				318098B71954605200ADEAF3 /* BaseMatcher.swift */,
 				318098BA1954609B00ADEAF3 /* Equal.swift */,
+				310644E119587965007629A0 /* BeTrue.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -245,6 +249,7 @@
 				31F33F0019531B5B00421A59 /* Array.swift in Sources */,
 				46718B5A194B6A2C006E8A18 /* main.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
+				310644E219587965007629A0 /* BeTrue.swift in Sources */,
 				318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +263,7 @@
 				31F33EFE1953101000421A59 /* Runner.swift in Sources */,
 				46718BAF194E03CC006E8A18 /* SleipnirLoader.m in Sources */,
 				46718BB2194E0426006E8A18 /* Example.swift in Sources */,
+				310644E319587965007629A0 /* BeTrue.swift in Sources */,
 				318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */,
 				46718BB4194EA3FE006E8A18 /* FirstSpec.swift in Sources */,
 				46718BAB194E00D1006E8A18 /* Internals.swift in Sources */,

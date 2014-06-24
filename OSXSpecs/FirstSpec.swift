@@ -23,6 +23,8 @@ class FirstSpec : SleipnirSpec {
                 var expected = [1,2,3]
                 
                 expect(actual).to(equal(expected))
+                
+                expect(4 % 2 == 0).to(beTrue())
             }
             
         }
