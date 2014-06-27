@@ -23,27 +23,31 @@ class ActualValue<T> {
     }
     
     func to(matcher: BaseMatcher<T>) {
-        if match(matcher) {
-            success()
-        } else {
+        if (exampleFailed()) {
+            return
+        }
+        
+        if !match(matcher) {
             fail(matcher)
         }
     }
     
     func notTo(matcher: BaseMatcher<T>) {
-        if !match(matcher) {
-            success()
-        } else {
+        if (exampleFailed()) {
+            return
+        }
+        
+        if match(matcher) {
             fail(matcher)
         }
     }
     
-    func fail(matcher: BaseMatcher<T>) {
-        println(matcher.failureMessage())
-    }
+    // Private
     
-    func success() {
-        println("SUCCESS")
+    func fail(matcher: BaseMatcher<T>) {
+        var specFailure = SpecFailure(reason: matcher.failureMessage())
+        Runner.currentExample!.specFailure = specFailure
+        Runner.currentExample!.setState(Internal.ExampleState.Failed)
     }
     
     func match(matcher: BaseMatcher<T>) -> Bool {
@@ -52,6 +56,10 @@ class ActualValue<T> {
         } else {
             return matcher.match(value[0])
         }
+    }
+    
+    func exampleFailed() -> Bool {
+        return Runner.currentExample!.failed()
     }
 }
 

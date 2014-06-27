@@ -8,17 +8,22 @@
 
 import Foundation
 
-class Runner {
+struct Runner {
     
     enum RunOrder {
         case Normal
         case Random
     }
     
-    class func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
+    static var currentExample: Internal.Example?
+    static var order = RunOrder.Random
+    static var dispatcher: ReportDispatcher?
+    
+    static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
         let specs = Internal.specTable
         
-        if (runOrder == RunOrder.Random) {
+        order = runOrder
+        if (order == RunOrder.Random) {
             if seed {
                 srandom(UInt32(seed!))
             } else {
@@ -28,24 +33,37 @@ class Runner {
             specs.topLevelGroups.shuffle()
         }
         
+        dispatcher = ReportDispatcher(with: getReporters())
+        dispatcher!.runWillStart()
+        
         for exampleGroup in specs.topLevelGroups {
-            runExampleGroup(exampleGroup, runOrder: runOrder)
+            runExampleGroup(exampleGroup)
         }
+        
+        dispatcher!.runDidComplete()
     }
     
-    // Make this function private when access modifiers are available
-    class func runExample(example: Internal.Example) {
+    // Private
+    
+    static func runExample(example: Internal.Example) {
+        currentExample = example
+        
         example.group.runBeforeEach()
         example.block()
         example.group.runAfterEach()
+        
+        if !example.failed() {
+            example.setState(Internal.ExampleState.Passed)
+        }
     }
     
-    // Make this function private when access modifiers are available
-    class func runExampleGroup(group: Internal.ExampleGroup, runOrder: RunOrder = RunOrder.Normal) {
-        if (runOrder == RunOrder.Random) {
+    static func runExampleGroup(group: Internal.ExampleGroup) {
+        if (order == RunOrder.Random) {
             group.examples.shuffle()
             group.childGroups.shuffle()
         }
+        
+        dispatcher!.runWillStartWithGroup(group)
         
         for beforeAll in group.beforeAllBlocks {
             beforeAll()
@@ -59,10 +77,18 @@ class Runner {
             afterAll()
         }
         
+        dispatcher!.runDidCompleteWithGroup(group)
         
         for childGroup in group.childGroups {
-            runExampleGroup(childGroup, runOrder: runOrder)
+            runExampleGroup(childGroup)
         }
+    }
+    
+    // TODO provide a way to define and load custom reporters
+    static func getReporters() -> Reporter[] {
+        var reporters = Reporter[]()
+        reporters.append(DefaultReporter())
+        return reporters
     }
 
 }

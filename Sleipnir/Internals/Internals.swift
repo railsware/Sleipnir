@@ -152,12 +152,26 @@ extension Internal {
 
 extension Internal {
     
+    enum ExampleState {
+        case Incomplete
+        case Skipped
+        case Passed
+        case Failed
+        case Error
+    }
+    
+}
+
+extension Internal {
+    
     class Example {
         
         var label: String
         var type: ExampleType
         var block: SleipnirBlock
         var group: ExampleGroup!
+        var state: Observable<ExampleState>
+        var specFailure: SpecFailure?
         
         init(_ label: String,
              _ block: SleipnirBlock,
@@ -165,6 +179,20 @@ extension Internal {
             self.label = label
             self.block = block
             self.type = type
+            self.state = Observable<ExampleState>(value: ExampleState.Incomplete)
+        }
+        
+        func setState(state: ExampleState) {
+            self.state.update(state)
+        }
+        
+        func failed() -> Bool {
+            return self.state.get() == ExampleState.Failed
+                || self.state.get() == ExampleState.Error
+        }
+        
+        func failure() -> String {
+            return specFailure!.reason
         }
     }
     

@@ -11,45 +11,50 @@ import Foundation
 class FirstSpec : SleipnirSpec {
     var x : () = describe("toplevel first") {
         
-        beforeAll { println("BEFORE ALL RUN, describe = toplevel first") }
+        beforeAll { }
 
         describe("first") {
             
-            beforeAll { println("BEFORE ALL RUN, describe = first") }
+            beforeAll {  }
             
             it("expect test") {
-                println("EXAMPLE RUN 1.1, expect test")
                 var actual = [1,2,3]
                 var expected = [1,2,3]
                 
                 expect(actual).to(equal(expected))
                 
-                expect(5 % 2 == 0).notTo(beTrue())
+                expect(4 % 2 == 0).notTo(beTrue())
             }
             
         }
         
         describe("second") {
             
-            beforeAll { println("BEFORE ALL RUN, describe = second") }
+            var actualString = "actual"
+            var expectedString = "another"
             
-            beforeEach { println("BEFORE EACH RUN") }
-            afterEach { println("AFTER EACH RUN") }
+            beforeAll {  }
             
-            it("first") { println("EXAMPLE RUN 2.1") }
-            it("second") { println("EXAMPLE RUN 2.2") }
-            it("third") { println("EXAMPLE RUN 2.3") }
-            it("fourth") { println("EXAMPLE RUN 2.4") }
-            it("fifth") { println("EXAMPLE RUN 2.5") }
+            beforeEach {  }
+            afterEach {  }
+            
+            it("first") {
+                expect(actualString).to(equal(expectedString))
+            }
+            
+            it("second") {  }
+            it("third") {  }
+            it("fourth") {  }
+            it("fifth") {  }
             
             describe("internal second") {
                 
-                beforeAll { println("BEFORE ALL RUN, describe = internal second") }
+                beforeAll {  }
                 
-                beforeEach { println("INTERNAL BEFORE EACH RUN") }
-                afterEach { println("INTERNAL AFTER EACH RUN") }
+                beforeEach {  }
+                afterEach {  }
                 
-                it("internal") { println("INTERNAL EXAMPLE RUN 2.1.1") }
+                it("internal") {  }
             }
             
         }
