@@ -25,6 +25,6 @@ class SpecFailure {
     }
     
     func failure() -> String {
-        return reason
+        return "\(fileName):\(lineNumber) \(reason)"
     }
 }

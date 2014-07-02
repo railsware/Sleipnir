@@ -70,8 +70,8 @@ class DefaultReporter : Reporter {
     
     func printStats() {
         let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime))
-        println("\nFinished in \(time) seconds")
-        println("\(examplesCount) examples, \(failureMessages.count) failures")
+        println("\nFinished in \(time) seconds\n")
+        println("\(examplesCount) examples, \(failureMessages.count) failures\n")
     }
     
     func startObservingExamples(examples: Internal.Example[]) {

@@ -200,7 +200,7 @@ extension Internal {
         }
         
         func failure() -> String {
-            return specFailure!.reason
+            return specFailure!.failure()
         }
 
         func fullText() -> String {

@@ -13,13 +13,21 @@ class ActualValue<T> {
     var value: T[] = T[]()
     
     var arrValue: T[]?
+    
+    var fileName: String
+    var lineNumber: Int
 
-    init(value: T) {
+    init(value: T, fileName: String, lineNumber: Int) {
         self.value.append(value)
+        self.fileName = fileName
+        self.lineNumber = lineNumber
     }
     
-    init(arrValue: T[]) {
+    init(arrValue: T[], fileName: String, lineNumber: Int) {
         self.arrValue = arrValue
+        self.fileName = fileName
+        self.lineNumber = lineNumber
+
     }
     
     func to(matcher: BaseMatcher<T>) {
@@ -67,7 +75,7 @@ class ActualValue<T> {
     }
     
     func fail(reason: String) {
-        var specFailure = SpecFailure(reason: reason)
+        var specFailure = SpecFailure(reason: reason, fileName: fileName, lineNumber: lineNumber)
         Runner.currentExample!.specFailure = specFailure
         Runner.currentExample!.setState(Internal.ExampleState.Failed)
     }
@@ -85,10 +93,10 @@ class ActualValue<T> {
     }
 }
 
-func expect<T>(value: T) -> ActualValue<T> {
-    return ActualValue(value: value)
+func expect<T>(value: T, file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
+    return ActualValue(value: value, fileName: file, lineNumber: line)
 }
 
-func expect<T>(arrValue: T[]) -> ActualValue<T> {
-    return ActualValue(arrValue: arrValue)
+func expect<T>(arrValue: T[], file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
+    return ActualValue(arrValue: arrValue, fileName: file, lineNumber: line)
 }
