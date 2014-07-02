@@ -8,8 +8,4 @@
 
 import Foundation
 
-//Internal.specTable.dump()
-
-println("\n================RUN==============\n")
-
 Runner.run()

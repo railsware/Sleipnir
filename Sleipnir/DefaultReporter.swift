@@ -37,9 +37,9 @@ class DefaultReporter : Reporter {
         return "FAILURE " + example.fullText() + ":\n" + example.failure() + "\n"
     }
     
-    func runWillStart() {
+    func runWillStart(randomSeed seed: Int) {
         startTime = NSDate()
-        println("RUN START\n")
+        println("Running With Random Seed: \(seed)\n")
     }
     
     func runDidComplete() {

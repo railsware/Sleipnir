@@ -10,8 +10,7 @@ import Foundation
 
 protocol Reporter {
 
-    //TODO Random seed goes here
-    func runWillStart()
+    func runWillStart(randomSeed seed: Int)
     
     func runDidComplete()
     

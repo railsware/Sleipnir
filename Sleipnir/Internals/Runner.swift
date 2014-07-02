@@ -17,24 +17,26 @@ struct Runner {
     
     static var currentExample: Internal.Example?
     static var order = RunOrder.Random
+    static var specSeed: Int?
     static var dispatcher: ReportDispatcher?
     
     static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
         let specs = Internal.specTable
         
+        if seed {
+            specSeed = seed!
+        } else {
+            specSeed = Int(getRandomSeed())
+        }
+        srandom(UInt32(specSeed!))
+        
         order = runOrder
         if (order == RunOrder.Random) {
-            if seed {
-                srandom(UInt32(seed!))
-            } else {
-                srandomdev()
-            }
-            
             specs.topLevelGroups.shuffle()
         }
         
         dispatcher = ReportDispatcher(with: getReporters())
-        dispatcher!.runWillStart()
+        dispatcher!.runWillStart(randomSeed: specSeed!)
         
         for exampleGroup in specs.topLevelGroups {
             runExampleGroup(exampleGroup)
@@ -89,6 +91,10 @@ struct Runner {
         var reporters = Reporter[]()
         reporters.append(DefaultReporter())
         return reporters
+    }
+    
+    static func getRandomSeed() -> UInt32 {
+       return arc4random()
     }
 
 }

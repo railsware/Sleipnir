@@ -16,15 +16,15 @@ class ReportDispatcher {
         self.reporters = reporters
     }
     
-    //TODO Random seed goes here
-    func runWillStart() {
+    func runWillStart(randomSeed seed: Int) {
         for reporter in reporters {
-            reporter.runWillStart()
+            reporter.runWillStart(randomSeed: seed)
         }
     }
     
     func runDidComplete() {
         for reporter in reporters {
+            
             reporter.runDidComplete()
         }
     }
