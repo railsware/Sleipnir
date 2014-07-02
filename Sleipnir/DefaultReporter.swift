@@ -31,7 +31,7 @@ class DefaultReporter : Reporter {
     }
     
     func failureMessageForExample(example: Internal.Example) -> String {
-        return "FAILURE " + example.label + "\n" + example.failure() + "\n"
+        return "FAILURE " + example.fullText() + ":\n" + example.failure() + "\n"
     }
     
     func runWillStart() {
@@ -39,13 +39,10 @@ class DefaultReporter : Reporter {
     }
     
     func runDidComplete() {
-        println("\n")
+        println()
         
-        for message in failureMessages {
-            println("\n\(message) \n")
-        }
-        
-        println("Finished: examples: \(examplesCount), failures: \(failureMessages.count)")
+        printMessages(failureMessages)
+        printStats()
     }
     
     func runWillStartWithGroup(group: Internal.ExampleGroup) {
@@ -57,6 +54,19 @@ class DefaultReporter : Reporter {
     }
     
     // Private
+    
+    func printMessages(messages: String[]) {
+        println()
+        
+        for message in messages {
+            println(message)
+        }
+    }
+    
+    func printStats() {
+        println("\nFinished in 0 seconds")
+        println("\(examplesCount) examples, \(failureMessages.count) failures")
+    }
     
     func startObservingExamples(examples: Internal.Example[]) {
         for example in examples {

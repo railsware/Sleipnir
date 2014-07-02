@@ -146,6 +146,14 @@ extension Internal {
             }
             parentGroup?.runAfterEach()
         }
+        
+        func fullText() -> String {
+            if parentGroup {
+                return parentGroup!.fullText() + " " + self.label
+            } else {
+                return self.label
+            }
+        }
     }
     
 }
@@ -193,6 +201,10 @@ extension Internal {
         
         func failure() -> String {
             return specFailure!.reason
+        }
+
+        func fullText() -> String {
+            return group.fullText() + " " + self.label
         }
     }
     
