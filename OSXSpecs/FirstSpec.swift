@@ -20,7 +20,6 @@ class FirstSpec : SleipnirSpec {
             it("expect test") {
                 var actual = [1,2,3]
                 var expected = [1,2,3]
-                
                 expect(actual).to(equal(expected))
                 
                 expect(4 % 2 == 0).notTo(beTrue())

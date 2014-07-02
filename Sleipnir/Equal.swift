@@ -18,16 +18,20 @@ class Equal<T: Equatable>: BaseMatcher<T> {
         super.init(expected: expected)
     }
     
-    override func failureMessage() -> String {
-        return "FAIL EQUAL"
-    }
-    
     override func match(actual: T) -> Bool {
         return actual == self.expected[0]
     }
     
     override func match(actual: T[]) -> Bool {
         return actual == self.expectedArr!
+    }
+    
+    override func failureMessageEnd() -> String {
+        if expectedArr {
+            return "equal \(expectedArr!)"
+        } else {
+            return "equal \(expected)"
+        }
     }
 }
 

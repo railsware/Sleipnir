@@ -27,9 +27,7 @@ class ActualValue<T> {
             return
         }
         
-        if !match(matcher) {
-            fail(matcher)
-        }
+        executePositiveMatch(matcher)
     }
     
     func notTo(matcher: BaseMatcher<T>) {
@@ -37,15 +35,39 @@ class ActualValue<T> {
             return
         }
         
-        if match(matcher) {
-            fail(matcher)
-        }
+        executeNegativeMatch(matcher)
     }
     
     // Private
     
-    func fail(matcher: BaseMatcher<T>) {
-        var specFailure = SpecFailure(reason: matcher.failureMessage())
+    func executePositiveMatch(matcher: BaseMatcher<T>) {
+        if !match(matcher) {
+            var reason: String
+            if arrValue {
+                reason = matcher.failureMessageFor(arrValue!)
+            } else {
+                reason = matcher.failureMessageFor(value[0])
+            }
+            
+            fail(reason)
+        }
+    }
+    
+    func executeNegativeMatch(matcher: BaseMatcher<T>) {
+        if match(matcher) {
+            var reason: String
+            if arrValue {
+                reason = matcher.negativeFailureMessageFor(arrValue!)
+            } else {
+                reason = matcher.negativeFailureMessageFor(value[0])
+            }
+            
+            fail(reason)
+        }
+    }
+    
+    func fail(reason: String) {
+        var specFailure = SpecFailure(reason: reason)
         Runner.currentExample!.specFailure = specFailure
         Runner.currentExample!.setState(Internal.ExampleState.Failed)
     }

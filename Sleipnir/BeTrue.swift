@@ -18,8 +18,8 @@ class BeTrue<T>: BaseMatcher<T> {
         return actual as Bool
     }
     
-    override func failureMessage() -> String {
-        return "FAIL TO BE TRUE"
+    override func failureMessageEnd() -> String {
+        return "evaluate to true"
     }
 }
 

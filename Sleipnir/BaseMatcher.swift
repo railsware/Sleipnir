@@ -22,15 +22,33 @@ class BaseMatcher<T> {
         self.expectedArr = expected
     }
     
-    func failureMessage() -> String {
-        return "FAIL"
-    }
-    
     func match(actual: T) -> Bool {
         return false
     }
     
     func match(actual: T[]) -> Bool {
         return false
+    }
+    
+    func failureMessageEnd() -> String {
+        return ""
+    }
+    
+    /// Private
+    
+    func failureMessageFor(value: T) -> String {
+        return "Expected \(value) to \(failureMessageEnd())"
+    }
+    
+    func failureMessageFor(value: T[]) -> String {
+        return "Expected \(value) to \(failureMessageEnd())"
+    }
+    
+    func negativeFailureMessageFor(value: T) -> String {
+        return "Expected \(value) to not \(failureMessageEnd())"
+    }
+    
+    func negativeFailureMessageFor(value: T[]) -> String {
+        return "Expected \(value) to not \(failureMessageEnd())"
     }
 }
