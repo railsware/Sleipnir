@@ -38,7 +38,7 @@ class ActualValue<T> {
         executePositiveMatch(matcher)
     }
     
-    func notTo(matcher: BaseMatcher<T>) {
+    func toNot(matcher: BaseMatcher<T>) {
         if (exampleFailed()) {
             return
         }
