@@ -10,6 +10,9 @@ import Foundation
 
 class DefaultReporter : Reporter {
  
+    var startTime: NSDate?
+    var endTime: NSDate?
+    
     var examplesCount: Int = 0
     
     var failureMessages: String[]
@@ -35,12 +38,14 @@ class DefaultReporter : Reporter {
     }
     
     func runWillStart() {
-        println("RUN START")
+        startTime = NSDate()
+        println("RUN START\n")
     }
     
     func runDidComplete() {
-        println()
+        endTime = NSDate()
         
+        println()
         printMessages(failureMessages)
         printStats()
     }
@@ -64,7 +69,8 @@ class DefaultReporter : Reporter {
     }
     
     func printStats() {
-        println("\nFinished in 0 seconds")
+        let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime))
+        println("\nFinished in \(time) seconds")
         println("\(examplesCount) examples, \(failureMessages.count) failures")
     }
     
