@@ -1,9 +1,8 @@
 # Sleipnir
 
-Sleipnir is a BDD-style framework for Swift. 
-Also [Sleipnir](http://en.wikipedia.org/wiki/Sleipnir) is Odin's steed, the child of Loki and Svaðilfari, described as the best of all horses, and is sometimes ridden to the location of Hel.
-
-Highly inspired by [Cedar](https://github.com/pivotal/cedar).
+Sleipnir is a BDD-style framework for Swift. Highly inspired by [Cedar](https://github.com/pivotal/cedar). 
+Also
+> [Sleipnir](http://en.wikipedia.org/wiki/Sleipnir) is Odin's steed, is the child of Loki and Svaðilfari, is described as the best of all horses, and is sometimes ridden to the location of Hel. 
   
 ```swift
 class SampleSpec : SleipnirSpec {
