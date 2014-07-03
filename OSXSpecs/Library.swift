@@ -32,6 +32,10 @@ class Library {
         return books.count
     }
     
+    func hasBooks() -> Bool {
+        return size() > 0
+    }
+    
     func filterBy(#author: String) -> Book[] {
         return books.filter { $0.author == author }
     }

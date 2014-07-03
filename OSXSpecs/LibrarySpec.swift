@@ -37,7 +37,7 @@ class LibrarySpec : SleipnirSpec {
         
         describe("empty") {
             it("has no books") {
-                expect(swiftLibrary!.size() == 0).to(beTrue())
+                expect(swiftLibrary!.hasBooks()).to(beFalse())
             }
         }
         
@@ -55,7 +55,7 @@ class LibrarySpec : SleipnirSpec {
             }
             
             it("is not empty") {
-                expect(swiftLibrary!.size() > 0).to(beTrue())
+                expect(swiftLibrary!.hasBooks()).to(beTrue())
             }
             
             it("has correct number of books") {
