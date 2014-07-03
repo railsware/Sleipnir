@@ -75,15 +75,15 @@ struct Runner {
             runExample(example)
         }
         
+        for childGroup in group.childGroups {
+            runExampleGroup(childGroup)
+        }
+        
         for afterAll in group.afterAllBlocks {
             afterAll()
         }
         
         dispatcher!.runDidCompleteWithGroup(group)
-        
-        for childGroup in group.childGroups {
-            runExampleGroup(childGroup)
-        }
     }
     
     // TODO provide a way to define and load custom reporters
