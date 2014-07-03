@@ -19,6 +19,8 @@
 		318098BC1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
 		31874422195C727000C23EAC /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
 		31874423195C727000C23EAC /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
+		31A997E919657437007319D2 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A997E819657437007319D2 /* Book.swift */; };
+		31A997EB196575CA007319D2 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A997EA196575CA007319D2 /* Library.swift */; };
 		31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
 		31BB329A1959AB4300BC30D0 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
 		31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
@@ -43,7 +45,7 @@
 		46718BAF194E03CC006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		46718BB0194E03E5006E8A18 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B83194B8AAF006E8A18 /* ExampleGroup.swift */; };
 		46718BB2194E0426006E8A18 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
-		46718BB4194EA3FE006E8A18 /* FirstSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BB3194EA3FE006E8A18 /* FirstSpec.swift */; };
+		46718BB4194EA3FE006E8A18 /* LibrarySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BB3194EA3FE006E8A18 /* LibrarySpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +76,8 @@
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
 		31874421195C727000C23EAC /* SpecFailure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecFailure.swift; sourceTree = "<group>"; };
+		31A997E819657437007319D2 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		31A997EA196575CA007319D2 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		31BB32981959AB4300BC30D0 /* DefaultReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultReporter.swift; sourceTree = "<group>"; };
 		31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDispatcher.swift; sourceTree = "<group>"; };
 		31BB329E1959B91700BC30D0 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
@@ -89,7 +93,7 @@
 		46718BA4194E00AB006E8A18 /* OSXSpecs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSXSpecs; sourceTree = BUILT_PRODUCTS_DIR; };
 		46718BA6194E00AB006E8A18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		46718BAC194E0393006E8A18 /* SleipnirSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleipnirSpec.swift; sourceTree = "<group>"; };
-		46718BB3194EA3FE006E8A18 /* FirstSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstSpec.swift; sourceTree = "<group>"; };
+		46718BB3194EA3FE006E8A18 /* LibrarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +201,9 @@
 			isa = PBXGroup;
 			children = (
 				46718BA6194E00AB006E8A18 /* main.swift */,
-				46718BB3194EA3FE006E8A18 /* FirstSpec.swift */,
+				46718BB3194EA3FE006E8A18 /* LibrarySpec.swift */,
+				31A997E819657437007319D2 /* Book.swift */,
+				31A997EA196575CA007319D2 /* Library.swift */,
 			);
 			path = OSXSpecs;
 			sourceTree = "<group>";
@@ -312,10 +318,12 @@
 				31BB32A41959C6BC00BC30D0 /* Observable.swift in Sources */,
 				31BB32A01959B91700BC30D0 /* Reporter.swift in Sources */,
 				31BB329D1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */,
+				31A997EB196575CA007319D2 /* Library.swift in Sources */,
+				31A997E919657437007319D2 /* Book.swift in Sources */,
 				46718BB2194E0426006E8A18 /* Example.swift in Sources */,
 				310644E319587965007629A0 /* BeTrue.swift in Sources */,
 				318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */,
-				46718BB4194EA3FE006E8A18 /* FirstSpec.swift in Sources */,
+				46718BB4194EA3FE006E8A18 /* LibrarySpec.swift in Sources */,
 				46718BAB194E00D1006E8A18 /* Internals.swift in Sources */,
 				31BB329A1959AB4300BC30D0 /* DefaultReporter.swift in Sources */,
 				46718BA7194E00AB006E8A18 /* main.swift in Sources */,
