@@ -13,7 +13,7 @@ class FirstSpec : SleipnirSpec {
         
         beforeAll { }
 
-        describe("first") {
+        context("first") {
             
             beforeAll {  }
             

@@ -45,3 +45,9 @@ func xdescribe(label: String, block: () -> ())
     var group = Internal.ExampleGroup(label, block, Internal.ExampleType.Excluded)
     Internal.handleGroup(group)
 }
+
+func context(label: String, block: () -> ())
+{
+    var group = Internal.ExampleGroup(label, block, Internal.ExampleType.Excluded)
+    Internal.handleGroup(group)
+}
