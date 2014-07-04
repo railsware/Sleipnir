@@ -1,8 +1,8 @@
 # Sleipnir
 
-Sleipnir is a BDD-style framework for Swift. Highly inspired by [Cedar](https://github.com/pivotal/cedar). 
+Sleipnir is a BDD-style framework for Swift. Sleipnir is highly inspired by [Cedar](https://github.com/pivotal/cedar). 
 Also
-> [Sleipnir](http://en.wikipedia.org/wiki/Sleipnir) is Odin's steed, is the child of Loki and Svaðilfari, is described as the best of all horses, and is sometimes ridden to the location of Hel. 
+> In Norse mythology, [Sleipnir](http://en.wikipedia.org/wiki/Sleipnir) is Odin's steed, is the child of Loki and Svaðilfari, is described as the best of all horses, and is sometimes ridden to the location of Hel. 
   
 ```swift
 class SampleSpec : SleipnirSpec {
@@ -25,21 +25,48 @@ class SampleSpec : SleipnirSpec {
     }
 }
 ```
+## Core principles
+
+* Sleipnir is not dependent of ```NSObject```, it is pure Swift BDD testing framework
+* Sleipnir is not using ```XCTest```
+* Sleipnir has nice command line output and support for custom test reporters
+* Other features, like seeded random tests invokation, focused and excluded examples/groups, etc.
 
 ## Quick start
 
-* TODO Importing guide
-* Add new targets to your project for specs
-* In ```main.swift``` file of spec target run ```Runner.run()``` to invoke specs
-* Start writing specs!
+1. TODO Importing guide
+2. Add new target to your project for specs
+3. In ```main.swift``` file of spec target run ```Runner.run()``` to invoke specs
+4. Start writing specs!
 
 ## Usage sample
 
-See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/OSXSpecs/LibrarySpec.swift) file in [OSXSpecs](https://github.com/railsware/Sleipnir/blob/master/OSXSpecs) target.
+See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/LibrarySpec.swift) file in [Sample](https://github.com/railsware/Sleipnir/blob/master/Sample) target.
+
+## TODO
+
+- [ ] Distribution as a framework
+- [ ] Pending examples support
+- [ ] Focused and excluded examples/groups support implementation
+- [ ] XCode templates
+- [ ] Shared examples support
+- [ ] ```should``` syntax support
+- [ ] Specs for Sleipnir using Sleipnir
+- [ ] Wiki documentation
+- [ ] More matchers:
+  - [ ] ```beNil```
+  - [ ] ```beGreaterThan```, ```beLessThan```, ```beInRangeOf```
+  - [ ] asynchronous matchers (```will```, ```willNot```, ```after```)
+  - [ ] matchers on collections/strings (```contains```, ```haveCount```, ```beginWith```, ```endWith```, etc.)
 
 ## Documentation
 
 Wiki coming soon...
+
+## Alternatives
+
+There are some alternative Swift BDD testing frameworks with some other concepts:
+* [Quick](https://github.com/modocache/Quick)
 
 ## Contributing
 
