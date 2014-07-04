@@ -30,7 +30,7 @@ class SampleSpec : SleipnirSpec {
 * Sleipnir is not dependent of ```NSObject```, it is pure Swift BDD testing framework
 * Sleipnir is not using ```XCTest```
 * Sleipnir has nice command line output and support for custom test reporters
-* Other features, like seeded random tests invokation, focused and excluded examples/groups, etc.
+* Other features, like seeded random tests invocation, focused and excluded examples/groups, etc.
 
 ## Quick start
 
