@@ -1,3 +1,5 @@
+<img style="float: center" src="whatever.jpg" />
+
 # Sleipnir
 
 Sleipnir is a BDD-style framework for Swift. Sleipnir is highly inspired by [Cedar](https://github.com/pivotal/cedar). 
