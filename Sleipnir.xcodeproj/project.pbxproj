@@ -90,7 +90,7 @@
 		46718B83194B8AAF006E8A18 /* ExampleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleGroup.swift; sourceTree = "<group>"; };
 		46718B85194B8AD2006E8A18 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleipnirLoader.m; sourceTree = "<group>"; };
-		46718BA4194E00AB006E8A18 /* OSXSpecs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OSXSpecs; sourceTree = BUILT_PRODUCTS_DIR; };
+		46718BA4194E00AB006E8A18 /* Sample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sample; sourceTree = BUILT_PRODUCTS_DIR; };
 		46718BA6194E00AB006E8A18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		46718BAC194E0393006E8A18 /* SleipnirSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleipnirSpec.swift; sourceTree = "<group>"; };
 		46718BB3194EA3FE006E8A18 /* LibrarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySpec.swift; sourceTree = "<group>"; };
@@ -149,7 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				46718B58194B6A2C006E8A18 /* Sleipnir */,
-				46718BA5194E00AB006E8A18 /* OSXSpecs */,
+				46718BA5194E00AB006E8A18 /* Sample */,
 				46718B57194B6A2C006E8A18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				46718B56194B6A2C006E8A18 /* Sleipnir */,
-				46718BA4194E00AB006E8A18 /* OSXSpecs */,
+				46718BA4194E00AB006E8A18 /* Sample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			path = ExampleGroups;
 			sourceTree = "<group>";
 		};
-		46718BA5194E00AB006E8A18 /* OSXSpecs */ = {
+		46718BA5194E00AB006E8A18 /* Sample */ = {
 			isa = PBXGroup;
 			children = (
 				46718BA6194E00AB006E8A18 /* main.swift */,
@@ -205,7 +205,7 @@
 				31A997E819657437007319D2 /* Book.swift */,
 				31A997EA196575CA007319D2 /* Library.swift */,
 			);
-			path = OSXSpecs;
+			path = Sample;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,9 +228,9 @@
 			productReference = 46718B56194B6A2C006E8A18 /* Sleipnir */;
 			productType = "com.apple.product-type.tool";
 		};
-		46718BA3194E00AB006E8A18 /* OSXSpecs */ = {
+		46718BA3194E00AB006E8A18 /* Sample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 46718BA8194E00AB006E8A18 /* Build configuration list for PBXNativeTarget "OSXSpecs" */;
+			buildConfigurationList = 46718BA8194E00AB006E8A18 /* Build configuration list for PBXNativeTarget "Sample" */;
 			buildPhases = (
 				46718BA0194E00AB006E8A18 /* Sources */,
 				46718BA1194E00AB006E8A18 /* Frameworks */,
@@ -240,9 +240,9 @@
 			);
 			dependencies = (
 			);
-			name = OSXSpecs;
-			productName = OSXSpecs;
-			productReference = 46718BA4194E00AB006E8A18 /* OSXSpecs */;
+			name = Sample;
+			productName = Sample;
+			productReference = 46718BA4194E00AB006E8A18 /* Sample */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -275,7 +275,7 @@
 			projectRoot = "";
 			targets = (
 				46718B55194B6A2C006E8A18 /* Sleipnir */,
-				46718BA3194E00AB006E8A18 /* OSXSpecs */,
+				46718BA3194E00AB006E8A18 /* Sample */,
 			);
 		};
 /* End PBXProject section */
@@ -474,7 +474,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		46718BA8194E00AB006E8A18 /* Build configuration list for PBXNativeTarget "OSXSpecs" */ = {
+		46718BA8194E00AB006E8A18 /* Build configuration list for PBXNativeTarget "Sample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				46718BA9194E00AB006E8A18 /* Debug */,
