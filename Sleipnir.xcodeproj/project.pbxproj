@@ -83,7 +83,7 @@
 		31BB329E1959B91700BC30D0 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
 		31BB32A21959C6BC00BC30D0 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		31F33EFC1953101000421A59 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
-		31F33EFF19531B5B00421A59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Internals/Array.swift; sourceTree = "<group>"; };
+		31F33EFF19531B5B00421A59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		46718B56194B6A2C006E8A18 /* Sleipnir */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sleipnir; sourceTree = BUILT_PRODUCTS_DIR; };
 		46718B59194B6A2C006E8A18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		46718B80194B8A57006E8A18 /* Internals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internals.swift; sourceTree = "<group>"; };
@@ -123,7 +123,7 @@
 				310644E119587965007629A0 /* BeTrue.swift */,
 				314C79C6195995F400E52DF0 /* BeFalse.swift */,
 			);
-			name = Matchers;
+			path = Matchers;
 			sourceTree = "<group>";
 		};
 		31BB32971959AB2800BC30D0 /* Reporters */ = {
@@ -133,7 +133,7 @@
 				31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */,
 				31BB329E1959B91700BC30D0 /* Reporter.swift */,
 			);
-			name = Reporters;
+			path = Reporters;
 			sourceTree = "<group>";
 		};
 		31BB32A11959C6A800BC30D0 /* Util */ = {
@@ -142,7 +142,7 @@
 				31F33EFF19531B5B00421A59 /* Array.swift */,
 				31BB32A21959C6BC00BC30D0 /* Observable.swift */,
 			);
-			name = Util;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		46718B4D194B6A2C006E8A18 = {
