@@ -1,4 +1,4 @@
-Sleipnir.xcodeproj/xcuserdata
-Sleipnir.xcodeproj/project.xcworkspace/xcuserdata
+xcuserdata
+*.xcuserstate
 
 .DS_Store

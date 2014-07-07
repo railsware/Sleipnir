@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 railsware. All rights reserved.
 //
 
+import Sleipnir
+
 class LibrarySpec : SleipnirSpec {
     
     var book : () = context("Book") {
