@@ -17,6 +17,10 @@
 		314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
 		314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
 		314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
+		314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5C3196D78DA00CA7ED7 /* main.swift */; };
+		314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */; };
+		314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */; };
+		314AE5EB196D803C00CA7ED7 /* Sleipnir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4640EBB51969440500AE5952 /* Sleipnir.framework */; };
 		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
@@ -68,7 +72,26 @@
 		46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		314AE5E9196D803200CA7ED7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46718B4E194B6A2C006E8A18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4640EBB41969440500AE5952;
+			remoteInfo = "Sleipnir-OSX";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
+		314AE5BF196D78DA00CA7ED7 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		46718B54194B6A2C006E8A18 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,6 +108,10 @@
 		312353FD196B07680080C6DF /* ExampleBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBase.swift; sourceTree = "<group>"; };
 		314AE5B5196D6BD100CA7ED7 /* Dumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dumper.swift; sourceTree = "<group>"; };
 		314AE5B9196D716A00CA7ED7 /* SpecTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTable.swift; sourceTree = "<group>"; };
+		314AE5C1196D78DA00CA7ED7 /* Spec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spec; sourceTree = BUILT_PRODUCTS_DIR; };
+		314AE5C3196D78DA00CA7ED7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleSpec.swift; path = Examples/ExampleSpec.swift; sourceTree = "<group>"; };
+		314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleGroupSpec.swift; path = Examples/ExampleGroupSpec.swift; sourceTree = "<group>"; };
 		314C79C6195995F400E52DF0 /* BeFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeFalse.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
@@ -110,6 +137,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		314AE5BE196D78DA00CA7ED7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				314AE5EB196D803C00CA7ED7 /* Sleipnir.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4640EB80196942AF00AE5952 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -134,6 +169,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		314AE5C2196D78DA00CA7ED7 /* Spec */ = {
+			isa = PBXGroup;
+			children = (
+				314AE5CA196D796000CA7ED7 /* Examples */,
+				314AE5C3196D78DA00CA7ED7 /* main.swift */,
+			);
+			path = Spec;
+			sourceTree = "<group>";
+		};
+		314AE5CA196D796000CA7ED7 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */,
+				314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */,
+			);
+			name = Examples;
+			sourceTree = "<group>";
+		};
 		318098B319545DC500ADEAF3 /* Matchers */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +257,7 @@
 				46718B58194B6A2C006E8A18 /* Sleipnir */,
 				4640EB85196942AF00AE5952 /* Sleipnir-iOS */,
 				4640EBB61969440500AE5952 /* Sleipnir-OSX */,
+				314AE5C2196D78DA00CA7ED7 /* Spec */,
 				46718B57194B6A2C006E8A18 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -214,6 +268,7 @@
 				46718B56194B6A2C006E8A18 /* Sleipnir */,
 				4640EB84196942AF00AE5952 /* Sleipnir.framework */,
 				4640EBB51969440500AE5952 /* Sleipnir.framework */,
+				314AE5C1196D78DA00CA7ED7 /* Spec */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,6 +330,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		314AE5C0196D78DA00CA7ED7 /* Spec */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 314AE5C5196D78DA00CA7ED7 /* Build configuration list for PBXNativeTarget "Spec" */;
+			buildPhases = (
+				314AE5BD196D78DA00CA7ED7 /* Sources */,
+				314AE5BE196D78DA00CA7ED7 /* Frameworks */,
+				314AE5BF196D78DA00CA7ED7 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				314AE5EA196D803200CA7ED7 /* PBXTargetDependency */,
+			);
+			name = Spec;
+			productName = Spec;
+			productReference = 314AE5C1196D78DA00CA7ED7 /* Spec */;
+			productType = "com.apple.product-type.tool";
+		};
 		4640EB83196942AF00AE5952 /* Sleipnir-iOS */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4640EB9B196942AF00AE5952 /* Build configuration list for PBXNativeTarget "Sleipnir-iOS" */;
@@ -337,8 +410,12 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = railsware;
 				TargetAttributes = {
+					314AE5C0196D78DA00CA7ED7 = {
+						CreatedOnToolsVersion = 6.0;
+					};
 					4640EB83196942AF00AE5952 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = LP9CCGYVFP;
 					};
 					4640EBB41969440500AE5952 = {
 						CreatedOnToolsVersion = 6.0;
@@ -363,6 +440,7 @@
 				46718B55194B6A2C006E8A18 /* Sleipnir */,
 				4640EB83196942AF00AE5952 /* Sleipnir-iOS */,
 				4640EBB41969440500AE5952 /* Sleipnir-OSX */,
+				314AE5C0196D78DA00CA7ED7 /* Spec */,
 			);
 		};
 /* End PBXProject section */
@@ -385,6 +463,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		314AE5BD196D78DA00CA7ED7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
+				314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */,
+				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4640EB7F196942AF00AE5952 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -466,7 +554,35 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		314AE5EA196D803200CA7ED7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4640EBB41969440500AE5952 /* Sleipnir-OSX */;
+			targetProxy = 314AE5E9196D803200CA7ED7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		314AE5C6196D78DA00CA7ED7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		314AE5C7196D78DA00CA7ED7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		4640EB97196942AF00AE5952 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -665,6 +781,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		314AE5C5196D78DA00CA7ED7 /* Build configuration list for PBXNativeTarget "Spec" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				314AE5C6196D78DA00CA7ED7 /* Debug */,
+				314AE5C7196D78DA00CA7ED7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4640EB9B196942AF00AE5952 /* Build configuration list for PBXNativeTarget "Sleipnir-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

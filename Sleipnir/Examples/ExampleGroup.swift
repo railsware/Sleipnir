@@ -32,7 +32,7 @@ class ExampleGroup : ExampleBase {
     }
     
     override func hasChildren() -> Bool {
-        return examples.count > 1
+        return examples.count >= 1
     }
     
     override func runWithDispatcher(dispatcher: ReportDispatcher) {
