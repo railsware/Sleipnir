@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		310644E219587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
 		310644E319587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
+		312353FE196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
+		312353FF196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
+		31235400196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
+		314AE5B6196D6BD100CA7ED7 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
+		314AE5B7196D6BD100CA7ED7 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
+		314AE5B8196D6BD100CA7ED7 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
+		314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
+		314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
+		314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
 		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
 		314C79C8195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
@@ -45,7 +54,6 @@
 		4640EBAA1969439100AE5952 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 		4640EBAB1969439100AE5952 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 		4640EBAC1969439100AE5952 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
-		4640EBAD1969439100AE5952 /* Internals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B80194B8A57006E8A18 /* Internals.swift */; };
 		4640EBAE1969439100AE5952 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4640EBAF1969439100AE5952 /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
 		4640EBBA1969440500AE5952 /* Sleipnir-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 4640EBB91969440500AE5952 /* Sleipnir-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -63,15 +71,12 @@
 		4640EBD91969445F00AE5952 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 		4640EBDA1969445F00AE5952 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 		4640EBDB1969445F00AE5952 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
-		4640EBDC1969445F00AE5952 /* Internals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B80194B8A57006E8A18 /* Internals.swift */; };
 		4640EBDD1969445F00AE5952 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4640EBDE1969445F00AE5952 /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
 		46718B5A194B6A2C006E8A18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B59194B6A2C006E8A18 /* main.swift */; };
-		46718B81194B8A57006E8A18 /* Internals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B80194B8A57006E8A18 /* Internals.swift */; };
 		46718B84194B8AAF006E8A18 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B83194B8AAF006E8A18 /* ExampleGroup.swift */; };
 		46718B86194B8AD2006E8A18 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 		46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		46718BAB194E00D1006E8A18 /* Internals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B80194B8A57006E8A18 /* Internals.swift */; };
 		46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 		46718BAE194E03C9006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 		46718BAF194E03CC006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -102,6 +107,9 @@
 
 /* Begin PBXFileReference section */
 		310644E119587965007629A0 /* BeTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeTrue.swift; sourceTree = "<group>"; };
+		312353FD196B07680080C6DF /* ExampleBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBase.swift; sourceTree = "<group>"; };
+		314AE5B5196D6BD100CA7ED7 /* Dumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dumper.swift; sourceTree = "<group>"; };
+		314AE5B9196D716A00CA7ED7 /* SpecTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTable.swift; sourceTree = "<group>"; };
 		314C79C6195995F400E52DF0 /* BeFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeFalse.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
@@ -120,7 +128,6 @@
 		4640EBB91969440500AE5952 /* Sleipnir-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sleipnir-OSX.h"; sourceTree = "<group>"; };
 		46718B56194B6A2C006E8A18 /* Sleipnir */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sleipnir; sourceTree = BUILT_PRODUCTS_DIR; };
 		46718B59194B6A2C006E8A18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		46718B80194B8A57006E8A18 /* Internals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Internals.swift; sourceTree = "<group>"; };
 		46718B83194B8AAF006E8A18 /* ExampleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleGroup.swift; sourceTree = "<group>"; };
 		46718B85194B8AD2006E8A18 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleipnirLoader.m; sourceTree = "<group>"; };
@@ -251,7 +258,7 @@
 				31BB32A11959C6A800BC30D0 /* Util */,
 				31BB32971959AB2800BC30D0 /* Reporters */,
 				318098B319545DC500ADEAF3 /* Matchers */,
-				46718B82194B8A5E006E8A18 /* ExampleGroups */,
+				46718B82194B8A5E006E8A18 /* Examples */,
 				46718B7F194B8A39006E8A18 /* Internals */,
 				46718B59194B6A2C006E8A18 /* main.swift */,
 			);
@@ -261,22 +268,24 @@
 		46718B7F194B8A39006E8A18 /* Internals */ = {
 			isa = PBXGroup;
 			children = (
+				46718BAC194E0393006E8A18 /* SleipnirSpec.swift */,
 				31F33EFC1953101000421A59 /* Runner.swift */,
-				46718B80194B8A57006E8A18 /* Internals.swift */,
 				46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */,
 				31874421195C727000C23EAC /* SpecFailure.swift */,
+				314AE5B5196D6BD100CA7ED7 /* Dumper.swift */,
+				314AE5B9196D716A00CA7ED7 /* SpecTable.swift */,
 			);
 			path = Internals;
 			sourceTree = "<group>";
 		};
-		46718B82194B8A5E006E8A18 /* ExampleGroups */ = {
+		46718B82194B8A5E006E8A18 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
 				46718B83194B8AAF006E8A18 /* ExampleGroup.swift */,
 				46718B85194B8AD2006E8A18 /* Example.swift */,
-				46718BAC194E0393006E8A18 /* SleipnirSpec.swift */,
+				312353FD196B07680080C6DF /* ExampleBase.swift */,
 			);
-			path = ExampleGroups;
+			path = Examples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,10 +457,12 @@
 				4640EBA91969439100AE5952 /* ExampleGroup.swift in Sources */,
 				4640EBAA1969439100AE5952 /* Example.swift in Sources */,
 				4640EBAB1969439100AE5952 /* SleipnirSpec.swift in Sources */,
+				314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBAC1969439100AE5952 /* Runner.swift in Sources */,
-				4640EBAD1969439100AE5952 /* Internals.swift in Sources */,
+				314AE5B7196D6BD100CA7ED7 /* Dumper.swift in Sources */,
 				4640EBAE1969439100AE5952 /* SleipnirLoader.m in Sources */,
 				4640EBAF1969439100AE5952 /* SpecFailure.swift in Sources */,
+				312353FF196B07680080C6DF /* ExampleBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,10 +483,12 @@
 				4640EBD81969445F00AE5952 /* ExampleGroup.swift in Sources */,
 				4640EBD91969445F00AE5952 /* Example.swift in Sources */,
 				4640EBDA1969445F00AE5952 /* SleipnirSpec.swift in Sources */,
+				314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBDB1969445F00AE5952 /* Runner.swift in Sources */,
-				4640EBDC1969445F00AE5952 /* Internals.swift in Sources */,
+				314AE5B8196D6BD100CA7ED7 /* Dumper.swift in Sources */,
 				4640EBDD1969445F00AE5952 /* SleipnirLoader.m in Sources */,
 				4640EBDE1969445F00AE5952 /* SpecFailure.swift in Sources */,
+				31235400196B07680080C6DF /* ExampleBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,13 +496,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				314AE5B6196D6BD100CA7ED7 /* Dumper.swift in Sources */,
 				46718B86194B8AD2006E8A18 /* Example.swift in Sources */,
 				31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */,
 				318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */,
 				31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */,
 				318098BB1954609B00ADEAF3 /* Equal.swift in Sources */,
 				31874422195C727000C23EAC /* SpecFailure.swift in Sources */,
-				46718B81194B8A57006E8A18 /* Internals.swift in Sources */,
+				314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */,
 				46718B84194B8AAF006E8A18 /* ExampleGroup.swift in Sources */,
 				46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */,
@@ -497,6 +511,7 @@
 				46718B5A194B6A2C006E8A18 /* main.swift in Sources */,
 				314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */,
 				31BB32A31959C6BC00BC30D0 /* Observable.swift in Sources */,
+				312353FE196B07680080C6DF /* ExampleBase.swift in Sources */,
 				31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 				310644E219587965007629A0 /* BeTrue.swift in Sources */,
@@ -519,7 +534,6 @@
 				46718BB2194E0426006E8A18 /* Example.swift in Sources */,
 				310644E319587965007629A0 /* BeTrue.swift in Sources */,
 				318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */,
-				46718BAB194E00D1006E8A18 /* Internals.swift in Sources */,
 				31BB329A1959AB4300BC30D0 /* DefaultReporter.swift in Sources */,
 				314C79C8195995F400E52DF0 /* BeFalse.swift in Sources */,
 				318098B91954605200ADEAF3 /* BaseMatcher.swift in Sources */,

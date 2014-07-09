@@ -14,17 +14,11 @@ protocol Reporter {
     
     func runDidComplete()
     
-    func runWillStartWithGroup(group: Internal.ExampleGroup)
+    func runWillStartExampleGroup(group: ExampleGroup)
     
-    func runDidCompleteWithGroup(group: Internal.ExampleGroup)
+    func runDidFinishExampleGroup(group: ExampleGroup)
     
-//    - (void)runWillStartExample:(CDRExample *)example;
-//    - (void)runDidFinishExample:(CDRExample *)example;
-//    
-//    - (void)runWillStartExampleGroup:(CDRExampleGroup *)exampleGroup;
-//    - (void)runDidFinishExampleGroup:(CDRExampleGroup *)exampleGroup;
-//    
-//    - (void)runWillStartSpec:(CDRSpec *)spec;
-//    - (void)runDidFinishSpec:(CDRSpec *)spec;
+    func runWillStartExample(example: Example)
     
+    func runDidFinishExample(example: Example)
 }

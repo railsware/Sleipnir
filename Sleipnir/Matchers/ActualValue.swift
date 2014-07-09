@@ -77,7 +77,7 @@ class ActualValue<T> {
     func fail(reason: String) {
         var specFailure = SpecFailure(reason: reason, fileName: fileName, lineNumber: lineNumber)
         Runner.currentExample!.specFailure = specFailure
-        Runner.currentExample!.setState(Internal.ExampleState.Failed)
+        Runner.currentExample!.setState(ExampleState.Failed)
     }
     
     func match(matcher: BaseMatcher<T>) -> Bool {

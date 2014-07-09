@@ -15,75 +15,34 @@ struct Runner {
         case Random
     }
     
-    static var currentExample: Internal.Example?
-    static var order = RunOrder.Random
-    static var specSeed: Int?
-    static var dispatcher: ReportDispatcher?
+    static var currentExample: Example?
     
     static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
-        let specs = Internal.specTable
+        let specSeed = setUpRandomSeed(seed: seed)
         
-        if seed {
-            specSeed = seed!
-        } else {
-            specSeed = Int(getRandomSeed())
-        }
-        srandom(UInt32(specSeed!))
-        
-        order = runOrder
-        if (order == RunOrder.Random) {
-            specs.topLevelGroups.shuffle()
+        if (runOrder == RunOrder.Random) {
+            shuffleExamples()
         }
         
-        dispatcher = ReportDispatcher(with: getReporters())
-        dispatcher!.runWillStart(randomSeed: specSeed!)
+        let dispatcher = ReportDispatcher(with: getReporters())
+        dispatcher.runWillStart(randomSeed: specSeed)
         
-        for exampleGroup in specs.topLevelGroups {
-            runExampleGroup(exampleGroup)
+        for exampleGroup in SpecTable.topLevelGroups {
+            exampleGroup.runWithDispatcher(dispatcher)
         }
         
-        dispatcher!.runDidComplete()
+        dispatcher.runDidComplete()
     }
     
     // Private
     
-    static func runExample(example: Internal.Example) {
-        currentExample = example
+    static func shuffleExamples() {
+        SpecTable.topLevelGroups.shuffle()
         
-        example.group.runBeforeEach()
-        example.block()
-        example.group.runAfterEach()
-        
-        if !example.failed() {
-            example.setState(Internal.ExampleState.Passed)
+        for exampleGroup in SpecTable.topLevelGroups {
+            exampleGroup.examples.shuffle()
+            exampleGroup.childGroups.shuffle()
         }
-    }
-    
-    static func runExampleGroup(group: Internal.ExampleGroup) {
-        if (order == RunOrder.Random) {
-            group.examples.shuffle()
-            group.childGroups.shuffle()
-        }
-        
-        dispatcher!.runWillStartWithGroup(group)
-        
-        for beforeAll in group.beforeAllBlocks {
-            beforeAll()
-        }
-        
-        for example in group.examples {
-            runExample(example)
-        }
-        
-        for childGroup in group.childGroups {
-            runExampleGroup(childGroup)
-        }
-        
-        for afterAll in group.afterAllBlocks {
-            afterAll()
-        }
-        
-        dispatcher!.runDidCompleteWithGroup(group)
     }
     
     // TODO provide a way to define and load custom reporters
@@ -93,8 +52,15 @@ struct Runner {
         return reporters
     }
     
-    static func getRandomSeed() -> UInt32 {
-       return arc4random()
+    static func setUpRandomSeed(seed: Int? = nil) -> Int {
+        var specSeed: Int
+        if seed {
+            specSeed = seed!
+        } else {
+            specSeed = Int(arc4random())
+        }
+        srandom(UInt32(specSeed))
+        
+        return specSeed
     }
-
 }

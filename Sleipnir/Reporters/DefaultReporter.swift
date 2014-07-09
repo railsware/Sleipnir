@@ -9,7 +9,7 @@
 import Foundation
 
 class DefaultReporter : Reporter {
- 
+    
     var startTime: NSDate?
     var endTime: NSDate?
     
@@ -19,22 +19,6 @@ class DefaultReporter : Reporter {
     
     init() {
         failureMessages = String[]()
-    }
-    
-    func successToken() -> String {
-        return "."
-    }
-    
-    func failureToken() -> String {
-        return "F"
-    }
-    
-    func errorToken() -> String {
-        return "E"
-    }
-    
-    func failureMessageForExample(example: Internal.Example) -> String {
-        return "FAILURE " + example.fullText() + ":\n" + example.failure() + "\n"
     }
     
     func runWillStart(randomSeed seed: Int) {
@@ -50,15 +34,37 @@ class DefaultReporter : Reporter {
         printStats()
     }
     
-    func runWillStartWithGroup(group: Internal.ExampleGroup) {
+    func runWillStartExampleGroup(group: ExampleGroup) {
         startObservingExamples(group.examples)
     }
     
-    func runDidCompleteWithGroup(group: Internal.ExampleGroup) {
+    func runDidFinishExampleGroup(group: ExampleGroup) {
         stopObservingExamples(group.examples)
     }
     
+    func runWillStartExample(example: Example) {
+    }
+    
+    func runDidFinishExample(example: Example) {
+    }
+    
     // Private
+    
+    func successToken() -> String {
+        return "."
+    }
+    
+    func failureToken() -> String {
+        return "F"
+    }
+    
+    func errorToken() -> String {
+        return "E"
+    }
+    
+    func failureMessageForExample(example: Example) -> String {
+        return "FAILURE " + example.fullText() + ":\n" + example.failure() + "\n"
+    }
     
     func printMessages(messages: String[]) {
         println()
@@ -74,10 +80,10 @@ class DefaultReporter : Reporter {
         println("\(examplesCount) examples, \(failureMessages.count) failures\n")
     }
     
-    func startObservingExamples(examples: Internal.Example[]) {
+    func startObservingExamples(examples: Example[]) {
         for example in examples {
-            var exampleObserver: Observable<Internal.ExampleState>.Observer = ({
-                (newValue: Internal.ExampleState) -> () in
+            var exampleObserver: Observable<ExampleState>.Observer = ({
+                (newValue: ExampleState) -> () in
                 self.reportOnExample(example)
             })
             
@@ -86,21 +92,21 @@ class DefaultReporter : Reporter {
         }
     }
     
-    func stopObservingExamples(examples: Internal.Example[]) {
+    func stopObservingExamples(examples: Example[]) {
         for example in examples {
             example.state.removeObserver("state_observer")
         }
     }
     
-    func reportOnExample(example: Internal.Example) {
+    func reportOnExample(example: Example) {
         var stateToken: String = ""
     
         switch example.state.get() {
-        case Internal.ExampleState.Passed:
+        case ExampleState.Passed:
             stateToken = successToken()
-        case Internal.ExampleState.Error:
+        case ExampleState.Error:
             stateToken = errorToken()
-        case Internal.ExampleState.Failed:
+        case ExampleState.Failed:
             stateToken = failureToken()
             failureMessages.append(failureMessageForExample(example))
         default:
@@ -109,5 +115,4 @@ class DefaultReporter : Reporter {
         
         print(stateToken)
     }
-    
 }

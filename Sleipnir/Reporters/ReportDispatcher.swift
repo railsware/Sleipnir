@@ -24,21 +24,31 @@ class ReportDispatcher {
     
     func runDidComplete() {
         for reporter in reporters {
-            
             reporter.runDidComplete()
         }
     }
     
-    func runWillStartWithGroup(group: Internal.ExampleGroup) {
+    func runWillStartExampleGroup(group: ExampleGroup) {
         for reporter in reporters {
-            reporter.runWillStartWithGroup(group)
+            reporter.runWillStartExampleGroup(group)
         }
     }
     
-    func runDidCompleteWithGroup(group: Internal.ExampleGroup) {
+    func runDidFinishExampleGroup(group: ExampleGroup) {
         for reporter in reporters {
-            reporter.runDidCompleteWithGroup(group)
+            reporter.runDidFinishExampleGroup(group)
         }
     }
 
+    func runWillStartExample(example: Example) {
+        for reporter in reporters {
+            reporter.runWillStartExample(example)
+        }
+    }
+    
+    func runDidFinishExample(example: Example) {
+        for reporter in reporters {
+            reporter.runDidFinishExample(example)
+        }
+    }
 }
