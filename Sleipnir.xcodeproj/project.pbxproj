@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		310644E219587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
-		310644E319587965007629A0 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
 		312353FE196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
 		312353FF196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
 		31235400196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
@@ -19,27 +18,16 @@
 		314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
 		314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
 		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
-		314C79C8195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
-		318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
-		318098B91954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
 		318098BB1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
-		318098BC1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
 		31874422195C727000C23EAC /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
-		31874423195C727000C23EAC /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
 		31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
-		31BB329A1959AB4300BC30D0 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
 		31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
-		31BB329D1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
 		31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329E1959B91700BC30D0 /* Reporter.swift */; };
-		31BB32A01959B91700BC30D0 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329E1959B91700BC30D0 /* Reporter.swift */; };
 		31BB32A31959C6BC00BC30D0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
-		31BB32A41959C6BC00BC30D0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
 		31F33EFD1953101000421A59 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
-		31F33EFE1953101000421A59 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
 		31F33F0019531B5B00421A59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
-		31F33F0119531B5B00421A59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		4640EB9F1969439100AE5952 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		4640EBA01969439100AE5952 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
 		4640EBA11969439100AE5952 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
@@ -78,23 +66,10 @@
 		46718B86194B8AD2006E8A18 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 		46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
-		46718BAE194E03C9006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
-		46718BAF194E03CC006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		46718BB0194E03E5006E8A18 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B83194B8AAF006E8A18 /* ExampleGroup.swift */; };
-		46718BB2194E0426006E8A18 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		46718B54194B6A2C006E8A18 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-		46718BA2194E00AB006E8A18 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -131,7 +106,6 @@
 		46718B83194B8AAF006E8A18 /* ExampleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleGroup.swift; sourceTree = "<group>"; };
 		46718B85194B8AD2006E8A18 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleipnirLoader.m; sourceTree = "<group>"; };
-		46718BA4194E00AB006E8A18 /* Sample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sample; sourceTree = BUILT_PRODUCTS_DIR; };
 		46718BAC194E0393006E8A18 /* SleipnirSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleipnirSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,13 +125,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		46718B53194B6A2C006E8A18 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46718BA1194E00AB006E8A18 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -245,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				46718B56194B6A2C006E8A18 /* Sleipnir */,
-				46718BA4194E00AB006E8A18 /* Sample */,
 				4640EB84196942AF00AE5952 /* Sleipnir.framework */,
 				4640EBB51969440500AE5952 /* Sleipnir.framework */,
 			);
@@ -362,23 +328,6 @@
 			productReference = 46718B56194B6A2C006E8A18 /* Sleipnir */;
 			productType = "com.apple.product-type.tool";
 		};
-		46718BA3194E00AB006E8A18 /* Sample */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 46718BA8194E00AB006E8A18 /* Build configuration list for PBXNativeTarget "Sample" */;
-			buildPhases = (
-				46718BA0194E00AB006E8A18 /* Sources */,
-				46718BA1194E00AB006E8A18 /* Frameworks */,
-				46718BA2194E00AB006E8A18 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = Sample;
-			productName = Sample;
-			productReference = 46718BA4194E00AB006E8A18 /* Sample */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -397,9 +346,6 @@
 					46718B55194B6A2C006E8A18 = {
 						CreatedOnToolsVersion = 6.0;
 					};
-					46718BA3194E00AB006E8A18 = {
-						CreatedOnToolsVersion = 6.0;
-					};
 				};
 			};
 			buildConfigurationList = 46718B51194B6A2C006E8A18 /* Build configuration list for PBXProject "Sleipnir" */;
@@ -415,7 +361,6 @@
 			projectRoot = "";
 			targets = (
 				46718B55194B6A2C006E8A18 /* Sleipnir */,
-				46718BA3194E00AB006E8A18 /* Sample */,
 				4640EB83196942AF00AE5952 /* Sleipnir-iOS */,
 				4640EBB41969440500AE5952 /* Sleipnir-OSX */,
 			);
@@ -516,29 +461,6 @@
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 				310644E219587965007629A0 /* BeTrue.swift in Sources */,
 				318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		46718BA0194E00AB006E8A18 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				31F33F0119531B5B00421A59 /* Array.swift in Sources */,
-				46718BB0194E03E5006E8A18 /* ExampleGroup.swift in Sources */,
-				31874423195C727000C23EAC /* SpecFailure.swift in Sources */,
-				31F33EFE1953101000421A59 /* Runner.swift in Sources */,
-				46718BAF194E03CC006E8A18 /* SleipnirLoader.m in Sources */,
-				31BB32A41959C6BC00BC30D0 /* Observable.swift in Sources */,
-				31BB32A01959B91700BC30D0 /* Reporter.swift in Sources */,
-				31BB329D1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */,
-				46718BB2194E0426006E8A18 /* Example.swift in Sources */,
-				310644E319587965007629A0 /* BeTrue.swift in Sources */,
-				318098B619545DD700ADEAF3 /* ActualValue.swift in Sources */,
-				31BB329A1959AB4300BC30D0 /* DefaultReporter.swift in Sources */,
-				314C79C8195995F400E52DF0 /* BeFalse.swift in Sources */,
-				318098B91954605200ADEAF3 /* BaseMatcher.swift in Sources */,
-				318098BC1954609B00ADEAF3 /* Equal.swift in Sources */,
-				46718BAE194E03C9006E8A18 /* SleipnirSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -740,28 +662,6 @@
 			};
 			name = Release;
 		};
-		46718BA9194E00AB006E8A18 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_MODULE_NAME = Sleipnir;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		46718BAA194E00AB006E8A18 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_MODULE_NAME = Sleipnir;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -797,15 +697,6 @@
 			buildConfigurations = (
 				46718B5E194B6A2C006E8A18 /* Debug */,
 				46718B5F194B6A2C006E8A18 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		46718BA8194E00AB006E8A18 /* Build configuration list for PBXNativeTarget "Sample" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				46718BA9194E00AB006E8A18 /* Debug */,
-				46718BAA194E00AB006E8A18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
