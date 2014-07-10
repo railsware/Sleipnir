@@ -26,6 +26,7 @@
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
 		318098BB1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
 		31874422195C727000C23EAC /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
+		31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */; };
 		31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
 		31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
 		31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329E1959B91700BC30D0 /* Reporter.swift */; };
@@ -117,6 +118,7 @@
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
 		31874421195C727000C23EAC /* SpecFailure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecFailure.swift; sourceTree = "<group>"; };
+		31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultReporterSpec.swift; path = Reporters/DefaultReporterSpec.swift; sourceTree = "<group>"; };
 		31BB32981959AB4300BC30D0 /* DefaultReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultReporter.swift; sourceTree = "<group>"; };
 		31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDispatcher.swift; sourceTree = "<group>"; };
 		31BB329E1959B91700BC30D0 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		314AE5C2196D78DA00CA7ED7 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				31AC70C4196EDE0E001D68E0 /* Reporters */,
 				314AE5CA196D796000CA7ED7 /* Examples */,
 				314AE5C3196D78DA00CA7ED7 /* main.swift */,
 			);
@@ -197,6 +200,14 @@
 				314C79C6195995F400E52DF0 /* BeFalse.swift */,
 			);
 			path = Matchers;
+			sourceTree = "<group>";
+		};
+		31AC70C4196EDE0E001D68E0 /* Reporters */ = {
+			isa = PBXGroup;
+			children = (
+				31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */,
+			);
+			name = Reporters;
 			sourceTree = "<group>";
 		};
 		31BB32971959AB2800BC30D0 /* Reporters */ = {
@@ -470,6 +481,7 @@
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
 				314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
+				31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -788,6 +800,7 @@
 				314AE5C7196D78DA00CA7ED7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4640EB9B196942AF00AE5952 /* Build configuration list for PBXNativeTarget "Sleipnir-iOS" */ = {
 			isa = XCConfigurationList;
