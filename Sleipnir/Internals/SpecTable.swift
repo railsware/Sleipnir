@@ -20,7 +20,6 @@ struct SpecTable {
             currentGroup?.block()
             currentGroup = nil
         } else {
-            group.parentGroup = currentGroup
             currentGroup?.addChildGroup(group)
             
             currentGroup = group

@@ -81,6 +81,7 @@ class ExampleGroup : ExampleBase {
     
     func addChildGroup(group: ExampleGroup) {
         childGroups.append(group)
+        group.parentGroup = self
     }
     
     func addBeforeEach(block: SleipnirBlock) {
