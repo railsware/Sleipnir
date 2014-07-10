@@ -49,8 +49,20 @@ class Example : ExampleBase {
             || self.state.get() == ExampleState.Error
     }
     
+    func message() -> String {
+        if specFailure {
+            return specFailure!.reason
+        } else {
+            return ""
+        }
+    }
+    
     func failure() -> String {
-        return specFailure!.failure()
+        if specFailure {
+            return specFailure!.failure()
+        } else {
+            return ""
+        }
     }
     
     func fullText() -> String {

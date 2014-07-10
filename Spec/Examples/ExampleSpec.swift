@@ -15,8 +15,47 @@ class ExampleSpec : SleipnirSpec {
         
         var example: Example?
         let exampleText = "exampleText"
+        let dispatcher = ReportDispatcher(with: Reporter[]())
         beforeEach {
             example = Example(exampleText, {})
+        }
+        
+        describe("hasChildren") {
+            it("should return false") {
+                expect(example!.hasChildren()).to(beFalse())
+            }
+        }
+        
+        describe("state") {
+            context("for a newly created example") {
+                it("should be Incomplete") {
+                    let exampleState = example!.state.get()
+                    expect(exampleState).to(equal(ExampleState.Incomplete))
+                }
+            }
+            
+            context("for an example that has run and succeeded") {
+                beforeEach {
+                    example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should be Passed") {
+                    let exampleState = example!.state.get()
+                    expect(exampleState).to(equal(ExampleState.Passed))
+                }
+            }
+
+            context("for an example that has run and failed") {
+                beforeEach {
+                    example = Example("I should fail", { expect(false).to(beTrue()) })
+                    example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should be Failed") {
+                    let exampleState = example!.state.get()
+                    expect(exampleState).to(equal(ExampleState.Failed))
+                }
+            }
         }
         
         describe("fullText") {
@@ -58,5 +97,37 @@ class ExampleSpec : SleipnirSpec {
                 }
             }
         }
+        
+        describe("message") {
+            describe("for an incomplete example") {
+                it("should return an empty string") {
+                    expect(example!.message()).to(equal(""))
+                }
+            }
+            
+            describe("for a passing example") {
+                beforeEach {
+                    example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should return an empty string") {
+                    expect(example!.message()).to(equal(""))
+                }
+            }
+            
+            describe("for a failing example") {
+                let failureMessage = "Expected false to evaluate to true"
+                
+                beforeEach {
+                    example = Example(failureMessage, { expect(false).to(beTrue()) })
+                    example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should return the failure message") {
+                    expect(example!.message()).to(equal(failureMessage))
+                }
+            }
+        }
+        
     }
 }
