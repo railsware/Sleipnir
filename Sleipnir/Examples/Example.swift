@@ -28,10 +28,10 @@ class Example : ExampleBase {
     override func runWithDispatcher(dispatcher: ReportDispatcher) {
         dispatcher.runWillStartExample(self)
         
-        group.runBeforeEach()
+        if group { group.runBeforeEach() }
         Runner.currentExample = self
         block()
-        group.runAfterEach()
+        if group { group.runAfterEach() }
         
         if !failed() {
             setState(ExampleState.Passed)
