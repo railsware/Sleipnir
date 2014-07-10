@@ -54,7 +54,11 @@ class Example : ExampleBase {
     }
     
     func fullText() -> String {
-        return group.fullText() + " " + self.label
+        if group {
+            return group.fullText() + " " + self.label
+        } else {
+            return self.label
+        }
     }
 }
 
