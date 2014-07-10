@@ -49,10 +49,7 @@ class ExampleGroupSpec : SleipnirSpec {
             var blockInvocationCount: Int = 0
             beforeEach {
                 blockInvocationCount = 0
-                func blockIncrement() {
-                    blockInvocationCount++
-                }
-                let afterEachBlock = blockIncrement
+                let afterEachBlock = { () -> () in blockInvocationCount = blockInvocationCount + 1 }
                 group!.addAfterEach(afterEachBlock)
                 group!.addExample(passedExample!)
                 group!.addExample(failedExample!)

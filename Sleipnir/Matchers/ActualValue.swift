@@ -27,7 +27,6 @@ class ActualValue<T> {
         self.arrValue = arrValue
         self.fileName = fileName
         self.lineNumber = lineNumber
-
     }
     
     func to(matcher: BaseMatcher<T>) {

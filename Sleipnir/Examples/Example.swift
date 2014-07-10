@@ -27,9 +27,9 @@ class Example : ExampleBase {
     
     override func runWithDispatcher(dispatcher: ReportDispatcher) {
         dispatcher.runWillStartExample(self)
-        Runner.currentExample = self
         
         group.runBeforeEach()
+        Runner.currentExample = self
         block()
         group.runAfterEach()
         
