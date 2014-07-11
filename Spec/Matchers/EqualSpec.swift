@@ -29,7 +29,7 @@ func ==(left: CustomObject, right: CustomObject) -> Bool {
 
 class EqualSpec : SleipnirSpec {
  
-    var equalSpec : () = describe("EqualMatcher") {
+    var equalSpec : () = describe("Equal matcher") {
         
         describe("when the values are a built-in type") {
             let actualValue = 1
