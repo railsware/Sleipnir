@@ -45,7 +45,7 @@ class SampleSpec : SleipnirSpec {
 
 ## Usage sample
 
-See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/LibrarySpec.swift) file in [Sample](https://github.com/railsware/Sleipnir/blob/master/Sample) target.
+See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Sample/LibrarySpec.swift) file in [Sample](https://github.com/railsware/Sleipnir/tree/master/Sample/Sample) project.
 
 ## TODO
 
@@ -55,7 +55,7 @@ See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Libra
 - [ ] XCode templates
 - [ ] Shared examples support
 - [ ] ```should``` syntax support
-- [ ] Specs for Sleipnir using Sleipnir
+- [x] Specs for Sleipnir using Sleipnir
 - [ ] Wiki documentation
 - [ ] More matchers:
   - [ ] ```beNil```
