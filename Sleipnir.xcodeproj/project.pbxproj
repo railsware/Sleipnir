@@ -22,6 +22,7 @@
 		314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */; };
 		314AE5EB196D803C00CA7ED7 /* Sleipnir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4640EBB51969440500AE5952 /* Sleipnir.framework */; };
 		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
+		3162A69B196FEFBE006A6786 /* SpecFailureSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69A196FEFBE006A6786 /* SpecFailureSpec.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
 		318098BB1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
@@ -114,6 +115,7 @@
 		314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleSpec.swift; path = Examples/ExampleSpec.swift; sourceTree = "<group>"; };
 		314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleGroupSpec.swift; path = Examples/ExampleGroupSpec.swift; sourceTree = "<group>"; };
 		314C79C6195995F400E52DF0 /* BeFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeFalse.swift; sourceTree = "<group>"; };
+		3162A69A196FEFBE006A6786 /* SpecFailureSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecFailureSpec.swift; path = Internals/SpecFailureSpec.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 		314AE5C2196D78DA00CA7ED7 /* Spec */ = {
 			isa = PBXGroup;
 			children = (
+				3162A699196FEF97006A6786 /* Internals */,
 				31AC70C4196EDE0E001D68E0 /* Reporters */,
 				314AE5CA196D796000CA7ED7 /* Examples */,
 				314AE5C3196D78DA00CA7ED7 /* main.swift */,
@@ -188,6 +191,14 @@
 				314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */,
 			);
 			name = Examples;
+			sourceTree = "<group>";
+		};
+		3162A699196FEF97006A6786 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				3162A69A196FEFBE006A6786 /* SpecFailureSpec.swift */,
+			);
+			name = Internals;
 			sourceTree = "<group>";
 		};
 		318098B319545DC500ADEAF3 /* Matchers */ = {
@@ -478,6 +489,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3162A69B196FEFBE006A6786 /* SpecFailureSpec.swift in Sources */,
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
 				314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
