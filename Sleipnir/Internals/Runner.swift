@@ -21,7 +21,7 @@ struct Runner {
         let specSeed = setUpRandomSeed(seed: seed)
         
         if (runOrder == RunOrder.Random) {
-            shuffleExamples()
+            shuffleExamples(SpecTable.topLevelGroups)
         }
         
         let dispatcher = ReportDispatcher(with: getReporters())
@@ -36,12 +36,14 @@ struct Runner {
     
     // Private
     
-    static func shuffleExamples() {
-        SpecTable.topLevelGroups.shuffle()
-        
-        for exampleGroup in SpecTable.topLevelGroups {
-            exampleGroup.examples.shuffle()
-            exampleGroup.childGroups.shuffle()
+    static func shuffleExamples(groups: ExampleGroup[]) {
+        groups.shuffle()
+        for group in groups {
+            group.examples.shuffle()
+            
+            if (group.childGroups.count > 0) {
+                shuffleExamples(group.childGroups)
+            }
         }
     }
     
