@@ -29,7 +29,7 @@ class BeFalseSpec : SleipnirSpec {
                 
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected false to not evaluate to false"
+                        let failureMessage = "Expected <false> to not evaluate to false"
                         expectFailureWithMessage(failureMessage) {
                             expect(value!).toNot(beFalse())
                         }
@@ -44,7 +44,7 @@ class BeFalseSpec : SleipnirSpec {
 
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected true to evaluate to false"
+                        let failureMessage = "Expected <true> to evaluate to false"
                         expectFailureWithMessage(failureMessage) {
                             expect(value!).to(beFalse())
                         }

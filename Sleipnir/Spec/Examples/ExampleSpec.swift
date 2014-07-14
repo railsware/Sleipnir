@@ -116,7 +116,7 @@ class ExampleSpec : SleipnirSpec {
             }
             
             describe("for a failing example") {
-                let failureMessage = "Expected false to evaluate to true"
+                let failureMessage = "Expected <false> to evaluate to true"
                 
                 beforeEach {
                     example = Example(failureMessage, { expect(false).to(beTrue()) })

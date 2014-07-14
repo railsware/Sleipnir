@@ -28,9 +28,9 @@ class Equal<T: Equatable>: BaseMatcher<T> {
     
     override func failureMessageEnd() -> String {
         if expectedArr {
-            return "equal \(expectedArr!)"
+            return "equal <\(expectedArr!)>"
         } else {
-            return "equal \(expected)"
+            return "equal <\(expected)>"
         }
     }
 }

@@ -37,18 +37,18 @@ class BaseMatcher<T> {
     /// Private
     
     func failureMessageFor(value: T) -> String {
-        return "Expected \(value) to \(failureMessageEnd())"
+        return "Expected <\(value)> to \(failureMessageEnd())"
     }
     
     func failureMessageFor(value: [T]) -> String {
-        return "Expected \(value) to \(failureMessageEnd())"
+        return "Expected <\(value)> to \(failureMessageEnd())"
     }
     
     func negativeFailureMessageFor(value: T) -> String {
-        return "Expected \(value) to not \(failureMessageEnd())"
+        return "Expected <\(value)> to not \(failureMessageEnd())"
     }
     
     func negativeFailureMessageFor(value: [T]) -> String {
-        return "Expected \(value) to not \(failureMessageEnd())"
+        return "Expected <\(value)> to not \(failureMessageEnd())"
     }
 }
