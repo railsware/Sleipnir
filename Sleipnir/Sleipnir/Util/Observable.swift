@@ -15,14 +15,14 @@ class Observable<T> {
     
     var observers = Dictionary<String, Observer>()
     
-    var observableProperty: T[] {
+    var observableProperty: [T] {
     didSet {
         notify()
     }
     }
     
     init(value: T) {
-        self.observableProperty = T[]()
+        self.observableProperty = [T]()
         self.observableProperty.append(value)
     }
     

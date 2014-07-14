@@ -10,9 +10,9 @@ import Foundation
 
 class ActualValue<T> {
     
-    var value: T[] = T[]()
+    var value: [T] = [T]()
     
-    var arrValue: T[]?
+    var arrValue: [T]?
     
     var fileName: String
     var lineNumber: Int
@@ -23,7 +23,7 @@ class ActualValue<T> {
         self.lineNumber = lineNumber
     }
     
-    init(arrValue: T[], fileName: String, lineNumber: Int) {
+    init(arrValue: [T], fileName: String, lineNumber: Int) {
         self.arrValue = arrValue
         self.fileName = fileName
         self.lineNumber = lineNumber
@@ -96,6 +96,6 @@ func expect<T>(value: T, file: String = __FILE__, line: Int = __LINE__) -> Actua
     return ActualValue(value: value, fileName: file, lineNumber: line)
 }
 
-func expect<T>(arrValue: T[], file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
+func expect<T>(arrValue: [T], file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
     return ActualValue(arrValue: arrValue, fileName: file, lineNumber: line)
 }

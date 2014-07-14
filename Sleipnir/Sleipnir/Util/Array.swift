@@ -10,7 +10,7 @@ import Foundation
 
 extension Array {
     
-    func shuffle() {        
+    mutating func shuffle() {
         for var i = self.count - 1; i >= 1; i-- {
             let j = Int(random() % (i+1))
             swap(&self[i], &self[j])

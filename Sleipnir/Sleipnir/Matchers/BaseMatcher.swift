@@ -10,15 +10,15 @@ import Foundation
 
 class BaseMatcher<T> {
     
-    var expected: T[] = T[]()
+    var expected: [T] = [T]()
     
-    var expectedArr: T[]?
+    var expectedArr: [T]?
     
     init(expected: T) {
         self.expected.append(expected)
     }
     
-    init(expected: T[]) {
+    init(expected: [T]) {
         self.expectedArr = expected
     }
     
@@ -26,7 +26,7 @@ class BaseMatcher<T> {
         return false
     }
     
-    func match(actual: T[]) -> Bool {
+    func match(actual: [T]) -> Bool {
         return false
     }
     
@@ -40,7 +40,7 @@ class BaseMatcher<T> {
         return "Expected \(value) to \(failureMessageEnd())"
     }
     
-    func failureMessageFor(value: T[]) -> String {
+    func failureMessageFor(value: [T]) -> String {
         return "Expected \(value) to \(failureMessageEnd())"
     }
     
@@ -48,7 +48,7 @@ class BaseMatcher<T> {
         return "Expected \(value) to not \(failureMessageEnd())"
     }
     
-    func negativeFailureMessageFor(value: T[]) -> String {
+    func negativeFailureMessageFor(value: [T]) -> String {
         return "Expected \(value) to not \(failureMessageEnd())"
     }
 }

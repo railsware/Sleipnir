@@ -15,10 +15,10 @@ class DefaultReporter : Reporter {
     
     var examplesCount: Int = 0
     
-    var failureMessages: String[]
+    var failureMessages: [String]
     
     init() {
-        failureMessages = String[]()
+        failureMessages = [String]()
     }
     
     func runWillStart(randomSeed seed: Int) {
@@ -66,7 +66,7 @@ class DefaultReporter : Reporter {
         return "FAILURE " + example.fullText() + ":\n" + example.failure() + "\n"
     }
     
-    func printMessages(messages: String[]) {
+    func printMessages(messages: [String]) {
         println()
         
         for message in messages {
@@ -80,7 +80,7 @@ class DefaultReporter : Reporter {
         println("\(examplesCount) examples, \(failureMessages.count) failures\n")
     }
     
-    func startObservingExamples(examples: Example[]) {
+    func startObservingExamples(examples: [Example]) {
         for example in examples {
             var exampleObserver: Observable<ExampleState>.Observer = ({
                 (newValue: ExampleState) -> () in
@@ -92,7 +92,7 @@ class DefaultReporter : Reporter {
         }
     }
     
-    func stopObservingExamples(examples: Example[]) {
+    func stopObservingExamples(examples: [Example]) {
         for example in examples {
             example.state.removeObserver("state_observer")
         }

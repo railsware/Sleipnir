@@ -21,7 +21,7 @@ struct Runner {
         let specSeed = setUpRandomSeed(seed: seed)
         
         if (runOrder == RunOrder.Random) {
-            shuffleExamples(SpecTable.topLevelGroups)
+            shuffleExamples(&SpecTable.topLevelGroups)
         }
         
         let dispatcher = ReportDispatcher(with: getReporters())
@@ -36,20 +36,20 @@ struct Runner {
     
     // Private
     
-    static func shuffleExamples(groups: ExampleGroup[]) {
+    static func shuffleExamples(inout groups: [ExampleGroup]) {
         groups.shuffle()
         for group in groups {
             group.examples.shuffle()
             
             if (group.childGroups.count > 0) {
-                shuffleExamples(group.childGroups)
+                shuffleExamples(&group.childGroups)
             }
         }
     }
     
     // TODO provide a way to define and load custom reporters
-    static func getReporters() -> Reporter[] {
-        var reporters = Reporter[]()
+    static func getReporters() -> [Reporter] {
+        var reporters = [Reporter]()
         reporters.append(DefaultReporter())
         return reporters
     }

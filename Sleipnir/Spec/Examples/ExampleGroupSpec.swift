@@ -16,7 +16,7 @@ class ExampleGroupSpec : SleipnirSpec {
         var group: ExampleGroup?
         var passedExample: Example?
         var failedExample: Example?
-        let dispatcher = ReportDispatcher(with: Reporter[]())
+        let dispatcher = ReportDispatcher(with: [Reporter]())
         beforeEach {
             group = ExampleGroup("Group!", {})
             passedExample = Example("I should pass", {})

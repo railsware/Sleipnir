@@ -10,11 +10,11 @@ import Foundation
 
 struct SpecTable {
     
-    static var topLevelGroups: ExampleGroup[] = ExampleGroup[]()
+    static var topLevelGroups: [ExampleGroup] = [ExampleGroup]()
     static var currentGroup : ExampleGroup?
     
     static func handleGroup(group: ExampleGroup) {
-        if (currentGroup == nil) {
+        if (!currentGroup) {
             currentGroup = group
             addGroup(currentGroup!)
             currentGroup?.block()

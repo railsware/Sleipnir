@@ -10,10 +10,10 @@ import Foundation
 
 class Library {
     
-    var books: Book[]
+    var books: [Book]
     
     init() {
-        self.books = Book[]()
+        self.books = [Book]()
     }
     
     func addBook(book: Book) {
@@ -36,11 +36,11 @@ class Library {
         return size() > 0
     }
     
-    func filterBy(#author: String) -> Book[] {
+    func filterBy(#author: String) -> [Book] {
         return books.filter { $0.author == author }
     }
     
-    func filterBy(#title: String) -> Book[] {
+    func filterBy(#title: String) -> [Book] {
         return books.filter { !$0.title.rangeOfString(title).isEmpty }
     }
 }

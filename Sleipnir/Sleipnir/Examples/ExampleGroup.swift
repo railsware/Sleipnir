@@ -14,14 +14,14 @@ class ExampleGroup : ExampleBase {
     var block: SleipnirBlock
     
     var parentGroup: ExampleGroup?
-    var childGroups: ExampleGroup[] = ExampleGroup[]()
+    var childGroups: [ExampleGroup] = [ExampleGroup]()
     
-    var examples: Example[] = Example[]()
+    var examples: [Example] = [Example]()
     
-    var beforeEachBlocks: SleipnirBlock[] = SleipnirBlock[]()
-    var afterEachBlocks: SleipnirBlock[] = SleipnirBlock[]()
-    var beforeAllBlocks: SleipnirBlock[] = SleipnirBlock[]()
-    var afterAllBlocks: SleipnirBlock[] = SleipnirBlock[]()
+    var beforeEachBlocks: [SleipnirBlock] = [SleipnirBlock]()
+    var afterEachBlocks: [SleipnirBlock] = [SleipnirBlock]()
+    var beforeAllBlocks: [SleipnirBlock] = [SleipnirBlock]()
+    var afterAllBlocks: [SleipnirBlock] = [SleipnirBlock]()
     
     init(_ label: String,
         _ block: SleipnirBlock,

@@ -10,9 +10,9 @@ import Foundation
 
 class ReportDispatcher {
     
-    var reporters: Reporter[]
+    var reporters: [Reporter]
     
-    init(with reporters: Reporter[]) {
+    init(with reporters: [Reporter]) {
         self.reporters = reporters
     }
     

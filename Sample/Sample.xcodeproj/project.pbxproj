@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31492560197408AC00EDF221 /* Sleipnir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3149255F197408AC00EDF221 /* Sleipnir.framework */; };
 		31BCD721196AF43A0023B154 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BCD720196AF43A0023B154 /* main.swift */; };
-		31BCD728196AF4BF0023B154 /* Sleipnir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31BCD727196AF4BF0023B154 /* Sleipnir.framework */; };
 		31BCD72C196AF8850023B154 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BCD729196AF8850023B154 /* Book.swift */; };
 		31BCD72D196AF8850023B154 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BCD72A196AF8850023B154 /* Library.swift */; };
 		31BCD72E196AF8850023B154 /* LibrarySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BCD72B196AF8850023B154 /* LibrarySpec.swift */; };
@@ -27,9 +27,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3149255F197408AC00EDF221 /* Sleipnir.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sleipnir.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Sleipnir-caokpubdjvmkvecouzlittpanymp/Build/Products/Debug/Sleipnir.framework"; sourceTree = "<group>"; };
 		31BCD71D196AF43A0023B154 /* Sample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sample; sourceTree = BUILT_PRODUCTS_DIR; };
 		31BCD720196AF43A0023B154 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		31BCD727196AF4BF0023B154 /* Sleipnir.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sleipnir.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Sleipnir-culvdrsgyplqqigxrcfdyyeyowhl/Build/Products/Debug/Sleipnir.framework"; sourceTree = "<group>"; };
 		31BCD729196AF8850023B154 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		31BCD72A196AF8850023B154 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		31BCD72B196AF8850023B154 /* LibrarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibrarySpec.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31BCD728196AF4BF0023B154 /* Sleipnir.framework in Frameworks */,
+				31492560197408AC00EDF221 /* Sleipnir.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,7 +50,7 @@
 		31BCD714196AF43A0023B154 = {
 			isa = PBXGroup;
 			children = (
-				31BCD727196AF4BF0023B154 /* Sleipnir.framework */,
+				3149255F197408AC00EDF221 /* Sleipnir.framework */,
 				31BCD71F196AF43A0023B154 /* Sample */,
 				31BCD71E196AF43A0023B154 /* Products */,
 			);
@@ -222,6 +222,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Sleipnir-culvdrsgyplqqigxrcfdyyeyowhl/Build/Products/Debug",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Sleipnir-caokpubdjvmkvecouzlittpanymp/Build/Products/Debug",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -233,6 +234,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Sleipnir-culvdrsgyplqqigxrcfdyyeyowhl/Build/Products/Debug",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/Sleipnir-caokpubdjvmkvecouzlittpanymp/Build/Products/Debug",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -257,6 +259,7 @@
 				31BCD726196AF43A0023B154 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

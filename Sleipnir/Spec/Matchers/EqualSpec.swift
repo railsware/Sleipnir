@@ -174,7 +174,7 @@ class EqualSpec : SleipnirSpec {
 
         describe("when the values are declared as an arrays") {
             let actualValue = [1, 2, 3]
-            var expectedValue: Int[]?
+            var expectedValue: [Int]?
             
             describe("and the values are equal") {
                 beforeEach {

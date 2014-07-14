@@ -15,7 +15,7 @@ class ExampleSpec : SleipnirSpec {
         
         var example: Example?
         let exampleText = "exampleText"
-        let dispatcher = ReportDispatcher(with: Reporter[]())
+        let dispatcher = ReportDispatcher(with: [Reporter]())
         beforeEach {
             example = Example(exampleText, {})
         }
