@@ -19,7 +19,7 @@ class Equal<T: Equatable>: BaseMatcher<T> {
     }
     
     override func match(actual: T) -> Bool {
-        return actual == self.expected[0]
+        return actual == self.expected
     }
     
     override func match(actual: [T]) -> Bool {

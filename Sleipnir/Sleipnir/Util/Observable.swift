@@ -15,23 +15,22 @@ class Observable<T> {
     
     var observers = Dictionary<String, Observer>()
     
-    var observableProperty: [T] {
+    var observableProperty: T {
     didSet {
         notify()
     }
     }
     
     init(value: T) {
-        self.observableProperty = [T]()
-        self.observableProperty.append(value)
+        self.observableProperty = value
     }
     
     func get() -> T {
-        return observableProperty[0]
+        return observableProperty
     }
     
     func update(value: T) {
-        self.observableProperty[0] = value
+        observableProperty = value
     }
     
     func addObserver(identifier: String, observer: Observer) {
@@ -46,7 +45,7 @@ class Observable<T> {
     
     func notify() {
         for (identifier, observer) in observers {
-            observer.post(newValue: observableProperty[0])
+            observer.post(newValue: observableProperty)
         }
     }
 }

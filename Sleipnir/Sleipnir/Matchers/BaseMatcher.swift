@@ -10,12 +10,12 @@ import Foundation
 
 class BaseMatcher<T> {
     
-    var expected: [T] = [T]()
+    var expected: T?
     
     var expectedArr: [T]?
     
     init(expected: T) {
-        self.expected.append(expected)
+        self.expected = expected
     }
     
     init(expected: [T]) {

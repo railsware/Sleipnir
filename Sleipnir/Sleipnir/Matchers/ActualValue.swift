@@ -10,7 +10,7 @@ import Foundation
 
 class ActualValue<T> {
     
-    var value: [T] = [T]()
+    var value: T?
     
     var arrValue: [T]?
     
@@ -18,7 +18,7 @@ class ActualValue<T> {
     var lineNumber: Int
 
     init(value: T, fileName: String, lineNumber: Int) {
-        self.value.append(value)
+        self.value = value
         self.fileName = fileName
         self.lineNumber = lineNumber
     }
@@ -53,7 +53,7 @@ class ActualValue<T> {
             if arrValue {
                 reason = matcher.failureMessageFor(arrValue!)
             } else {
-                reason = matcher.failureMessageFor(value[0])
+                reason = matcher.failureMessageFor(value!)
             }
             
             fail(reason)
@@ -66,7 +66,7 @@ class ActualValue<T> {
             if arrValue {
                 reason = matcher.negativeFailureMessageFor(arrValue!)
             } else {
-                reason = matcher.negativeFailureMessageFor(value[0])
+                reason = matcher.negativeFailureMessageFor(value!)
             }
             
             fail(reason)
@@ -83,7 +83,7 @@ class ActualValue<T> {
         if arrValue {
             return matcher.match(arrValue!)
         } else {
-            return matcher.match(value[0])
+            return matcher.match(value!)
         }
     }
     
