@@ -54,6 +54,10 @@
 		317456AA1976B38900028FB0 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456A81976B38900028FB0 /* BeNil.swift */; };
 		317456AB1976B38900028FB0 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456A81976B38900028FB0 /* BeNil.swift */; };
 		317456AD1976B54A00028FB0 /* BeNilSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456AC1976B54A00028FB0 /* BeNilSpec.swift */; };
+		3166FA8819753E1700B1CD32 /* ShouldSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166FA8719753E1700B1CD32 /* ShouldSyntax.swift */; };
+		3166FA8919753E1700B1CD32 /* ShouldSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166FA8719753E1700B1CD32 /* ShouldSyntax.swift */; };
+		3166FA8A19753E1700B1CD32 /* ShouldSyntax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166FA8719753E1700B1CD32 /* ShouldSyntax.swift */; };
+		3166FA8C19756C3000B1CD32 /* ShouldSyntaxSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3166FA8B19756C3000B1CD32 /* ShouldSyntaxSpec.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
 		318098BB1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
@@ -205,6 +209,8 @@
 		3162A6A319702427006A6786 /* BeFalseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeFalseSpec.swift; path = Matchers/BeFalseSpec.swift; sourceTree = "<group>"; };
 		317456A81976B38900028FB0 /* BeNil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeNil.swift; sourceTree = "<group>"; };
 		317456AC1976B54A00028FB0 /* BeNilSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeNilSpec.swift; path = Matchers/BeNilSpec.swift; sourceTree = "<group>"; };
+		3166FA8719753E1700B1CD32 /* ShouldSyntax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldSyntax.swift; sourceTree = "<group>"; };
+		3166FA8B19756C3000B1CD32 /* ShouldSyntaxSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldSyntaxSpec.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
@@ -316,6 +322,7 @@
 				467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */,
 				467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */,
 				467B48A919828686008B8D02 /* CustomObject.swift */,
+				3166FA8B19756C3000B1CD32 /* ShouldSyntaxSpec.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -332,6 +339,7 @@
 				317456A81976B38900028FB0 /* BeNil.swift */,
 				467B489B1982802D008B8D02 /* BeGreaterThan.swift */,
 				467B48A4198284E9008B8D02 /* BeLessThan.swift */,
+				3166FA8719753E1700B1CD32 /* ShouldSyntax.swift */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -682,6 +690,7 @@
 				31E278DF19827307001A3B36 /* BeEmpty.swift in Sources */,
 				31E278E01982730B001A3B36 /* NSContain.swift in Sources */,
 				31E36CCF1981218600E7D654 /* Array.swift in Sources */,
+				3166FA8C19756C3000B1CD32 /* ShouldSyntaxSpec.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
 				467B48A8198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				3162A6A419702427006A6786 /* BeFalseSpec.swift in Sources */,
@@ -702,6 +711,7 @@
 				4640EB9F1969439100AE5952 /* Array.swift in Sources */,
 				4640EBA01969439100AE5952 /* Observable.swift in Sources */,
 				4640EBA11969439100AE5952 /* DefaultReporter.swift in Sources */,
+				3166FA8919753E1700B1CD32 /* ShouldSyntax.swift in Sources */,
 				4640EBA21969439100AE5952 /* ReportDispatcher.swift in Sources */,
 				4640EBA31969439100AE5952 /* Reporter.swift in Sources */,
 				31B53FC1197FCF61006F7066 /* NSContain.swift in Sources */,
@@ -742,6 +752,7 @@
 				4640EBCE1969445F00AE5952 /* Array.swift in Sources */,
 				4640EBCF1969445F00AE5952 /* Observable.swift in Sources */,
 				4640EBD01969445F00AE5952 /* DefaultReporter.swift in Sources */,
+				3166FA8A19753E1700B1CD32 /* ShouldSyntax.swift in Sources */,
 				4640EBD11969445F00AE5952 /* ReportDispatcher.swift in Sources */,
 				4640EBD21969445F00AE5952 /* Reporter.swift in Sources */,
 				31B53FC2197FCF61006F7066 /* NSContain.swift in Sources */,
@@ -788,6 +799,7 @@
 				31B7E4C81979B7020042E05C /* Contain.swift in Sources */,
 				318098BB1954609B00ADEAF3 /* Equal.swift in Sources */,
 				31874422195C727000C23EAC /* SpecFailure.swift in Sources */,
+				3166FA8819753E1700B1CD32 /* ShouldSyntax.swift in Sources */,
 				314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				313EE75A197EA7E1000C0F32 /* BeEmpty.swift in Sources */,
 				46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */,
