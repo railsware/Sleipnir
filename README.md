@@ -43,6 +43,19 @@ class SampleSpec : SleipnirSpec {
 3. In ```main.swift``` file of spec target run ```Runner.run()``` to invoke specs
 4. Start writing specs!
 
+#### Xcode6 - Beta3 BugFix
+
+If you run sample project and see this error `error: invalid virtual filesystem overlay`  
+
+1. Set `Defines Module` to `NO` for Sleipnir-iOS  and Sleipnir-OSX  
+2. Clean product and remove Deriven Data  
+3. Set `Defines Module` back to `YES` for Sleipnir-iOS  and Sleipnir-OSX  
+4. Error should be gone
+
+This Issue  on [StackOverflow](http://stackoverflow.com/questions/24622650/xcode-6-beta-3-invalid-virtual-filesystem-overlay-file) and [AppleDevForum](https://devforums.apple.com/message/999878)
+
+
+
 ## Usage sample
 
 See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Sample/LibrarySpec.swift) file in [Sample](https://github.com/railsware/Sleipnir/tree/master/Sample/Sample) project.
