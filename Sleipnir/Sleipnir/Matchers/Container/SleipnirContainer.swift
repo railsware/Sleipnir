@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol SleipnirContainer {
+public protocol SleipnirContainer : SequenceType {
     
     var count: Int { get }
     

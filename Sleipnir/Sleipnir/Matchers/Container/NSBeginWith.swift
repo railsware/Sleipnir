@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NSBeginWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
+public class NSBeginWith<T: AnyObject, S: SleipnirOrderedContainer> : BaseMatcher<S> {
     
     var item: T
     
@@ -17,7 +17,7 @@ public class NSBeginWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
         super.init()
     }
     
-    override func match(actual: SleipnirOrderedContainer?) -> Bool {
+    override func match(actual: S?) -> Bool {
         return actual!.indexOfObject(item) == 0
     }
     
@@ -26,6 +26,6 @@ public class NSBeginWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
     }
 }
 
-public func beginWith(item: AnyObject) -> NSBeginWith<AnyObject> {
+public func beginWith<S: SleipnirOrderedContainer>(item: AnyObject) -> NSBeginWith<AnyObject, S> {
     return NSBeginWith(item: item)
 }

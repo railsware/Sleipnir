@@ -69,3 +69,9 @@ public func expect<T>(expression: @autoclosure () -> T?, file: String = __FILE__
 public func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T?) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
+
+public func fail(message: String, file: String = __FILE__, line: Int = __LINE__) {
+    let specFailure = SpecFailure(reasonRaw: message, fileName: file, lineNumber: line)
+    Runner.currentExample!.specFailure = specFailure
+    Runner.currentExample!.setState(ExampleState.Failed)
+}
