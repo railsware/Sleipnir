@@ -27,6 +27,10 @@
 		3162A6A0196FFFEF006A6786 /* ExpectFailureWithMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69F196FFFEF006A6786 /* ExpectFailureWithMessage.swift */; };
 		3162A6A219702411006A6786 /* BeTrueSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A6A119702411006A6786 /* BeTrueSpec.swift */; };
 		3162A6A419702427006A6786 /* BeFalseSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A6A319702427006A6786 /* BeFalseSpec.swift */; };
+		317456A91976B38900028FB0 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456A81976B38900028FB0 /* BeNil.swift */; };
+		317456AA1976B38900028FB0 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456A81976B38900028FB0 /* BeNil.swift */; };
+		317456AB1976B38900028FB0 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456A81976B38900028FB0 /* BeNil.swift */; };
+		317456AD1976B54A00028FB0 /* BeNilSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456AC1976B54A00028FB0 /* BeNilSpec.swift */; };
 		318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
 		318098BB1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
@@ -124,6 +128,8 @@
 		3162A69F196FFFEF006A6786 /* ExpectFailureWithMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpectFailureWithMessage.swift; path = Matchers/ExpectFailureWithMessage.swift; sourceTree = "<group>"; };
 		3162A6A119702411006A6786 /* BeTrueSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeTrueSpec.swift; path = Matchers/BeTrueSpec.swift; sourceTree = "<group>"; };
 		3162A6A319702427006A6786 /* BeFalseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeFalseSpec.swift; path = Matchers/BeFalseSpec.swift; sourceTree = "<group>"; };
+		317456A81976B38900028FB0 /* BeNil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeNil.swift; sourceTree = "<group>"; };
+		317456AC1976B54A00028FB0 /* BeNilSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeNilSpec.swift; path = Matchers/BeNilSpec.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 				3162A69F196FFFEF006A6786 /* ExpectFailureWithMessage.swift */,
 				3162A6A119702411006A6786 /* BeTrueSpec.swift */,
 				3162A6A319702427006A6786 /* BeFalseSpec.swift */,
+				317456AC1976B54A00028FB0 /* BeNilSpec.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -229,6 +236,7 @@
 				318098BA1954609B00ADEAF3 /* Equal.swift */,
 				310644E119587965007629A0 /* BeTrue.swift */,
 				314C79C6195995F400E52DF0 /* BeFalse.swift */,
+				317456A81976B38900028FB0 /* BeNil.swift */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -518,6 +526,7 @@
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
 				3162A6A419702427006A6786 /* BeFalseSpec.swift in Sources */,
 				31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */,
+				317456AD1976B54A00028FB0 /* BeNilSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +550,7 @@
 				314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBAC1969439100AE5952 /* Runner.swift in Sources */,
 				314AE5B7196D6BD100CA7ED7 /* Dumper.swift in Sources */,
+				317456AA1976B38900028FB0 /* BeNil.swift in Sources */,
 				4640EBAE1969439100AE5952 /* SleipnirLoader.m in Sources */,
 				4640EBAF1969439100AE5952 /* SpecFailure.swift in Sources */,
 				312353FF196B07680080C6DF /* ExampleBase.swift in Sources */,
@@ -567,6 +577,7 @@
 				314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBDB1969445F00AE5952 /* Runner.swift in Sources */,
 				314AE5B8196D6BD100CA7ED7 /* Dumper.swift in Sources */,
+				317456AB1976B38900028FB0 /* BeNil.swift in Sources */,
 				4640EBDD1969445F00AE5952 /* SleipnirLoader.m in Sources */,
 				4640EBDE1969445F00AE5952 /* SpecFailure.swift in Sources */,
 				31235400196B07680080C6DF /* ExampleBase.swift in Sources */,
@@ -581,6 +592,7 @@
 				46718B86194B8AD2006E8A18 /* Example.swift in Sources */,
 				31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */,
 				318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */,
+				317456A91976B38900028FB0 /* BeNil.swift in Sources */,
 				31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */,
 				318098BB1954609B00ADEAF3 /* Equal.swift in Sources */,
 				31874422195C727000C23EAC /* SpecFailure.swift in Sources */,

@@ -14,6 +14,9 @@ class BaseMatcher<T> {
     
     var expectedArr: [T]?
     
+    init() {
+    }
+    
     init(expected: T) {
         self.expected = expected
     }

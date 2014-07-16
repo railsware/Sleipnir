@@ -10,8 +10,8 @@ import Foundation
 
 class BeTrue<T>: BaseMatcher<T> {
     
-    init(expected: T) {
-        super.init(expected: expected)
+    init() {
+        super.init()
     }
     
     override func match(actual: T) -> Bool {
@@ -24,6 +24,6 @@ class BeTrue<T>: BaseMatcher<T> {
 }
 
 func beTrue() -> BeTrue<Bool> {
-    return BeTrue(expected: true)
+    return BeTrue()
 }
 
