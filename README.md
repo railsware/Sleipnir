@@ -54,11 +54,11 @@ See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Sampl
 - [ ] Focused and excluded examples/groups support implementation
 - [ ] XCode templates
 - [ ] Shared examples support
-- [ ] ```should``` syntax support
+- [ ] ```should``` syntax support (In process, see the corresponding [Pull request](https://github.com/railsware/Sleipnir/pull/5))
 - [x] Specs for Sleipnir using Sleipnir
 - [ ] Wiki documentation
 - [ ] More matchers:
-  - [ ] ```beNil```
+  - [x] ```beNil```
   - [ ] ```beGreaterThan```, ```beLessThan```, ```beInRangeOf```
   - [ ] asynchronous matchers (```will```, ```willNot```, ```after```)
   - [ ] matchers on collections/strings (```contains```, ```haveCount```, ```beginWith```, ```endWith```, etc.)
