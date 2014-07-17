@@ -50,8 +50,8 @@ See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Sampl
 ## TODO
 
 - [ ] Distribution as a framework
-- [ ] Pending examples support
-- [ ] Focused and excluded examples/groups support implementation
+- [x] Pending examples support
+- [x] Focused and excluded examples/groups support
 - [ ] XCode templates
 - [ ] Shared examples support
 - [ ] ```should``` syntax support (In process, see the corresponding [Pull request](https://github.com/railsware/Sleipnir/pull/5))
