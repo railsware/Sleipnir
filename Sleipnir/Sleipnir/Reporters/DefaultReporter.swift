@@ -16,9 +16,13 @@ class DefaultReporter : Reporter {
     var examplesCount: Int = 0
     
     var failureMessages: [String]
+    var pendingMessages: [String]
+    var skippedMessages: [String]
     
     init() {
         failureMessages = [String]()
+        pendingMessages = [String]()
+        skippedMessages = [String]()
     }
     
     func runWillStart(randomSeed seed: Int) {
@@ -30,6 +34,7 @@ class DefaultReporter : Reporter {
         endTime = NSDate()
         
         println()
+        printMessages(pendingMessages)
         printMessages(failureMessages)
         printStats()
     }
@@ -62,8 +67,24 @@ class DefaultReporter : Reporter {
         return "E"
     }
     
+    func skippedToken() -> String {
+        return ">"
+    }
+    
+    func pendingToken() -> String {
+        return "P"
+    }
+    
     func failureMessageForExample(example: Example) -> String {
-        return "FAILURE " + example.fullText() + ":\n" + example.failure() + "\n"
+        return "FAILURE \(example.fullText()):\n\(example.failure())\n"
+    }
+    
+    func skippedMessageForExample(example: Example) -> String {
+        return "SKIPPED \(example.fullText())"
+    }
+    
+    func pendingMessageForExample(example: Example) -> String {
+        return "PENDING \(example.fullText())"
     }
     
     func printMessages(messages: [String]) {
@@ -77,7 +98,17 @@ class DefaultReporter : Reporter {
     func printStats() {
         let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime))
         println("\nFinished in \(time) seconds\n")
-        println("\(examplesCount) examples, \(failureMessages.count) failures\n")
+        print("\(examplesCount) examples, \(failureMessages.count) failures")
+        
+        if pendingMessages.count > 0 {
+            print(", \(pendingMessages.count) pending")
+        }
+        
+        if skippedMessages.count > 0 {
+            print(", \(skippedMessages.count) skipped")
+        }
+        
+        println()
     }
     
     func startObservingExamples(examples: [Example]) {
@@ -104,6 +135,12 @@ class DefaultReporter : Reporter {
         switch example.state.get() {
         case ExampleState.Passed:
             stateToken = successToken()
+        case ExampleState.Pending:
+            stateToken = pendingToken()
+            pendingMessages.append(pendingMessageForExample(example))
+        case ExampleState.Skipped:
+            stateToken = skippedToken()
+            skippedMessages.append(skippedMessageForExample(example))
         case ExampleState.Error:
             stateToken = errorToken()
         case ExampleState.Failed:

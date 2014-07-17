@@ -30,7 +30,6 @@ class ExampleGroupSpec : SleipnirSpec {
                     expect(group!.examples.count).to(equal(0))
                     expect(group!.hasChildren()).to(beFalse())
                 }
-                
             }
             
             describe("for a non-empty group") {
@@ -45,6 +44,61 @@ class ExampleGroupSpec : SleipnirSpec {
             }
         }
         
+        describe("focused") {
+            it("should return false by default") {
+                expect(group!.focused).to(beFalse())
+            }
+        }
+        
+        describe("hasFocusedExamples") {
+            context("for a group that is focused") {
+                beforeEach {
+                    group!.focused = true
+                }
+                
+                it("should return true") {
+                    expect(group!.hasFocusedExamples()).to(beTrue())
+                }
+            }
+            
+            context("for a group that is not focused") {
+                beforeEach {
+                    group!.focused = false
+                }
+                
+                it("should return false") {
+                    expect(group!.hasFocusedExamples()).to(beFalse())
+                }
+                
+                context("and has at least one focused example") {
+                    beforeEach {
+                        group!.addExample(passedExample!)
+                        group!.addExample(failedExample!)
+                        passedExample!.focused = true
+                    }
+                    
+                    it("should return true") {
+                        expect(group!.hasFocusedExamples()).to(beTrue())
+                    }
+                }
+                
+                context("and has at least one focused group") {
+                    beforeEach {
+                        let innerGroup = ExampleGroup("Inner group", {})
+                        innerGroup.focused = true
+                        group!.addChildGroup(innerGroup)
+                        
+                        let anotherInnerGroup = ExampleGroup("Another inner group", {})
+                        group!.addChildGroup(anotherInnerGroup)
+                    }
+                    
+                    it("should return true") {
+                        expect(group!.hasFocusedExamples()).to(beTrue())
+                    }
+                }
+            }
+        }
+        
         describe("afterEach") {
             var blockInvocationCount: Int = 0
             beforeEach {
@@ -53,8 +107,6 @@ class ExampleGroupSpec : SleipnirSpec {
                 group!.addAfterEach(afterEachBlock)
                 group!.addExample(passedExample!)
                 group!.addExample(failedExample!)
-                passedExample!.group = group
-                failedExample!.group = group
                 group!.runWithDispatcher(dispatcher)
             }
             

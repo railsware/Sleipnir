@@ -10,17 +10,12 @@ import Foundation
 
 class Example : ExampleBase {
     
-    var type: ExampleType
     var block: SleipnirBlock
-    var group: ExampleGroup!
     var state: Observable<ExampleState>
     var specFailure: SpecFailure?
     
-    init(_ label: String,
-        _ block: SleipnirBlock,
-        _ type: ExampleType = ExampleType.Normal) {
+    init(_ label: String, _ block: SleipnirBlock) {
             self.block = block
-            self.type = type
             self.state = Observable<ExampleState>(value: ExampleState.Incomplete)
             super.init(label)
     }
@@ -28,13 +23,17 @@ class Example : ExampleBase {
     override func runWithDispatcher(dispatcher: ReportDispatcher) {
         dispatcher.runWillStartExample(self)
         
-        if group { group.runBeforeEach() }
-        Runner.currentExample = self
-        block()
-        if group { group.runAfterEach() }
-        
-        if !failed() {
-            setState(ExampleState.Passed)
+        if !shouldRun() {
+            setState(ExampleState.Skipped)
+        } else {
+            if parent { parent!.runBeforeEach() }
+            Runner.currentExample = self
+            block()
+            if parent { parent!.runAfterEach() }
+            
+            if !failed() {
+                setState(ExampleState.Passed)
+            }
         }
         
         dispatcher.runDidFinishExample(self)
@@ -66,8 +65,8 @@ class Example : ExampleBase {
     }
     
     func fullText() -> String {
-        if group {
-            return group.fullText() + " " + self.label
+        if parent {
+            return parent!.fullText() + " " + self.label
         } else {
             return self.label
         }
@@ -80,11 +79,12 @@ func it(label: String, block: () -> ()) {
 }
 
 func fit(label: String, block: () -> ()) {
-    var example = Example(label, block, ExampleType.Focused)
+    var example = Example(label, block)
+    example.focused = true
     SpecTable.handleExample(example)
 }
 
 func xit(label: String, block: () -> ()) {
-    var example = Example(label, block, ExampleType.Excluded)
+    var example = Example(label, block)
     SpecTable.handleExample(example)
 }

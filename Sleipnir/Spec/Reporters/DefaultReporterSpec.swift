@@ -29,7 +29,6 @@ class DefaultReporterSpec : SleipnirSpec {
                 beforeEach {
                     let example = Example("example", {})
                     group!.addExample(example)
-                    example.group = group
                 }
                 
                 it("exampleCount shoud be 1") {

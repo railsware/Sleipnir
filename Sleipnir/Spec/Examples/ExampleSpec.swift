@@ -9,6 +9,13 @@
 import Foundation
 import Sleipnir
 
+func runInFocusedSpecsMode(example: ExampleBase, dispatcher: ReportDispatcher) {
+    let before = Runner.shouldOnlyRunFocused
+    Runner.shouldOnlyRunFocused = true
+    example.runWithDispatcher(dispatcher)
+    Runner.shouldOnlyRunFocused = before
+}
+
 class ExampleSpec : SleipnirSpec {
     
     var exampleSpec : () = describe("Example") {
@@ -23,6 +30,28 @@ class ExampleSpec : SleipnirSpec {
         describe("hasChildren") {
             it("should return false") {
                 expect(example!.hasChildren()).to(beFalse())
+            }
+        }
+        
+        describe("focused") {
+            it("should return false by default") {
+                expect(example!.focused).to(beFalse())
+            }
+        }
+        
+        describe("hasFocusedExamples") {
+            it("should return false by default") {
+                expect(example!.hasFocusedExamples()).to(beFalse())
+            }
+            
+            it("should return false when example is not focused") {
+                example!.focused = false
+                expect(example!.hasFocusedExamples()).to(beFalse())
+            }
+            
+            it("should return true when example is focused") {
+                example!.focused = true
+                expect(example!.hasFocusedExamples()).to(beTrue())
             }
         }
         
@@ -56,6 +85,73 @@ class ExampleSpec : SleipnirSpec {
                     expect(exampleState).to(equal(ExampleState.Failed))
                 }
             }
+            
+            context("when running in the focused specs mode") {
+                context("for an example that was focused") {
+                    beforeEach {
+                        example!.focused = true
+                        runInFocusedSpecsMode(example!, dispatcher)
+                    }
+                    
+                    it("should be Passed") {
+                        let exampleState = example!.state.get()
+                        expect(exampleState).to(equal(ExampleState.Passed))
+                    }
+                }
+                
+                context("for an example that was not focused") {
+                    beforeEach {
+                        example!.focused = false
+                    }
+                    
+                    context("and its parent group was focused") {
+                        beforeEach {
+                            let parentGroup = ExampleGroup("ParentGroup", {})
+                            parentGroup.focused = true
+                            example!.parent = parentGroup
+                            
+                            runInFocusedSpecsMode(example!, dispatcher)
+                        }
+                        
+                        it("should be Passed") {
+                            let exampleState = example!.state.get()
+                            expect(exampleState).to(equal(ExampleState.Passed))
+                        }
+                    }
+                    
+                    context("and its parent group was not focused") {
+                        
+                        var parentGroup: ExampleGroup?
+                        beforeEach {
+                            parentGroup = ExampleGroup("ParentGroup", {})
+                            parentGroup!.focused = false
+                            example!.parent = parentGroup
+                            
+                            runInFocusedSpecsMode(example!, dispatcher)
+                        }
+                        
+                        it("should be Skipped") {
+                            let exampleState = example!.state.get()
+                            expect(exampleState).to(equal(ExampleState.Skipped))
+                        }
+                        
+                        context("and its parent's parent group was focused") {
+                            beforeEach {
+                                let parentsParentGroup = ExampleGroup("Parent's parent group", {})
+                                parentsParentGroup.focused = true
+                                parentGroup!.parent = parentsParentGroup
+                                
+                                runInFocusedSpecsMode(example!, dispatcher)
+                            }
+                            
+                            it("should be Passed") {
+                                let exampleState = example!.state.get()
+                                expect(exampleState).to(equal(ExampleState.Passed))
+                            }
+                        }
+                    }
+                }
+            }
         }
         
         describe("fullText") {
@@ -73,7 +169,6 @@ class ExampleSpec : SleipnirSpec {
                 beforeEach {
                     group = ExampleGroup(groupText, {})
                     group!.addExample(example!)
-                    example!.group = group
                 }
                 
                 it("should return its parent's text prepended with its own text") {
@@ -108,6 +203,17 @@ class ExampleSpec : SleipnirSpec {
             describe("for a passing example") {
                 beforeEach {
                     example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should return an empty string") {
+                    expect(example!.message()).to(equal(""))
+                }
+            }
+            
+            describe("for a skipped example") {
+                beforeEach {
+                    example!.focused = false
+                    runInFocusedSpecsMode(example!, dispatcher)
                 }
                 
                 it("should return an empty string") {

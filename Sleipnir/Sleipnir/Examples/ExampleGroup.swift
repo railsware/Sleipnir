@@ -10,10 +10,8 @@ import Foundation
 
 class ExampleGroup : ExampleBase {
     
-    var type: ExampleType
     var block: SleipnirBlock
     
-    var parentGroup: ExampleGroup?
     var childGroups: [ExampleGroup] = [ExampleGroup]()
     
     var examples: [Example] = [Example]()
@@ -23,16 +21,33 @@ class ExampleGroup : ExampleBase {
     var beforeAllBlocks: [SleipnirBlock] = [SleipnirBlock]()
     var afterAllBlocks: [SleipnirBlock] = [SleipnirBlock]()
     
-    init(_ label: String,
-        _ block: SleipnirBlock,
-        _ type: ExampleType = ExampleType.Normal) {
+    init(_ label: String, _ block: SleipnirBlock) {
         self.block = block
-        self.type = type
         super.init(label)
     }
     
     override func hasChildren() -> Bool {
         return examples.count >= 1
+    }
+    
+    override func hasFocusedExamples() -> Bool {
+        if self.focused {
+            return true
+        }
+        
+        for example in examples {
+            if example.hasFocusedExamples() {
+                return true
+            }
+        }
+        
+        for group in childGroups {
+            if group.hasFocusedExamples() {
+                return true
+            }
+        }
+        
+        return false
     }
     
     override func runWithDispatcher(dispatcher: ReportDispatcher) {
@@ -58,7 +73,7 @@ class ExampleGroup : ExampleBase {
     }
     
     func runBeforeEach() {
-        parentGroup?.runBeforeEach()
+        parent?.runBeforeEach()
         for beforeEachBlock in beforeEachBlocks {
             beforeEachBlock()
         }
@@ -68,12 +83,12 @@ class ExampleGroup : ExampleBase {
         for afterEachBlock in afterEachBlocks {
             afterEachBlock()
         }
-        parentGroup?.runAfterEach()
+        parent?.runAfterEach()
     }
     
     func fullText() -> String {
-        if parentGroup {
-            return parentGroup!.fullText() + " " + self.label
+        if parent {
+            return parent!.fullText() + " " + self.label
         } else {
             return self.label
         }
@@ -81,7 +96,7 @@ class ExampleGroup : ExampleBase {
     
     func addChildGroup(group: ExampleGroup) {
         childGroups.append(group)
-        group.parentGroup = self
+        group.parent = self
     }
     
     func addBeforeEach(block: SleipnirBlock) {
@@ -102,6 +117,7 @@ class ExampleGroup : ExampleBase {
     
     func addExample(example: Example) {
         examples.append(example)
+        example.parent = self
     }
 }
 
@@ -127,16 +143,28 @@ func describe(label: String, block: () -> ()) {
 }
 
 func fdescribe(label: String, block: () -> ()) {
-    var group = ExampleGroup(label, block, ExampleType.Focused)
+    var group = ExampleGroup(label, block)
+    group.focused = true
     SpecTable.handleGroup(group)
 }
 
 func xdescribe(label: String, block: () -> ()) {
-    var group = ExampleGroup(label, block, ExampleType.Excluded)
+    var group = ExampleGroup(label, block)
     SpecTable.handleGroup(group)
 }
 
 func context(label: String, block: () -> ()) {
+    var group = ExampleGroup(label, block)
+    SpecTable.handleGroup(group)
+}
+
+func fcontext(label: String, block: () -> ()) {
+    var group = ExampleGroup(label, block)
+    group.focused = true
+    SpecTable.handleGroup(group)
+}
+
+func xcontext(label: String, block: () -> ()) {
     var group = ExampleGroup(label, block)
     SpecTable.handleGroup(group)
 }

@@ -10,24 +10,10 @@ import Foundation
 
 typealias SleipnirBlock = () -> ()
 
-enum ExampleType : Printable {
-    case Normal
-    case Focused
-    case Excluded
-    
-    var description: String {
-        switch (self) {
-        case .Normal: return "Normal"
-        case .Focused: return "Focused"
-        case .Excluded: return "Excluded"
-        default: return "ExampleType"
-        }
-    }
-}
-
 enum ExampleState : Printable {
     case Incomplete
     case Skipped
+    case Pending
     case Passed
     case Failed
     case Error
@@ -36,6 +22,7 @@ enum ExampleState : Printable {
         switch (self) {
         case .Incomplete: return "Incomplete"
         case .Skipped: return "Skipped"
+        case .Pending: return "Pending"
         case .Passed: return "Passed"
         case .Failed: return "Failed"
         case .Error: return "Error"
@@ -47,6 +34,9 @@ enum ExampleState : Printable {
 class ExampleBase {
     
     var label: String
+    var parent: ExampleGroup?
+    
+    var focused: Bool = false
     
     init(_ label: String) {
         self.label = label
@@ -57,5 +47,14 @@ class ExampleBase {
     
     func hasChildren() -> Bool {
         return false
+    }
+    
+    func hasFocusedExamples() -> Bool {
+        return focused
+    }
+    
+    func shouldRun() -> Bool {
+        let shouldOnlyRunFocused = Runner.shouldOnlyRunFocused
+        return !shouldOnlyRunFocused || (self.focused || (parent && parent!.shouldRun()))
     }
 }

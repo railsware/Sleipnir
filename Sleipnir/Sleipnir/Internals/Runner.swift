@@ -17,11 +17,20 @@ struct Runner {
     
     static var currentExample: Example?
     
+    static var shouldOnlyRunFocused = false
+    
     static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
         let specSeed = setUpRandomSeed(seed: seed)
         
         if (runOrder == RunOrder.Random) {
             shuffleExamples(&SpecTable.topLevelGroups)
+        }
+        
+        for exampleGroup in SpecTable.topLevelGroups {
+            if exampleGroup.hasFocusedExamples() {
+                shouldOnlyRunFocused = true
+                break
+            }
         }
         
         let dispatcher = ReportDispatcher(with: getReporters())

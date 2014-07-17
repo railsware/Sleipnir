@@ -24,7 +24,7 @@ struct SpecTable {
             
             currentGroup = group
             currentGroup?.block()
-            currentGroup = group.parentGroup
+            currentGroup = group.parent
         }
     }
     
@@ -45,7 +45,7 @@ struct SpecTable {
     }
     
     static func handleExample(example: Example) {
-        example.group = currentGroup
+        example.parent = currentGroup
         currentGroup?.addExample(example)
     }
     
