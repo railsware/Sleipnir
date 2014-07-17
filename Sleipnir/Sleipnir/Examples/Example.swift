@@ -92,12 +92,12 @@ func it(label: String, block: SleipnirBlock?) {
     SpecTable.handleExample(example)
 }
 
-func fit(label: String, block: () -> ()) {
+func fit(label: String, block: SleipnirBlock) {
     var example = Example(label, block)
     example.focused = true
     SpecTable.handleExample(example)
 }
 
-func xit(label: String, block: () -> ()) {
+func xit(label: String, block: SleipnirBlock) {
     it(label, PENDING)
 }

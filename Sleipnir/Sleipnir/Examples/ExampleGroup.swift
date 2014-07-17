@@ -123,50 +123,50 @@ class ExampleGroup : ExampleBase {
     }
 }
 
-func beforeAll(block: () -> ()) {
+func beforeAll(block: SleipnirBlock) {
     SpecTable.handleBeforeAll(block)
 }
 
-func beforeEach(block: () -> ()) {
+func beforeEach(block: SleipnirBlock) {
     SpecTable.handleBeforeEach(block)
 }
 
-func afterAll(block: () -> ()) {
+func afterAll(block: SleipnirBlock) {
     SpecTable.handleAfterAll(block)
 }
 
-func afterEach(block: () -> ()) {
+func afterEach(block: SleipnirBlock) {
     SpecTable.handleAfterEach(block)
 }
 
-func describe(label: String, block: () -> ()) {
+func describe(label: String, block: SleipnirBlock) {
     var group = ExampleGroup(label, block)
     SpecTable.handleGroup(group)
 }
 
-func fdescribe(label: String, block: () -> ()) {
+func fdescribe(label: String, block: SleipnirBlock) {
     var group = ExampleGroup(label, block)
     group.focused = true
     SpecTable.handleGroup(group)
 }
 
-func xdescribe(label: String, block: () -> ()) {
+func xdescribe(label: String, block: SleipnirBlock) {
     var group = ExampleGroup(label, { it("is pending", PENDING) })
     SpecTable.handleGroup(group)
 }
 
-func context(label: String, block: () -> ()) {
+func context(label: String, block: SleipnirBlock) {
     var group = ExampleGroup(label, block)
     SpecTable.handleGroup(group)
 }
 
-func fcontext(label: String, block: () -> ()) {
+func fcontext(label: String, block: SleipnirBlock) {
     var group = ExampleGroup(label, block)
     group.focused = true
     SpecTable.handleGroup(group)
 }
 
-func xcontext(label: String, block: () -> ()) {
+func xcontext(label: String, block: SleipnirBlock) {
     var group = ExampleGroup(label, { it("is pending", PENDING) })
     SpecTable.handleGroup(group)
 }
