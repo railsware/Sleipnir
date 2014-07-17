@@ -86,6 +86,18 @@ class ExampleSpec : SleipnirSpec {
                 }
             }
             
+            context("for a pending example") {
+                beforeEach {
+                    example = Example("I should be pending", PENDING)
+                    example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should be Pending") {
+                    let exampleState = example!.state.get()
+                    expect(exampleState).to(equal(ExampleState.Pending))
+                }
+            }
+            
             context("when running in the focused specs mode") {
                 context("for an example that was focused") {
                     beforeEach {
@@ -221,6 +233,17 @@ class ExampleSpec : SleipnirSpec {
                 }
             }
             
+            describe("for a pending example") {
+                beforeEach {
+                    example = Example("I should be pending", PENDING)
+                    example!.runWithDispatcher(dispatcher)
+                }
+                
+                it("should return an empty string") {
+                    expect(example!.message()).to(equal(""))
+                }
+            }
+            
             describe("for a failing example") {
                 let failureMessage = "Expected <false> to evaluate to true"
                 
@@ -231,6 +254,44 @@ class ExampleSpec : SleipnirSpec {
                 
                 it("should return the failure message") {
                     expect(example!.message()).to(equal(failureMessage))
+                }
+            }
+        }
+        
+        describe("isPending") {
+            context("for an example with a block") {
+                it("should not report itself as pending") {
+                    expect(example!.isPending()).to(beFalse())
+                }
+                
+                context("after it has run") {
+                    beforeEach {
+                        example!.runWithDispatcher(dispatcher)
+                    }
+                    
+                    it("should not report itself as pending") {
+                        expect(example!.isPending()).to(beFalse())
+                    }
+                }
+            }
+            
+            context("for a pending example") {
+                beforeEach {
+                    example = Example("I should be pending", PENDING)
+                }
+                
+                it("should report itself as pending") {
+                    expect(example!.isPending()).to(beTrue())
+                }
+                
+                context("after it has run") {
+                    beforeEach {
+                        example!.runWithDispatcher(dispatcher)
+                    }
+                    
+                    it("should report itself as pending") {
+                        expect(example!.isPending()).to(beTrue())
+                    }
                 }
             }
         }

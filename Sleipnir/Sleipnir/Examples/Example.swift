@@ -8,16 +8,20 @@
 
 import Foundation
 
+let PENDING : SleipnirBlock? = nil
+
 class Example : ExampleBase {
     
-    var block: SleipnirBlock
+    var block: SleipnirBlock!
     var state: Observable<ExampleState>
     var specFailure: SpecFailure?
     
-    init(_ label: String, _ block: SleipnirBlock) {
-            self.block = block
-            self.state = Observable<ExampleState>(value: ExampleState.Incomplete)
-            super.init(label)
+    init(_ label: String, _ block: SleipnirBlock?) {
+        if block {
+            self.block = block!
+        }
+        self.state = Observable<ExampleState>(value: ExampleState.Incomplete)
+        super.init(label)
     }
     
     override func runWithDispatcher(dispatcher: ReportDispatcher) {
@@ -25,6 +29,8 @@ class Example : ExampleBase {
         
         if !shouldRun() {
             setState(ExampleState.Skipped)
+        } else if isPending() {
+            setState(ExampleState.Pending)
         } else {
             if parent { parent!.runBeforeEach() }
             Runner.currentExample = self
@@ -46,6 +52,14 @@ class Example : ExampleBase {
     func failed() -> Bool {
         return self.state.get() == ExampleState.Failed
             || self.state.get() == ExampleState.Error
+    }
+    
+    func isPending() -> Bool {
+        if !block {
+            return true
+        }
+        
+        return false
     }
     
     func message() -> String {
@@ -73,7 +87,7 @@ class Example : ExampleBase {
     }
 }
 
-func it(label: String, block: () -> ()) {
+func it(label: String, block: SleipnirBlock?) {
     var example = Example(label, block)
     SpecTable.handleExample(example)
 }
@@ -85,6 +99,5 @@ func fit(label: String, block: () -> ()) {
 }
 
 func xit(label: String, block: () -> ()) {
-    var example = Example(label, block)
-    SpecTable.handleExample(example)
+    it(label, PENDING)
 }

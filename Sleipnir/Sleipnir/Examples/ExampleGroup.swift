@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+
 class ExampleGroup : ExampleBase {
     
     var block: SleipnirBlock
@@ -149,7 +151,7 @@ func fdescribe(label: String, block: () -> ()) {
 }
 
 func xdescribe(label: String, block: () -> ()) {
-    var group = ExampleGroup(label, block)
+    var group = ExampleGroup(label, { it("is pending", PENDING) })
     SpecTable.handleGroup(group)
 }
 
@@ -165,6 +167,6 @@ func fcontext(label: String, block: () -> ()) {
 }
 
 func xcontext(label: String, block: () -> ()) {
-    var group = ExampleGroup(label, block)
+    var group = ExampleGroup(label, { it("is pending", PENDING) })
     SpecTable.handleGroup(group)
 }
