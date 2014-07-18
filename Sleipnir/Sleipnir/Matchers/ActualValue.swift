@@ -99,3 +99,11 @@ func expect<T>(value: T, file: String = __FILE__, line: Int = __LINE__) -> Actua
 func expect<T>(arrValue: [T], file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
     return ActualValue(arrValue: arrValue, fileName: file, lineNumber: line)
 }
+
+func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T) -> ActualValue<T> {
+    return ActualValue(value: expression(), fileName: file, lineNumber: line)
+}
+
+func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> [T]) -> ActualValue<T> {
+    return ActualValue(arrValue: expression(), fileName: file, lineNumber: line)
+}

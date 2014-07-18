@@ -265,6 +265,58 @@ class EqualSpec : SleipnirSpec {
                 }
             }
         }
+
+        describe("when the value is declared in a trailing closure") {
+            let actualValue = 3
+            var expectedValue: Int?
+            
+            describe("and the values are equal") {
+                beforeEach {
+                    expectedValue = 3
+                }
+                
+                describe("positive match") {
+                    it("should pass") {
+                        expect{ actualValue }.to(equal(expectedValue!))
+                    }
+                }
+                
+                describe("negative match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <3> to not equal <3>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect{ actualValue }.toNot(equal(expectedValue!))
+                        }
+                    }
+                }
+            }
+            
+            context("and the value is an array") {
+                let actualArrayValue = [1, 2, 3]
+                var expectedArrayValue: [Int]?
+                
+                describe("and the expected array is equal") {
+                    beforeEach {
+                        expectedArrayValue = [1, 2, 3]
+                    }
+                    
+                    describe("positive match") {
+                        it("should pass") {
+                            expect{ actualArrayValue }.to(equal(expectedArrayValue!))
+                        }
+                    }
+                    
+                    describe("negative match") {
+                        it("should fail with a sensible failure message") {
+                            let failureMessage = "Expected <[1, 2, 3]> to not equal <[1, 2, 3]>"
+                            expectFailureWithMessage(failureMessage) {
+                                expect{ actualArrayValue }.toNot(equal(expectedArrayValue!))
+                            }
+                        }
+                    }
+                }
+            }
+        }
         
     }
     
