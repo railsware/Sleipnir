@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeNil<T>: BaseMatcher<T> {
+class BeNil<T> : BaseMatcher<T> {
     
     init() {
         super.init()

@@ -14,7 +14,7 @@ class BeTrue<T>: BaseMatcher<T> {
         super.init()
     }
     
-    override func match(actual: T) -> Bool {
+    override func match(actual: T?) -> Bool {
         return actual as Bool
     }
     

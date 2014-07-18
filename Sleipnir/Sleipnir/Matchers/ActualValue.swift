@@ -12,19 +12,11 @@ class ActualValue<T> {
     
     var value: T?
     
-    var arrValue: [T]?
-    
     var fileName: String
     var lineNumber: Int
 
-    init(value: T, fileName: String, lineNumber: Int) {
+    init(value: T?, fileName: String, lineNumber: Int) {
         self.value = value
-        self.fileName = fileName
-        self.lineNumber = lineNumber
-    }
-    
-    init(arrValue: [T], fileName: String, lineNumber: Int) {
-        self.arrValue = arrValue
         self.fileName = fileName
         self.lineNumber = lineNumber
     }
@@ -48,43 +40,23 @@ class ActualValue<T> {
     // Private
     
     func executePositiveMatch(matcher: BaseMatcher<T>) {
-        if !match(matcher) {
-            var reason: String
-            if arrValue {
-                reason = matcher.failureMessageFor(arrValue!)
-            } else {
-                reason = matcher.failureMessageFor(value!)
-            }
-            
+        if !matcher.match(value) {
+            let reason = matcher.failureMessageFor(value)
             fail(reason)
         }
     }
     
     func executeNegativeMatch(matcher: BaseMatcher<T>) {
-        if match(matcher) {
-            var reason: String
-            if arrValue {
-                reason = matcher.negativeFailureMessageFor(arrValue!)
-            } else {
-                reason = matcher.negativeFailureMessageFor(value!)
-            }
-            
+        if matcher.match(value) {
+            let reason = matcher.negativeFailureMessageFor(value)
             fail(reason)
         }
     }
     
     func fail(reason: String) {
-        var specFailure = SpecFailure(reason: reason, fileName: fileName, lineNumber: lineNumber)
+        var specFailure = SpecFailure(reasonRaw: reason, fileName: fileName, lineNumber: lineNumber)
         Runner.currentExample!.specFailure = specFailure
         Runner.currentExample!.setState(ExampleState.Failed)
-    }
-    
-    func match(matcher: BaseMatcher<T>) -> Bool {
-        if arrValue {
-            return matcher.match(arrValue!)
-        } else {
-            return matcher.match(value!)
-        }
     }
     
     func exampleFailed() -> Bool {
@@ -92,18 +64,10 @@ class ActualValue<T> {
     }
 }
 
-func expect<T>(value: T, file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
-    return ActualValue(value: value, fileName: file, lineNumber: line)
-}
-
-func expect<T>(arrValue: [T], file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
-    return ActualValue(arrValue: arrValue, fileName: file, lineNumber: line)
-}
-
-func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T) -> ActualValue<T> {
+func expect<T>(expression: @auto_closure () -> T?, file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
 
-func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> [T]) -> ActualValue<T> {
-    return ActualValue(arrValue: expression(), fileName: file, lineNumber: line)
+func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T?) -> ActualValue<T> {
+    return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
