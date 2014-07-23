@@ -123,6 +123,90 @@ class ContainSpec : SleipnirSpec {
             }
         }
         
+        describe("when the container is an NSArray") {
+            var container: NSArray?
+            
+            context("and it is empty") {
+                beforeEach {
+                    container = NSArray(array: [])
+                }
+                
+                it("should fail with a sensible failure message") {
+                    let failureMessage = "Expected <()> to contain <[1]>"
+                    expectFailureWithMessage(failureMessage) {
+                        expect(container).to(contain(1))
+                    }
+                }
+            }
+            
+            context("and it contains elements") {
+                beforeEach {
+                    container = NSArray(array: [1, 2, 3, 4, 5])
+                }
+                
+                describe("positive match") {
+                    context("for a single value") {
+                        let element = 1
+                        
+                        it("should pass") {
+                            expect(container).to(contain(element))
+                        }
+                    }
+                    
+                    context("for multiple values") {
+                        let elementOne = 1
+                        let elementTwo = 3
+                        
+                        it("should pass") {
+                            expect(container).to(contain(elementOne, elementTwo))
+                        }
+                    }
+                }
+            }
+        }
+        
+        describe("when the container is an NSSet") {
+            var container: NSSet?
+            
+            context("and it is empty") {
+                beforeEach {
+                    container = NSSet(array: [])
+                }
+                
+                it("should fail with a sensible failure message") {
+                    let failureMessage = "Expected <{()}> to contain <[1]>"
+                    expectFailureWithMessage(failureMessage) {
+                        expect(container).to(contain(1))
+                    }
+                }
+            }
+            
+            context("and it contains elements") {
+                beforeEach {
+                    container = NSSet(array: [1, 2, 3, 4, 5])
+                }
+                
+                describe("positive match") {
+                    context("for a single value") {
+                        let element = 1
+                        
+                        it("should pass") {
+                            expect(container).to(contain(element))
+                        }
+                    }
+                    
+                    context("for multiple values") {
+                        let elementOne = 1
+                        let elementTwo = 3
+                        
+                        it("should pass") {
+                            expect(container).to(contain(elementOne, elementTwo))
+                        }
+                    }
+                }
+            }
+        }
+        
     }
     
 }

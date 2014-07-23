@@ -24,7 +24,6 @@ class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : Ba
         } else {
             return matchSequence(actual!, expected: expected!)
         }
-
     }
     
     override func failureMessageEnd() -> String {

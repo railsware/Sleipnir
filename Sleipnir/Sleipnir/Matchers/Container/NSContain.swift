@@ -1,0 +1,48 @@
+//
+//  NSContain.swift
+//  Sleipnir
+//
+//  Created by Artur Termenji on 7/23/14.
+//  Copyright (c) 2014 railsware. All rights reserved.
+//
+
+import Foundation
+
+protocol NSContainer {
+    
+    func containsObject(anObject: AnyObject!) -> Bool
+    
+}
+
+extension NSArray : NSContainer { }
+extension NSSet : NSContainer { }
+
+class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
+    
+    var items: [T]
+    
+    init(items: [T]) {
+        self.items = items
+        super.init()
+    }
+    
+    override func match(actual: NSContainer?) -> Bool {
+        var result = true
+        
+        for item in items {
+            if !(actual!.containsObject(item)) {
+                result = false
+            }
+        }
+        
+        return result
+    }
+    
+    override func failureMessageEnd() -> String {
+        return "contain <\(items)>"
+    }
+}
+
+func contain(items: AnyObject...) -> NSContain<AnyObject> {
+    return NSContain(items: items)
+}
