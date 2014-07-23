@@ -11,6 +11,9 @@
 		312353FE196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
 		312353FF196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
 		31235400196B07680080C6DF /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
+		313EE75A197EA7E1000C0F32 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EE759197EA7E1000C0F32 /* BeEmpty.swift */; };
+		313EE75B197EA7E1000C0F32 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EE759197EA7E1000C0F32 /* BeEmpty.swift */; };
+		313EE75C197EA7E1000C0F32 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EE759197EA7E1000C0F32 /* BeEmpty.swift */; };
 		314AE5B6196D6BD100CA7ED7 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
 		314AE5B7196D6BD100CA7ED7 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
 		314AE5B8196D6BD100CA7ED7 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
@@ -39,6 +42,7 @@
 		31A547F31981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
 		31A547F41981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
 		31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */; };
+		31B53FBE197FC840006F7066 /* BeEmptySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B53FBD197FC840006F7066 /* BeEmptySpec.swift */; };
 		31B7E4C81979B7020042E05C /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B7E4C71979B7020042E05C /* Contain.swift */; };
 		31B7E4C91979B7020042E05C /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B7E4C71979B7020042E05C /* Contain.swift */; };
 		31B7E4CA1979B7020042E05C /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B7E4C71979B7020042E05C /* Contain.swift */; };
@@ -148,6 +152,7 @@
 /* Begin PBXFileReference section */
 		310644E119587965007629A0 /* BeTrue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeTrue.swift; sourceTree = "<group>"; };
 		312353FD196B07680080C6DF /* ExampleBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleBase.swift; sourceTree = "<group>"; };
+		313EE759197EA7E1000C0F32 /* BeEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeEmpty.swift; path = Container/BeEmpty.swift; sourceTree = "<group>"; };
 		314AE5B5196D6BD100CA7ED7 /* Dumper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dumper.swift; sourceTree = "<group>"; };
 		314AE5B9196D716A00CA7ED7 /* SpecTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecTable.swift; sourceTree = "<group>"; };
 		314AE5C1196D78DA00CA7ED7 /* Spec */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Spec; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -168,6 +173,7 @@
 		31874421195C727000C23EAC /* SpecFailure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecFailure.swift; sourceTree = "<group>"; };
 		31A547F01981300700CA7984 /* Stringifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stringifier.swift; sourceTree = "<group>"; };
 		31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultReporterSpec.swift; path = Reporters/DefaultReporterSpec.swift; sourceTree = "<group>"; };
+		31B53FBD197FC840006F7066 /* BeEmptySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeEmptySpec.swift; path = Container/BeEmptySpec.swift; sourceTree = "<group>"; };
 		31B7E4C71979B7020042E05C /* Contain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Container/Contain.swift; sourceTree = "<group>"; };
 		31BB32981959AB4300BC30D0 /* DefaultReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultReporter.swift; sourceTree = "<group>"; };
 		31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDispatcher.swift; sourceTree = "<group>"; };
@@ -300,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				31B7E4C71979B7020042E05C /* Contain.swift */,
+				313EE759197EA7E1000C0F32 /* BeEmpty.swift */,
 			);
 			name = Container;
 			sourceTree = "<group>";
@@ -329,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				31C84BA1197E94700010AF3A /* ContainSpec.swift */,
+				31B53FBD197FC840006F7066 /* BeEmptySpec.swift */,
 			);
 			name = Container;
 			sourceTree = "<group>";
@@ -587,6 +595,7 @@
 				31E36CE0198121E500E7D654 /* SpecFailure.swift in Sources */,
 				31E36CD5198121BB00E7D654 /* BaseMatcher.swift in Sources */,
 				467B489F1982802E008B8D02 /* BeGreaterThan.swift in Sources */,
+				31B53FBE197FC840006F7066 /* BeEmptySpec.swift in Sources */,
 				3162A6A0196FFFEF006A6786 /* ExpectFailureWithMessage.swift in Sources */,
 				31E36CD9198121C900E7D654 /* BeNil.swift in Sources */,
 				31E36CD4198121B700E7D654 /* ActualValue.swift in Sources */,
@@ -645,6 +654,7 @@
 				4640EBAB1969439100AE5952 /* SleipnirSpec.swift in Sources */,
 				314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBAC1969439100AE5952 /* Runner.swift in Sources */,
+				313EE75B197EA7E1000C0F32 /* BeEmpty.swift in Sources */,
 				314AE5B7196D6BD100CA7ED7 /* Dumper.swift in Sources */,
 				46C560B5198299CD001C5444 /* NSNumber.swift in Sources */,
 				317456AA1976B38900028FB0 /* BeNil.swift in Sources */,
@@ -677,6 +687,7 @@
 				4640EBDA1969445F00AE5952 /* SleipnirSpec.swift in Sources */,
 				314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBDB1969445F00AE5952 /* Runner.swift in Sources */,
+				313EE75C197EA7E1000C0F32 /* BeEmpty.swift in Sources */,
 				314AE5B8196D6BD100CA7ED7 /* Dumper.swift in Sources */,
 				46C560B6198299CD001C5444 /* NSNumber.swift in Sources */,
 				317456AB1976B38900028FB0 /* BeNil.swift in Sources */,
@@ -701,6 +712,7 @@
 				318098BB1954609B00ADEAF3 /* Equal.swift in Sources */,
 				31874422195C727000C23EAC /* SpecFailure.swift in Sources */,
 				314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */,
+				313EE75A197EA7E1000C0F32 /* BeEmpty.swift in Sources */,
 				46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */,
 				46718B84194B8AAF006E8A18 /* ExampleGroup.swift in Sources */,
 				46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */,
