@@ -32,7 +32,7 @@ class SpecFailure {
     
     func failure() -> String {
         if fileName && lineNumber {
-            return "\(fileName):\(lineNumber) \(reason)"
+            return "\(fileName!):\(lineNumber!) \(reason)"
         } else {
             return reason
         }

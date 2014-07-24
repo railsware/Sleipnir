@@ -28,7 +28,6 @@ func expectFailureWithMessage(message: String, block: SleipnirBlock,
         if !(message == fakeExample.message()) {
             let reason =
                 "Expected failure message: \(message) but received failure message \(fakeExample.message())"
-            println(reason)
             let specFailure = SpecFailure(reasonRaw: reason, fileName: file, lineNumber: line)
             updateCurrentExample(ExampleState.Failed, specFailure: specFailure)
         } else {

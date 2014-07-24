@@ -19,7 +19,7 @@ class Equal<T: Equatable> : BaseMatcher<T> {
     }
     
     override func failureMessageEnd() -> String {
-        return "equal <\(expected)>"
+        return "equal <\(stringify(expected))>"
     }
 }
 

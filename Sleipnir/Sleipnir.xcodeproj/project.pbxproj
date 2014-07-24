@@ -34,6 +34,10 @@
 		318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
 		318098BB1954609B00ADEAF3 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
 		31874422195C727000C23EAC /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
+		31A547F11981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
+		31A547F21981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
+		31A547F31981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
+		31A547F41981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
 		31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */; };
 		31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
 		31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
@@ -55,7 +59,7 @@
 		31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
 		31E36CDD198121D900E7D654 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 		31E36CDE198121DD00E7D654 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
-		31E36CDF198121E100E7D654 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; };
+		31E36CDF198121E100E7D654 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		31E36CE0198121E500E7D654 /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
 		31E36CE1198121E800E7D654 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
 		31E36CE2198121EB00E7D654 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
@@ -143,6 +147,7 @@
 		318098B71954605200ADEAF3 /* BaseMatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseMatcher.swift; sourceTree = "<group>"; };
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
 		31874421195C727000C23EAC /* SpecFailure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecFailure.swift; sourceTree = "<group>"; };
+		31A547F01981300700CA7984 /* Stringifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stringifier.swift; sourceTree = "<group>"; };
 		31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultReporterSpec.swift; path = Reporters/DefaultReporterSpec.swift; sourceTree = "<group>"; };
 		31BB32981959AB4300BC30D0 /* DefaultReporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultReporter.swift; sourceTree = "<group>"; };
 		31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDispatcher.swift; sourceTree = "<group>"; };
@@ -272,6 +277,7 @@
 			children = (
 				31F33EFF19531B5B00421A59 /* Array.swift */,
 				31BB32A21959C6BC00BC30D0 /* Observable.swift */,
+				31A547F01981300700CA7984 /* Stringifier.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				31E36CDF198121E100E7D654 /* SleipnirLoader.m in Sources */,
 				31E36CE2198121EB00E7D654 /* SpecTable.swift in Sources */,
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
+				31A547F41981300700CA7984 /* Stringifier.swift in Sources */,
 				31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */,
 				31E36CD2198121AE00E7D654 /* ReportDispatcher.swift in Sources */,
 				31E36CD0198121A400E7D654 /* Observable.swift in Sources */,
@@ -569,6 +576,7 @@
 				4640EBA41969439100AE5952 /* ActualValue.swift in Sources */,
 				4640EBA51969439100AE5952 /* BaseMatcher.swift in Sources */,
 				4640EBA61969439100AE5952 /* Equal.swift in Sources */,
+				31A547F21981300700CA7984 /* Stringifier.swift in Sources */,
 				4640EBA71969439100AE5952 /* BeTrue.swift in Sources */,
 				4640EBA81969439100AE5952 /* BeFalse.swift in Sources */,
 				4640EBA91969439100AE5952 /* ExampleGroup.swift in Sources */,
@@ -596,6 +604,7 @@
 				4640EBD31969445F00AE5952 /* ActualValue.swift in Sources */,
 				4640EBD41969445F00AE5952 /* BaseMatcher.swift in Sources */,
 				4640EBD51969445F00AE5952 /* Equal.swift in Sources */,
+				31A547F31981300700CA7984 /* Stringifier.swift in Sources */,
 				4640EBD61969445F00AE5952 /* BeTrue.swift in Sources */,
 				4640EBD71969445F00AE5952 /* BeFalse.swift in Sources */,
 				4640EBD81969445F00AE5952 /* ExampleGroup.swift in Sources */,
@@ -631,6 +640,7 @@
 				46718B5A194B6A2C006E8A18 /* main.swift in Sources */,
 				314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */,
 				31BB32A31959C6BC00BC30D0 /* Observable.swift in Sources */,
+				31A547F11981300700CA7984 /* Stringifier.swift in Sources */,
 				312353FE196B07680080C6DF /* ExampleBase.swift in Sources */,
 				31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
@@ -650,6 +660,7 @@
 					"$(inherited)",
 				);
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_MODULE_NAME = Sleipnir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -658,6 +669,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_MODULE_NAME = Sleipnir;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

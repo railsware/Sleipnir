@@ -31,6 +31,6 @@ class BeNil<T> : BaseMatcher<T> {
     }
 }
 
-func beNil() -> BeNil<Optional<Any>> {
+func beNil() -> BeNil<AnyObject> {
     return BeNil()
 }
