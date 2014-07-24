@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ActualValue<T> {
+public class ActualValue<T> {
     
     var value: T?
     
@@ -21,7 +21,7 @@ class ActualValue<T> {
         self.lineNumber = lineNumber
     }
     
-    func to(matcher: BaseMatcher<T>) {
+    public func to(matcher: BaseMatcher<T>) {
         if (exampleFailed()) {
             return
         }
@@ -29,7 +29,7 @@ class ActualValue<T> {
         executePositiveMatch(matcher)
     }
     
-    func toNot(matcher: BaseMatcher<T>) {
+    public func toNot(matcher: BaseMatcher<T>) {
         if (exampleFailed()) {
             return
         }
@@ -37,37 +37,36 @@ class ActualValue<T> {
         executeNegativeMatch(matcher)
     }
     
-    // Private
-    
-    func executePositiveMatch(matcher: BaseMatcher<T>) {
+    private func executePositiveMatch(matcher: BaseMatcher<T>) {
         if !matcher.match(value) {
             let reason = matcher.failureMessageFor(value)
             fail(reason)
         }
     }
     
-    func executeNegativeMatch(matcher: BaseMatcher<T>) {
+    private func executeNegativeMatch(matcher: BaseMatcher<T>) {
         if matcher.match(value) {
             let reason = matcher.negativeFailureMessageFor(value)
             fail(reason)
         }
     }
     
-    func fail(reason: String) {
+    private func fail(reason: String) {
         var specFailure = SpecFailure(reasonRaw: reason, fileName: fileName, lineNumber: lineNumber)
         Runner.currentExample!.specFailure = specFailure
         Runner.currentExample!.setState(ExampleState.Failed)
     }
     
-    func exampleFailed() -> Bool {
+    private func exampleFailed() -> Bool {
         return Runner.currentExample!.failed()
     }
 }
 
-func expect<T>(expression: @auto_closure () -> T?, file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
+public func expect<T>(expression: @auto_closure () -> T?,
+        file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
 
-func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T?) -> ActualValue<T> {
+public func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T?) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }

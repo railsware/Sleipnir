@@ -8,7 +8,7 @@
 
 import Foundation
 
-let PENDING : SleipnirBlock? = nil
+public let PENDING : SleipnirBlock? = nil
 
 class Example : ExampleBase {
     
@@ -87,17 +87,17 @@ class Example : ExampleBase {
     }
 }
 
-func it(label: String, block: SleipnirBlock?) {
+public func it(label: String, block: SleipnirBlock?) {
     var example = Example(label, block)
     SpecTable.handleExample(example)
 }
 
-func fit(label: String, block: SleipnirBlock) {
+public func fit(label: String, block: SleipnirBlock) {
     var example = Example(label, block)
     example.focused = true
     SpecTable.handleExample(example)
 }
 
-func xit(label: String, block: SleipnirBlock) {
+public func xit(label: String, block: SleipnirBlock) {
     it(label, PENDING)
 }

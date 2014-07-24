@@ -40,9 +40,7 @@ class Observable<T> {
         observers.removeValueForKey(identifer)
     }
     
-    // Private
-    
-    func notify() {
+    private func notify() {
         for (identifier, observer) in observers {
             observer(newValue: observableProperty)
         }

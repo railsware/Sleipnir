@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Equal<T: Equatable> : BaseMatcher<T> {
+public class Equal<T: Equatable> : BaseMatcher<T> {
     
     init(expected: T?) {
         super.init(expected: expected)
@@ -23,6 +23,6 @@ class Equal<T: Equatable> : BaseMatcher<T> {
     }
 }
 
-func equal<T: Equatable>(expected: T?) -> Equal<T> {
+public func equal<T: Equatable>(expected: T?) -> Equal<T> {
     return Equal(expected: expected)
 }

@@ -16,7 +16,7 @@ struct SpecTable {
     static func handleGroup(group: ExampleGroup) {
         if (!currentGroup) {
             currentGroup = group
-            addGroup(currentGroup!)
+            topLevelGroups.append(currentGroup!)
             currentGroup?.block()
             currentGroup = nil
         } else {
@@ -47,11 +47,5 @@ struct SpecTable {
     static func handleExample(example: Example) {
         example.parent = currentGroup
         currentGroup?.addExample(example)
-    }
-    
-    /// Private
-    
-    static func addGroup(group: ExampleGroup) {
-        topLevelGroups.append(group)
     }
 }

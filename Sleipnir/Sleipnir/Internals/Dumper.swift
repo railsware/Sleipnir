@@ -8,17 +8,15 @@
 
 import Foundation
 
-struct Dumper {
+public struct Dumper {
     
-    static func dump() {
+    public static func dump() {
         for exampleGroup in SpecTable.topLevelGroups {
             dumpExampleGroup(exampleGroup)
         }
     }
     
-    /// Private
-    
-    static func dumpExampleGroup(group: ExampleGroup, level: Int = 0) {
+    private static func dumpExampleGroup(group: ExampleGroup, level: Int = 0) {
         printWithPadding("ExampleGroup: \(group.label)", level: level)
         
         printWithPadding("beforeAll: \(group.beforeAllBlocks.count)", level: level)
@@ -35,7 +33,7 @@ struct Dumper {
         }
     }
     
-    static func printWithPadding(string: String, level: Int) {
+    private static func printWithPadding(string: String, level: Int) {
         var spaces = level * 2
         var padding = String(count: spaces, repeatedValue: Character(" "))
         println(padding + string)

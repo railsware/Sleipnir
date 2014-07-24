@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeFalse<T>: BaseMatcher<T> {
+public class BeFalse<T>: BaseMatcher<T> {
     
     init() {
         super.init()
@@ -23,6 +23,6 @@ class BeFalse<T>: BaseMatcher<T> {
     }
 }
 
-func beFalse() -> BeFalse<Bool> {
+public func beFalse() -> BeFalse<Bool> {
     return BeFalse()
 }

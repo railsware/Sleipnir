@@ -8,4 +8,4 @@
 
 import Foundation
 
-@objc class SleipnirSpec {}
+@objc public class SleipnirSpec {}

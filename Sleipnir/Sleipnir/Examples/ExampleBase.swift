@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias SleipnirBlock = () -> ()
+public typealias SleipnirBlock = () -> ()
 
 enum ExampleState : Printable {
     case Incomplete

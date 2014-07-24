@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseMatcher<T> {
+public class BaseMatcher<T> {
     
     var expected: T?
     
@@ -26,8 +26,6 @@ class BaseMatcher<T> {
     func failureMessageEnd() -> String {
         return ""
     }
-    
-    /// Private
     
     func failureMessageFor(value: T?) -> String {
         return "Expected <\(stringify(value))> to \(failureMessageEnd())"

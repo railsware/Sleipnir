@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct Runner {
+public struct Runner {
     
-    enum RunOrder {
+    public enum RunOrder {
         case Normal
         case Random
     }
@@ -19,7 +19,7 @@ struct Runner {
     
     static var shouldOnlyRunFocused = false
     
-    static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
+    public static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
         let specSeed = setUpRandomSeed(seed: seed)
         
         if (runOrder == RunOrder.Random) {
@@ -43,9 +43,7 @@ struct Runner {
         dispatcher.runDidComplete()
     }
     
-    // Private
-    
-    static func shuffleExamples(inout groups: [ExampleGroup]) {
+    private static func shuffleExamples(inout groups: [ExampleGroup]) {
         groups.shuffle()
         for group in groups {
             group.examples.shuffle()
@@ -57,13 +55,13 @@ struct Runner {
     }
     
     // TODO provide a way to define and load custom reporters
-    static func getReporters() -> [Reporter] {
+    private static func getReporters() -> [Reporter] {
         var reporters = [Reporter]()
         reporters.append(DefaultReporter())
         return reporters
     }
     
-    static func setUpRandomSeed(seed: Int? = nil) -> Int {
+    private static func setUpRandomSeed(seed: Int? = nil) -> Int {
         var specSeed: Int
         if seed {
             specSeed = seed!

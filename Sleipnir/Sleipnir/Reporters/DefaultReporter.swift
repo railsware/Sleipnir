@@ -53,41 +53,39 @@ class DefaultReporter : Reporter {
     func runDidFinishExample(example: Example) {
     }
     
-    // Private
-    
-    func successToken() -> String {
+    private func successToken() -> String {
         return "."
     }
     
-    func failureToken() -> String {
+    private func failureToken() -> String {
         return "F"
     }
     
-    func errorToken() -> String {
+    private func errorToken() -> String {
         return "E"
     }
     
-    func skippedToken() -> String {
+    private func skippedToken() -> String {
         return ">"
     }
     
-    func pendingToken() -> String {
+    private func pendingToken() -> String {
         return "P"
     }
     
-    func failureMessageForExample(example: Example) -> String {
+    private func failureMessageForExample(example: Example) -> String {
         return "FAILURE \(example.fullText()):\n\(example.failure())\n"
     }
     
-    func skippedMessageForExample(example: Example) -> String {
+    private func skippedMessageForExample(example: Example) -> String {
         return "SKIPPED \(example.fullText())"
     }
     
-    func pendingMessageForExample(example: Example) -> String {
+    private func pendingMessageForExample(example: Example) -> String {
         return "PENDING \(example.fullText())"
     }
     
-    func printMessages(messages: [String]) {
+    private func printMessages(messages: [String]) {
         println()
         
         for message in messages {
@@ -95,7 +93,7 @@ class DefaultReporter : Reporter {
         }
     }
     
-    func printStats() {
+    private func printStats() {
         let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime))
         println("\nFinished in \(time) seconds\n")
         print("\(examplesCount) examples, \(failureMessages.count) failures")
@@ -111,7 +109,7 @@ class DefaultReporter : Reporter {
         println()
     }
     
-    func startObservingExamples(examples: [Example]) {
+    private func startObservingExamples(examples: [Example]) {
         for example in examples {
             var exampleObserver: Observable<ExampleState>.Observer = ({
                 (newValue: ExampleState) -> () in
@@ -123,13 +121,13 @@ class DefaultReporter : Reporter {
         }
     }
     
-    func stopObservingExamples(examples: [Example]) {
+    private func stopObservingExamples(examples: [Example]) {
         for example in examples {
             example.state.removeObserver("state_observer")
         }
     }
     
-    func reportOnExample(example: Example) {
+    private func reportOnExample(example: Example) {
         var stateToken: String = ""
     
         switch example.state.get() {

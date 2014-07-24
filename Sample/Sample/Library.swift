@@ -41,6 +41,6 @@ class Library {
     }
     
     func filterBy(#title: String) -> [Book] {
-        return books.filter { !$0.title.rangeOfString(title).isEmpty }
+        return books.filter { !$0.title.rangeOfString(title) }
     }
 }

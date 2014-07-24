@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeNil<T> : BaseMatcher<T> {
+public class BeNil<T> : BaseMatcher<T> {
     
     init() {
         super.init()
@@ -31,6 +31,6 @@ class BeNil<T> : BaseMatcher<T> {
     }
 }
 
-func beNil() -> BeNil<AnyObject> {
+public func beNil() -> BeNil<AnyObject> {
     return BeNil()
 }

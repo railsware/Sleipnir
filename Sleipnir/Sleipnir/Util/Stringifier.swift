@@ -8,8 +8,6 @@
 
 import Foundation
 
-//func toString<T>()
-
 func stringify<T>(object: T?) -> String {
     var result = "nil"
     if object {
