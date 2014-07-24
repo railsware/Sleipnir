@@ -171,26 +171,26 @@ class EqualSpec : SleipnirSpec {
             }
         }
 
-        describe("when the values are declared as an arrays") {
-            let actualValue = [1, 2, 3]
-            var expectedValue: [Int]?
+        describe("when the values are declared as NSArray") {
+            let actualValue: NSArray = NSArray(array: [1,2,3])
+            var expectedValue: NSArray?
             
             describe("and the values are equal") {
                 beforeEach {
-                    expectedValue = [1, 2, 3]
+                    expectedValue = NSArray(array: [1,2,3])
                 }
                 
-                xdescribe("positive match") {
+                describe("positive match") {
                     it("should pass") {
-//                        expect(actualValue).to(equal(expectedValue!))
+                        expect(actualValue).to(equal(expectedValue!))
                     }
                 }
                 
-                xdescribe("negative match") {
+                describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <(1,2,3)> to not equal <(1,2,3)>"
                         expectFailureWithMessage(failureMessage) {
-//                            expect(actualValue).toNot(equal(expectedValue!))
+                            expect(actualValue).toNot(equal(expectedValue!))
                         }
                     }
                 }
@@ -201,18 +201,18 @@ class EqualSpec : SleipnirSpec {
                     expectedValue = [1, 2, 5]
                 }
                 
-                xdescribe("positive match") {
+                describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <(1,2,3)> to equal <(1,2,5)>"
                         expectFailureWithMessage(failureMessage) {
-//                            expect(actualValue).to(equal(expectedValue!))
+                            expect(actualValue).to(equal(expectedValue!))
                         }
                     }
                 }
                 
-                xdescribe("negative match") {
+                describe("negative match") {
                     it("should pass") {
-//                        expect(actualValue).toNot(equal(expectedValue!))
+                        expect(actualValue).toNot(equal(expectedValue!))
                     }
                 }
             }
@@ -291,25 +291,25 @@ class EqualSpec : SleipnirSpec {
             }
             
             context("and the value is an array") {
-                let actualArrayValue = [1, 2, 3]
-                var expectedArrayValue: [Int]?
+                let actualArrayValue: NSArray = NSArray(array: [1, 2, 3])
+                var expectedArrayValue: NSArray?
                 
                 describe("and the expected array is equal") {
                     beforeEach {
                         expectedArrayValue = [1, 2, 3]
                     }
                     
-                    xdescribe("positive match") {
+                    describe("positive match") {
                         it("should pass") {
-//                            expect{ actualArrayValue }.to(equal(expectedArrayValue!))
+                            expect{ actualArrayValue }.to(equal(expectedArrayValue!))
                         }
                     }
                     
-                    xdescribe("negative match") {
+                    describe("negative match") {
                         it("should fail with a sensible failure message") {
                             let failureMessage = "Expected <(1,2,3)> to not equal <(1,2,3)>"
                             expectFailureWithMessage(failureMessage) {
-//                                expect{ actualArrayValue }.toNot(equal(expectedArrayValue!))
+                                expect{ actualArrayValue }.toNot(equal(expectedArrayValue!))
                             }
                         }
                     }
