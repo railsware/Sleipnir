@@ -7,6 +7,5 @@
 //
 
 import Foundation
-import Sleipnir
 
 Runner.run()

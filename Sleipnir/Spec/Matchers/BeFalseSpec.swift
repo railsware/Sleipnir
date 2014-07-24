@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Sleipnir
 
 class BeFalseSpec : SleipnirSpec {
     

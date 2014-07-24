@@ -20,7 +20,6 @@
 		314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5C3196D78DA00CA7ED7 /* main.swift */; };
 		314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */; };
 		314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */; };
-		314AE5EB196D803C00CA7ED7 /* Sleipnir.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4640EBB51969440500AE5952 /* Sleipnir.framework */; };
 		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
 		3162A69B196FEFBE006A6786 /* SpecFailureSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69A196FEFBE006A6786 /* SpecFailureSpec.swift */; };
 		3162A69E196FF95F006A6786 /* EqualSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69D196FF95F006A6786 /* EqualSpec.swift */; };
@@ -40,6 +39,26 @@
 		31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
 		31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329E1959B91700BC30D0 /* Reporter.swift */; };
 		31BB32A31959C6BC00BC30D0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
+		31E36CCF1981218600E7D654 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
+		31E36CD0198121A400E7D654 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
+		31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
+		31E36CD2198121AE00E7D654 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
+		31E36CD3198121B300E7D654 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329E1959B91700BC30D0 /* Reporter.swift */; };
+		31E36CD4198121B700E7D654 /* ActualValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B419545DD700ADEAF3 /* ActualValue.swift */; };
+		31E36CD5198121BB00E7D654 /* BaseMatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098B71954605200ADEAF3 /* BaseMatcher.swift */; };
+		31E36CD6198121BE00E7D654 /* Equal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 318098BA1954609B00ADEAF3 /* Equal.swift */; };
+		31E36CD7198121C200E7D654 /* BeTrue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310644E119587965007629A0 /* BeTrue.swift */; };
+		31E36CD8198121C500E7D654 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
+		31E36CD9198121C900E7D654 /* BeNil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 317456A81976B38900028FB0 /* BeNil.swift */; };
+		31E36CDA198121CD00E7D654 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B83194B8AAF006E8A18 /* ExampleGroup.swift */; };
+		31E36CDB198121D000E7D654 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
+		31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 312353FD196B07680080C6DF /* ExampleBase.swift */; };
+		31E36CDD198121D900E7D654 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
+		31E36CDE198121DD00E7D654 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
+		31E36CDF198121E100E7D654 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; };
+		31E36CE0198121E500E7D654 /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
+		31E36CE1198121E800E7D654 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
+		31E36CE2198121EB00E7D654 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
 		31F33EFD1953101000421A59 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
 		31F33F0019531B5B00421A59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		4640EB9F1969439100AE5952 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
@@ -81,16 +100,6 @@
 		46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		314AE5E9196D803200CA7ED7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 46718B4E194B6A2C006E8A18 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4640EBB41969440500AE5952;
-			remoteInfo = "Sleipnir-OSX";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		314AE5BF196D78DA00CA7ED7 /* CopyFiles */ = {
@@ -159,7 +168,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				314AE5EB196D803C00CA7ED7 /* Sleipnir.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,7 +399,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				314AE5EA196D803200CA7ED7 /* PBXTargetDependency */,
 			);
 			name = Spec;
 			productName = Spec;
@@ -518,15 +525,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				3162A69B196FEFBE006A6786 /* SpecFailureSpec.swift in Sources */,
+				31E36CD3198121B300E7D654 /* Reporter.swift in Sources */,
+				31E36CDA198121CD00E7D654 /* ExampleGroup.swift in Sources */,
+				31E36CE0198121E500E7D654 /* SpecFailure.swift in Sources */,
+				31E36CD5198121BB00E7D654 /* BaseMatcher.swift in Sources */,
 				3162A6A0196FFFEF006A6786 /* ExpectFailureWithMessage.swift in Sources */,
+				31E36CD9198121C900E7D654 /* BeNil.swift in Sources */,
+				31E36CD4198121B700E7D654 /* ActualValue.swift in Sources */,
+				31E36CDD198121D900E7D654 /* SleipnirSpec.swift in Sources */,
 				3162A69E196FF95F006A6786 /* EqualSpec.swift in Sources */,
+				31E36CD7198121C200E7D654 /* BeTrue.swift in Sources */,
+				31E36CDB198121D000E7D654 /* Example.swift in Sources */,
+				31E36CDF198121E100E7D654 /* SleipnirLoader.m in Sources */,
+				31E36CE2198121EB00E7D654 /* SpecTable.swift in Sources */,
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
+				31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */,
+				31E36CD2198121AE00E7D654 /* ReportDispatcher.swift in Sources */,
+				31E36CD0198121A400E7D654 /* Observable.swift in Sources */,
+				31E36CE1198121E800E7D654 /* Dumper.swift in Sources */,
+				31E36CD8198121C500E7D654 /* BeFalse.swift in Sources */,
 				314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */,
+				31E36CD6198121BE00E7D654 /* Equal.swift in Sources */,
 				3162A6A219702411006A6786 /* BeTrueSpec.swift in Sources */,
+				31E36CCF1981218600E7D654 /* Array.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
 				3162A6A419702427006A6786 /* BeFalseSpec.swift in Sources */,
 				31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */,
+				31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */,
 				317456AD1976B54A00028FB0 /* BeNilSpec.swift in Sources */,
+				31E36CDE198121DD00E7D654 /* Runner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -613,14 +640,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		314AE5EA196D803200CA7ED7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4640EBB41969440500AE5952 /* Sleipnir-OSX */;
-			targetProxy = 314AE5E9196D803200CA7ED7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		314AE5C6196D78DA00CA7ED7 /* Debug */ = {

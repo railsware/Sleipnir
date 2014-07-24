@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Sleipnir
 
 func runInFocusedSpecsMode(example: ExampleBase, dispatcher: ReportDispatcher) {
     let before = Runner.shouldOnlyRunFocused

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import Sleipnir
 
 func expectFailureWithMessage(message: String, block: SleipnirBlock,
         file: String = __FILE__, line: Int = __LINE__) {
