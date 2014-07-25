@@ -8,14 +8,6 @@
 
 import Foundation
 
-public protocol NSOrderedContainer : NSContainer {
-    
-    func indexOfObject(object: AnyObject!) -> Int
-    
-}
-
-extension NSArray : NSOrderedContainer { }
-
 public class NSBeginWith<T: AnyObject> : BaseMatcher<NSOrderedContainer> {
     
     var item: T

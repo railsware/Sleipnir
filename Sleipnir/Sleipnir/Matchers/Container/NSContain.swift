@@ -8,16 +8,6 @@
 
 import Foundation
 
-public protocol NSContainer {
-    
-    var count: Int { get }
-    
-    func containsObject(anObject: AnyObject!) -> Bool
-    
-}
-
-extension NSSet : NSContainer { }
-
 public class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
     
     var items: [T]
