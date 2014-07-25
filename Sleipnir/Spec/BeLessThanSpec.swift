@@ -146,6 +146,51 @@ class BeLessThanSpec : SleipnirSpec {
             }
             
         }
+        
+        context("NSNumber") {
+            var value: NSNumber = NSNumber(integer: 5)
+            
+            describe("which is less than") {
+                var expected = NSNumber(integer: 10)
+                
+                describe("positive match") {
+                    it("should pass") {
+                        expect(value).to(beLessThan(expected))
+                    }
+                }
+                
+                describe("negative match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <5> to not be less than <10>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(value).toNot(beLessThan(expected))
+                        }
+                    }
+                }
+                
+            }
+            
+            describe("which is not less than") {
+                var expected = NSNumber(integer: 1)
+                
+                describe("positive match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <5> to be less than <1>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(value).to(beLessThan(expected))
+                        }
+                    }
+                }
+                
+                describe("negative match") {
+                    it("should pass") {
+                        expect(value).toNot(beLessThan(expected))
+                    }
+                }
+                
+            }
+            
+        }
 
     }
     
