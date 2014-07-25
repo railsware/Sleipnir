@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol NSOrderedContainer {
+public protocol NSOrderedContainer : NSContainer {
     
     func indexOfObject(object: AnyObject!) -> Int
     

@@ -10,11 +10,12 @@ import Foundation
 
 public protocol NSContainer {
     
+    var count: Int { get }
+    
     func containsObject(anObject: AnyObject!) -> Bool
     
 }
 
-extension NSArray : NSContainer { }
 extension NSSet : NSContainer { }
 
 public class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {

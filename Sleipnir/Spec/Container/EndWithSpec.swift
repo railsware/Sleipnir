@@ -1,5 +1,5 @@
 //
-//  BeginWithSpec.swift
+//  EndWithSpec.swift
 //  Sleipnir
 //
 //  Created by Artur Termenji on 7/25/14.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class BeginWithSpec : SleipnirSpec {
+class EndWithSpec : SleipnirSpec {
     
-    var beginWithSpec : () = describe("BeginWith matcher") {
+    var endWithSpec : () = describe("EndWith matcher") {
         
         describe("when the container is an Array") {
             var container: [Int]?
@@ -21,9 +21,9 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail") {
-                    let failureMessage = "Expected <nil> to begin with <[1]>"
+                    let failureMessage = "Expected <nil> to end with <[1]>"
                     expectFailureWithMessage(failureMessage) {
-                        expect(container).to(beginWith(1))
+                        expect(container).to(endWith(1))
                     }
                 }
             }
@@ -34,9 +34,9 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <[]> to begin with <[1]>"
+                    let failureMessage = "Expected <[]> to end with <[1]>"
                     expectFailureWithMessage(failureMessage) {
-                        expect(container).to(beginWith(1))
+                        expect(container).to(endWith(1))
                     }
                 }
             }
@@ -47,20 +47,20 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 describe("positive match") {
-                    let element = 1
+                    let element = 5
                     
                     it("should pass") {
-                        expect(container).to(beginWith(element))
+                        expect(container).to(endWith(element))
                     }
                 }
                 
                 describe("negative match") {
-                    let element = 1
-                        
+                    let element = 5
+                    
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not begin with <[1]>"
+                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not end with <[5]>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(container).toNot(beginWith(element))
+                            expect(container).toNot(endWith(element))
                         }
                     }
                 }
@@ -71,27 +71,27 @@ class BeginWithSpec : SleipnirSpec {
             let container = "Test String"
             var nested: String?
             
-            context("and it begins with nested String") {
+            context("and it ends with nested String") {
                 beforeEach {
-                    nested = "Test"
+                    nested = "String"
                 }
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(container).to(beginWith(nested!))
+                        expect(container).to(endWith(nested!))
                     }
                 }
             }
             
-            context("and it does not begin with nested String") {
+            context("and it does not end with nested String") {
                 beforeEach {
                     nested = "Testt"
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <Test String> to begin with <Testt>"
+                    let failureMessage = "Expected <Test String> to end with <Testt>"
                     expectFailureWithMessage(failureMessage) {
-                        expect(container).to(beginWith(nested!))
+                        expect(container).to(endWith(nested!))
                     }
                 }
             }
@@ -106,9 +106,9 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <()> to begin with <1>"
+                    let failureMessage = "Expected <()> to end with <1>"
                     expectFailureWithMessage(failureMessage) {
-                        expect(container).to(beginWith(1))
+                        expect(container).to(endWith(1))
                     }
                 }
             }
@@ -119,26 +119,26 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 describe("positive match") {
-                    let element = 1
-                        
+                    let element = 5
+                    
                     it("should pass") {
-                        expect(container).to(beginWith(element))
+                        expect(container).to(endWith(element))
                     }
                 }
                 
                 describe("negative match") {
-                    let element = 1
+                    let element = 5
                     
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <(1,2,3,4,5)> to not begin with <1>"
+                        let failureMessage = "Expected <(1,2,3,4,5)> to not end with <5>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(container).toNot(beginWith(element))
+                            expect(container).toNot(endWith(element))
                         }
                     }
                 }
             }
         }
-
+        
     }
     
 }
