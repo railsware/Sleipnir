@@ -113,6 +113,7 @@
 		467B48A6198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
 		467B48A7198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
 		467B48A8198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
+		467B48AA19828686008B8D02 /* CustomObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A919828686008B8D02 /* CustomObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -180,6 +181,7 @@
 		467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeGreaterThanSpec.swift; sourceTree = "<group>"; };
 		467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeLessThanSpec.swift; sourceTree = "<group>"; };
 		467B48A4198284E9008B8D02 /* BeLessThan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeLessThan.swift; sourceTree = "<group>"; };
+		467B48A919828686008B8D02 /* CustomObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				317456AC1976B54A00028FB0 /* BeNilSpec.swift */,
 				467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */,
 				467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */,
+				467B48A919828686008B8D02 /* CustomObject.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				31A547F41981300700CA7984 /* Stringifier.swift in Sources */,
 				31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */,
 				31E36CD2198121AE00E7D654 /* ReportDispatcher.swift in Sources */,
+				467B48AA19828686008B8D02 /* CustomObject.swift in Sources */,
 				467B48A119828095008B8D02 /* BeGreaterThanSpec.swift in Sources */,
 				31E36CD0198121A400E7D654 /* Observable.swift in Sources */,
 				31E36CE1198121E800E7D654 /* Dumper.swift in Sources */,
