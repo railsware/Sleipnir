@@ -108,6 +108,11 @@
 		467B489E1982802E008B8D02 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B489B1982802D008B8D02 /* BeGreaterThan.swift */; };
 		467B489F1982802E008B8D02 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B489B1982802D008B8D02 /* BeGreaterThan.swift */; };
 		467B48A119828095008B8D02 /* BeGreaterThanSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */; };
+		467B48A3198284CC008B8D02 /* BeLessThanSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */; };
+		467B48A5198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
+		467B48A6198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
+		467B48A7198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
+		467B48A8198284E9008B8D02 /* BeLessThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A4198284E9008B8D02 /* BeLessThan.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -173,6 +178,8 @@
 		46718BAC194E0393006E8A18 /* SleipnirSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleipnirSpec.swift; sourceTree = "<group>"; };
 		467B489B1982802D008B8D02 /* BeGreaterThan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeGreaterThan.swift; sourceTree = "<group>"; };
 		467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeGreaterThanSpec.swift; sourceTree = "<group>"; };
+		467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeLessThanSpec.swift; sourceTree = "<group>"; };
+		467B48A4198284E9008B8D02 /* BeLessThan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeLessThan.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +252,7 @@
 				3162A6A319702427006A6786 /* BeFalseSpec.swift */,
 				317456AC1976B54A00028FB0 /* BeNilSpec.swift */,
 				467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */,
+				467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -259,6 +267,7 @@
 				314C79C6195995F400E52DF0 /* BeFalse.swift */,
 				317456A81976B38900028FB0 /* BeNil.swift */,
 				467B489B1982802D008B8D02 /* BeGreaterThan.swift */,
+				467B48A4198284E9008B8D02 /* BeLessThan.swift */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -567,9 +576,11 @@
 				3162A6A219702411006A6786 /* BeTrueSpec.swift in Sources */,
 				31E36CCF1981218600E7D654 /* Array.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
+				467B48A8198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				3162A6A419702427006A6786 /* BeFalseSpec.swift in Sources */,
 				31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */,
 				31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */,
+				467B48A3198284CC008B8D02 /* BeLessThanSpec.swift in Sources */,
 				317456AD1976B54A00028FB0 /* BeNilSpec.swift in Sources */,
 				31E36CDE198121DD00E7D654 /* Runner.swift in Sources */,
 			);
@@ -579,6 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467B48A6198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				4640EB9F1969439100AE5952 /* Array.swift in Sources */,
 				4640EBA01969439100AE5952 /* Observable.swift in Sources */,
 				4640EBA11969439100AE5952 /* DefaultReporter.swift in Sources */,
@@ -608,6 +620,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				467B48A7198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				4640EBCE1969445F00AE5952 /* Array.swift in Sources */,
 				4640EBCF1969445F00AE5952 /* Observable.swift in Sources */,
 				4640EBD01969445F00AE5952 /* DefaultReporter.swift in Sources */,
@@ -657,6 +670,7 @@
 				31A547F11981300700CA7984 /* Stringifier.swift in Sources */,
 				312353FE196B07680080C6DF /* ExampleBase.swift in Sources */,
 				31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */,
+				467B48A5198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 				310644E219587965007629A0 /* BeTrue.swift in Sources */,
 				318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */,
