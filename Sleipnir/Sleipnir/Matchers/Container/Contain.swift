@@ -27,13 +27,13 @@ class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : Ba
     }
     
     override func failureMessageEnd() -> String {
-        return "contain <\(expected)>"
+        return "contain <\(stringify(expected))>"
     }
     
     /// Private
     
     func matchString(actual: String, expected: String) -> Bool {
-        return !actual.rangeOfString(expected).isEmpty
+        return actual.rangeOfString(expected) != nil
     }
     
     func matchSequence(actual: S, expected: S) -> Bool {
