@@ -24,6 +24,10 @@
 		314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */; };
 		314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */; };
 		314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314C79C6195995F400E52DF0 /* BeFalse.swift */; };
+		315A950E198288F700086A35 /* NSBeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A950D198288F700086A35 /* NSBeginWith.swift */; };
+		315A950F198288F700086A35 /* NSBeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A950D198288F700086A35 /* NSBeginWith.swift */; };
+		315A9510198288F700086A35 /* NSBeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A950D198288F700086A35 /* NSBeginWith.swift */; };
+		315A9511198288F700086A35 /* NSBeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 315A950D198288F700086A35 /* NSBeginWith.swift */; };
 		3162A69B196FEFBE006A6786 /* SpecFailureSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69A196FEFBE006A6786 /* SpecFailureSpec.swift */; };
 		3162A69E196FF95F006A6786 /* EqualSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69D196FF95F006A6786 /* EqualSpec.swift */; };
 		3162A6A0196FFFEF006A6786 /* ExpectFailureWithMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3162A69F196FFFEF006A6786 /* ExpectFailureWithMessage.swift */; };
@@ -57,6 +61,11 @@
 		31E278DE19827304001A3B36 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B7E4C71979B7020042E05C /* Contain.swift */; };
 		31E278DF19827307001A3B36 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EE759197EA7E1000C0F32 /* BeEmpty.swift */; };
 		31E278E01982730B001A3B36 /* NSContain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B53FBF197FCF61006F7066 /* NSContain.swift */; };
+		31E278E219828097001A3B36 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E119828097001A3B36 /* BeginWith.swift */; };
+		31E278E319828097001A3B36 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E119828097001A3B36 /* BeginWith.swift */; };
+		31E278E419828097001A3B36 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E119828097001A3B36 /* BeginWith.swift */; };
+		31E278E519828097001A3B36 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E119828097001A3B36 /* BeginWith.swift */; };
+		31E278E7198282EB001A3B36 /* BeginWithSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E6198282EB001A3B36 /* BeginWithSpec.swift */; };
 		31E36CCF1981218600E7D654 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		31E36CD0198121A400E7D654 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
 		31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
@@ -166,6 +175,7 @@
 		314AE5C8196D793F00CA7ED7 /* ExampleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleSpec.swift; path = Examples/ExampleSpec.swift; sourceTree = "<group>"; };
 		314AE5CB196D799000CA7ED7 /* ExampleGroupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExampleGroupSpec.swift; path = Examples/ExampleGroupSpec.swift; sourceTree = "<group>"; };
 		314C79C6195995F400E52DF0 /* BeFalse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeFalse.swift; sourceTree = "<group>"; };
+		315A950D198288F700086A35 /* NSBeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBeginWith.swift; path = Container/NSBeginWith.swift; sourceTree = "<group>"; };
 		3162A69A196FEFBE006A6786 /* SpecFailureSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpecFailureSpec.swift; path = Internals/SpecFailureSpec.swift; sourceTree = "<group>"; };
 		3162A69D196FF95F006A6786 /* EqualSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EqualSpec.swift; path = Matchers/EqualSpec.swift; sourceTree = "<group>"; };
 		3162A69F196FFFEF006A6786 /* ExpectFailureWithMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExpectFailureWithMessage.swift; path = Matchers/ExpectFailureWithMessage.swift; sourceTree = "<group>"; };
@@ -187,6 +197,8 @@
 		31BB329E1959B91700BC30D0 /* Reporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reporter.swift; sourceTree = "<group>"; };
 		31BB32A21959C6BC00BC30D0 /* Observable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		31C84BA1197E94700010AF3A /* ContainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContainSpec.swift; path = Container/ContainSpec.swift; sourceTree = "<group>"; };
+		31E278E119828097001A3B36 /* BeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Container/BeginWith.swift; sourceTree = "<group>"; };
+		31E278E6198282EB001A3B36 /* BeginWithSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeginWithSpec.swift; path = Matchers/BeginWithSpec.swift; sourceTree = "<group>"; };
 		31F33EFC1953101000421A59 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		31F33EFF19531B5B00421A59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		4640EB84196942AF00AE5952 /* Sleipnir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sleipnir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +327,8 @@
 				31B7E4C71979B7020042E05C /* Contain.swift */,
 				313EE759197EA7E1000C0F32 /* BeEmpty.swift */,
 				31B53FBF197FCF61006F7066 /* NSContain.swift */,
+				31E278E119828097001A3B36 /* BeginWith.swift */,
+				315A950D198288F700086A35 /* NSBeginWith.swift */,
 			);
 			name = Container;
 			sourceTree = "<group>";
@@ -345,6 +359,7 @@
 			children = (
 				31C84BA1197E94700010AF3A /* ContainSpec.swift */,
 				31B53FBD197FC840006F7066 /* BeEmptySpec.swift */,
+				31E278E6198282EB001A3B36 /* BeginWithSpec.swift */,
 			);
 			name = Container;
 			sourceTree = "<group>";
@@ -614,7 +629,10 @@
 				31E36CDB198121D000E7D654 /* Example.swift in Sources */,
 				31E36CDF198121E100E7D654 /* SleipnirLoader.m in Sources */,
 				31E36CE2198121EB00E7D654 /* SpecTable.swift in Sources */,
+				315A9511198288F700086A35 /* NSBeginWith.swift in Sources */,
+				31E278E7198282EB001A3B36 /* BeginWithSpec.swift in Sources */,
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
+				31E278E519828097001A3B36 /* BeginWith.swift in Sources */,
 				31A547F41981300700CA7984 /* Stringifier.swift in Sources */,
 				31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */,
 				46C560B7198299CD001C5444 /* NSNumber.swift in Sources */,
@@ -661,8 +679,10 @@
 				4640EBA71969439100AE5952 /* BeTrue.swift in Sources */,
 				4640EBA81969439100AE5952 /* BeFalse.swift in Sources */,
 				4640EBA91969439100AE5952 /* ExampleGroup.swift in Sources */,
+				31E278E319828097001A3B36 /* BeginWith.swift in Sources */,
 				4640EBAA1969439100AE5952 /* Example.swift in Sources */,
 				31B7E4C91979B7020042E05C /* Contain.swift in Sources */,
+				315A950F198288F700086A35 /* NSBeginWith.swift in Sources */,
 				4640EBAB1969439100AE5952 /* SleipnirSpec.swift in Sources */,
 				314AE5BB196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBAC1969439100AE5952 /* Runner.swift in Sources */,
@@ -695,8 +715,10 @@
 				4640EBD61969445F00AE5952 /* BeTrue.swift in Sources */,
 				4640EBD71969445F00AE5952 /* BeFalse.swift in Sources */,
 				4640EBD81969445F00AE5952 /* ExampleGroup.swift in Sources */,
+				31E278E419828097001A3B36 /* BeginWith.swift in Sources */,
 				4640EBD91969445F00AE5952 /* Example.swift in Sources */,
 				31B7E4CA1979B7020042E05C /* Contain.swift in Sources */,
+				315A9510198288F700086A35 /* NSBeginWith.swift in Sources */,
 				4640EBDA1969445F00AE5952 /* SleipnirSpec.swift in Sources */,
 				314AE5BC196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				4640EBDB1969445F00AE5952 /* Runner.swift in Sources */,
@@ -739,9 +761,11 @@
 				312353FE196B07680080C6DF /* ExampleBase.swift in Sources */,
 				31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */,
 				467B48A5198284E9008B8D02 /* BeLessThan.swift in Sources */,
+				315A950E198288F700086A35 /* NSBeginWith.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 				310644E219587965007629A0 /* BeTrue.swift in Sources */,
 				318098B81954605200ADEAF3 /* BaseMatcher.swift in Sources */,
+				31E278E219828097001A3B36 /* BeginWith.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
