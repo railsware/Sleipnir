@@ -53,6 +53,10 @@
 		31BB329C1959B8EA00BC30D0 /* ReportDispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329B1959B8EA00BC30D0 /* ReportDispatcher.swift */; };
 		31BB329F1959B91700BC30D0 /* Reporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB329E1959B91700BC30D0 /* Reporter.swift */; };
 		31BB32A31959C6BC00BC30D0 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
+		31C84BA2197E94700010AF3A /* ContainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C84BA1197E94700010AF3A /* ContainSpec.swift */; };
+		31E278DE19827304001A3B36 /* Contain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B7E4C71979B7020042E05C /* Contain.swift */; };
+		31E278DF19827307001A3B36 /* BeEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313EE759197EA7E1000C0F32 /* BeEmpty.swift */; };
+		31E278E01982730B001A3B36 /* NSContain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B53FBF197FCF61006F7066 /* NSContain.swift */; };
 		31E36CCF1981218600E7D654 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		31E36CD0198121A400E7D654 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
 		31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
@@ -73,7 +77,6 @@
 		31E36CE0198121E500E7D654 /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
 		31E36CE1198121E800E7D654 /* Dumper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B5196D6BD100CA7ED7 /* Dumper.swift */; };
 		31E36CE2198121EB00E7D654 /* SpecTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314AE5B9196D716A00CA7ED7 /* SpecTable.swift */; };
-		31C84BA2197E94700010AF3A /* ContainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C84BA1197E94700010AF3A /* ContainSpec.swift */; };
 		31F33EFD1953101000421A59 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
 		31F33F0019531B5B00421A59 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		4640EB9F1969439100AE5952 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
@@ -624,11 +627,14 @@
 				314AE5C4196D78DA00CA7ED7 /* main.swift in Sources */,
 				31E36CD6198121BE00E7D654 /* Equal.swift in Sources */,
 				3162A6A219702411006A6786 /* BeTrueSpec.swift in Sources */,
+				31E278DF19827307001A3B36 /* BeEmpty.swift in Sources */,
+				31E278E01982730B001A3B36 /* NSContain.swift in Sources */,
 				31E36CCF1981218600E7D654 /* Array.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
 				467B48A8198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				3162A6A419702427006A6786 /* BeFalseSpec.swift in Sources */,
 				31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */,
+				31E278DE19827304001A3B36 /* Contain.swift in Sources */,
 				31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */,
 				467B48A3198284CC008B8D02 /* BeLessThanSpec.swift in Sources */,
 				317456AD1976B54A00028FB0 /* BeNilSpec.swift in Sources */,
