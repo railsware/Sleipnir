@@ -59,9 +59,9 @@ See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Sampl
 - [ ] Wiki documentation
 - [ ] More matchers:
   - [x] ```beNil```
-  - [ ] ```beGreaterThan```, ```beLessThan```, ```beInRangeOf```
+  - [x] ```beGreaterThan```, ```beLessThan```
   - [ ] asynchronous matchers (```will```, ```willNot```, ```after```)
-  - [ ] matchers on collections/strings (```contains```, ```haveCount```, ```beginWith```, ```endWith```, etc.)
+  - [x] matchers on collections/strings (```contains```, ```beEmpty```, ```beginWith```, ```endWith```, etc.)
 
 ## Documentation
 
