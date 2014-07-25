@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NSEndWith<T: AnyObject> : BaseMatcher<NSOrderedContainer> {
+public class NSEndWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
     
     var item: T
     
@@ -17,7 +17,7 @@ public class NSEndWith<T: AnyObject> : BaseMatcher<NSOrderedContainer> {
         super.init()
     }
     
-    override func match(actual: NSOrderedContainer?) -> Bool {
+    override func match(actual: SleipnirOrderedContainer?) -> Bool {
         return actual!.indexOfObject(item) == actual!.count - 1
     }
     

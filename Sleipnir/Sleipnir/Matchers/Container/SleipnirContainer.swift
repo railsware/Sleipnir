@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol NSContainer {
+public protocol SleipnirContainer {
     
     var count: Int { get }
     
@@ -16,11 +16,11 @@ public protocol NSContainer {
     
 }
 
-public protocol NSOrderedContainer : NSContainer {
+public protocol SleipnirOrderedContainer : SleipnirContainer {
     
     func indexOfObject(object: AnyObject!) -> Int
     
 }
 
-extension NSArray : NSOrderedContainer { }
-extension NSSet : NSContainer { }
+extension NSArray : SleipnirOrderedContainer { }
+extension NSSet : SleipnirContainer { }

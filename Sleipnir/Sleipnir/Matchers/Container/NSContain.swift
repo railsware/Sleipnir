@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
+public class NSContain<T: AnyObject> : BaseMatcher<SleipnirContainer> {
     
     var items: [T]
     
@@ -17,7 +17,7 @@ public class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
         super.init()
     }
     
-    override func match(actual: NSContainer?) -> Bool {
+    override func match(actual: SleipnirContainer?) -> Bool {
         var result = true
         
         for item in items {
