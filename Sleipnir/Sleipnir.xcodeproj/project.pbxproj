@@ -103,6 +103,11 @@
 		46718B86194B8AD2006E8A18 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 		46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		46718BAD194E0393006E8A18 /* SleipnirSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718BAC194E0393006E8A18 /* SleipnirSpec.swift */; };
+		467B489C1982802D008B8D02 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B489B1982802D008B8D02 /* BeGreaterThan.swift */; };
+		467B489D1982802E008B8D02 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B489B1982802D008B8D02 /* BeGreaterThan.swift */; };
+		467B489E1982802E008B8D02 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B489B1982802D008B8D02 /* BeGreaterThan.swift */; };
+		467B489F1982802E008B8D02 /* BeGreaterThan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B489B1982802D008B8D02 /* BeGreaterThan.swift */; };
+		467B48A119828095008B8D02 /* BeGreaterThanSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -166,6 +171,8 @@
 		46718B85194B8AD2006E8A18 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleipnirLoader.m; sourceTree = "<group>"; };
 		46718BAC194E0393006E8A18 /* SleipnirSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleipnirSpec.swift; sourceTree = "<group>"; };
+		467B489B1982802D008B8D02 /* BeGreaterThan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeGreaterThan.swift; sourceTree = "<group>"; };
+		467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeGreaterThanSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +244,7 @@
 				3162A6A119702411006A6786 /* BeTrueSpec.swift */,
 				3162A6A319702427006A6786 /* BeFalseSpec.swift */,
 				317456AC1976B54A00028FB0 /* BeNilSpec.swift */,
+				467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -250,6 +258,7 @@
 				310644E119587965007629A0 /* BeTrue.swift */,
 				314C79C6195995F400E52DF0 /* BeFalse.swift */,
 				317456A81976B38900028FB0 /* BeNil.swift */,
+				467B489B1982802D008B8D02 /* BeGreaterThan.swift */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -535,6 +544,7 @@
 				31E36CDA198121CD00E7D654 /* ExampleGroup.swift in Sources */,
 				31E36CE0198121E500E7D654 /* SpecFailure.swift in Sources */,
 				31E36CD5198121BB00E7D654 /* BaseMatcher.swift in Sources */,
+				467B489F1982802E008B8D02 /* BeGreaterThan.swift in Sources */,
 				3162A6A0196FFFEF006A6786 /* ExpectFailureWithMessage.swift in Sources */,
 				31E36CD9198121C900E7D654 /* BeNil.swift in Sources */,
 				31E36CD4198121B700E7D654 /* ActualValue.swift in Sources */,
@@ -548,6 +558,7 @@
 				31A547F41981300700CA7984 /* Stringifier.swift in Sources */,
 				31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */,
 				31E36CD2198121AE00E7D654 /* ReportDispatcher.swift in Sources */,
+				467B48A119828095008B8D02 /* BeGreaterThanSpec.swift in Sources */,
 				31E36CD0198121A400E7D654 /* Observable.swift in Sources */,
 				31E36CE1198121E800E7D654 /* Dumper.swift in Sources */,
 				31E36CD8198121C500E7D654 /* BeFalse.swift in Sources */,
@@ -577,6 +588,7 @@
 				4640EBA51969439100AE5952 /* BaseMatcher.swift in Sources */,
 				4640EBA61969439100AE5952 /* Equal.swift in Sources */,
 				31A547F21981300700CA7984 /* Stringifier.swift in Sources */,
+				467B489D1982802E008B8D02 /* BeGreaterThan.swift in Sources */,
 				4640EBA71969439100AE5952 /* BeTrue.swift in Sources */,
 				4640EBA81969439100AE5952 /* BeFalse.swift in Sources */,
 				4640EBA91969439100AE5952 /* ExampleGroup.swift in Sources */,
@@ -605,6 +617,7 @@
 				4640EBD41969445F00AE5952 /* BaseMatcher.swift in Sources */,
 				4640EBD51969445F00AE5952 /* Equal.swift in Sources */,
 				31A547F31981300700CA7984 /* Stringifier.swift in Sources */,
+				467B489E1982802E008B8D02 /* BeGreaterThan.swift in Sources */,
 				4640EBD61969445F00AE5952 /* BeTrue.swift in Sources */,
 				4640EBD71969445F00AE5952 /* BeFalse.swift in Sources */,
 				4640EBD81969445F00AE5952 /* ExampleGroup.swift in Sources */,
@@ -630,6 +643,7 @@
 				318098B519545DD700ADEAF3 /* ActualValue.swift in Sources */,
 				317456A91976B38900028FB0 /* BeNil.swift in Sources */,
 				31BB32991959AB4300BC30D0 /* DefaultReporter.swift in Sources */,
+				467B489C1982802D008B8D02 /* BeGreaterThan.swift in Sources */,
 				318098BB1954609B00ADEAF3 /* Equal.swift in Sources */,
 				31874422195C727000C23EAC /* SpecFailure.swift in Sources */,
 				314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */,
