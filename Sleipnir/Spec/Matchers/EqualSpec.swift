@@ -8,24 +8,6 @@
 
 import Foundation
 
-class CustomObject : Equatable, Printable {
-    
-    var value: Int
-    
-    init(value: Int) {
-        self.value = value
-    }
-    
-    var description: String {
-        return "CustomObject"
-    }
-    
-}
-
-func ==(left: CustomObject, right: CustomObject) -> Bool {
-    return left.value == right.value
-}
-
 class EqualSpec : SleipnirSpec {
  
     var equalSpec : () = describe("Equal matcher") {
@@ -235,7 +217,7 @@ class EqualSpec : SleipnirSpec {
                 
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <CustomObject> to not equal <CustomObject>"
+                        let failureMessage = "Expected <CustomObject(42)> to not equal <CustomObject(42)>"
                         expectFailureWithMessage(failureMessage) {
                             expect(actualValue).toNot(equal(expectedValue!))
                         }
@@ -250,7 +232,7 @@ class EqualSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <CustomObject> to equal <CustomObject>"
+                        let failureMessage = "Expected <CustomObject(42)> to equal <CustomObject(7)>"
                         expectFailureWithMessage(failureMessage) {
                             expect(actualValue).to(equal(expectedValue!))
                         }
