@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NSContainer {
+public protocol NSContainer {
     
     func containsObject(anObject: AnyObject!) -> Bool
     
@@ -17,7 +17,7 @@ protocol NSContainer {
 extension NSArray : NSContainer { }
 extension NSSet : NSContainer { }
 
-class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
+public class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
     
     var items: [T]
     
@@ -43,6 +43,6 @@ class NSContain<T: AnyObject> : BaseMatcher<NSContainer> {
     }
 }
 
-func contain(items: AnyObject...) -> NSContain<AnyObject> {
+public func contain(items: AnyObject...) -> NSContain<AnyObject> {
     return NSContain(items: items)
 }

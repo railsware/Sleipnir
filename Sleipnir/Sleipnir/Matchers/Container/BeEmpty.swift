@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BeEmpty<S: Sequence> : BaseMatcher<S> {
+public class BeEmpty<S: Sequence> : BaseMatcher<S> {
     
     init() {
         super.init()
@@ -32,6 +32,6 @@ class BeEmpty<S: Sequence> : BaseMatcher<S> {
     }
 }
 
-func beEmpty<S: Sequence>() -> BeEmpty<S> {
+public func beEmpty<S: Sequence>() -> BeEmpty<S> {
     return BeEmpty()
 }

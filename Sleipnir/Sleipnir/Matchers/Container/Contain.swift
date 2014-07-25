@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : BaseMatcher<S> {
+public class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : BaseMatcher<S> {
     
     init(items: S) {
         super.init(expected: items)
@@ -30,13 +30,11 @@ class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : Ba
         return "contain <\(stringify(expected))>"
     }
     
-    /// Private
-    
-    func matchString(actual: String, expected: String) -> Bool {
+    private func matchString(actual: String, expected: String) -> Bool {
         return actual.rangeOfString(expected) != nil
     }
     
-    func matchSequence(actual: S, expected: S) -> Bool {
+    private func matchSequence(actual: S, expected: S) -> Bool {
         var result = true
         
         for item in expected {
@@ -49,10 +47,10 @@ class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : Ba
     }
 }
 
-func contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T>(items: S) -> Contain<S, T> {
+public func contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T>(items: S) -> Contain<S, T> {
     return Contain(items: items)
 }
 
-func contain<T: Equatable>(items: T...) -> Contain<[T], T> {
+public func contain<T: Equatable>(items: T...) -> Contain<[T], T> {
     return Contain(items: items)
 }
