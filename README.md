@@ -168,7 +168,7 @@ actual.should(equal(expected))
 ### Available matchers
 
 #### Equal
-Values must be `Equatable`, `Comparable` or derive from `NSObject`.
+Values must be [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html), [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html) or derive from `NSObject`.
 ```swift
 expect([1,2,3]).to(equal(1,2,3))
 expect("some string").toNot(equal("another string"))
@@ -187,7 +187,7 @@ expect(false).to(beFalse())
 ```
 
 #### BeGreaterThan/BeLessThan
-Values must be `Comparable`.
+Values must be [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html).
 ```swift
 expect(3).to(beGreaterThan(1))
 expect(1).to(beLessThan(3))
@@ -197,7 +197,7 @@ expect(1).to(beLessThan(3))
 Sleipnir supports some matchers on collections and strings. 
 
 ##### Contain
-Matches if all items are in the container. Supports Swift collections with `Equatable` elements, `NSArrays`, `NSSets` and `Strings`.
+Matches if all items are in the container. Supports Swift collections with [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html) elements, `NSArrays`, `NSSets` and `Strings`.
 ```swift
 expect([1,2,3]).to(contain(1,3))
 expect("some string").toNot(contain("another"))
