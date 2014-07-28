@@ -200,6 +200,53 @@ class EqualSpec : SleipnirSpec {
             }
         }
         
+        describe("when the values are declared as Swift Arrays") {
+            let actualValue: [Int] = [1,2,3]
+            var expectedValue: [Int]?
+            
+            describe("and the values are equal") {
+                beforeEach {
+                    expectedValue = [1,2,3]
+                }
+                
+                describe("positive match") {
+                    it("should pass") {
+                        expect(actualValue).to(equal(expectedValue!))
+                    }
+                }
+                
+                describe("negative match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <[1, 2, 3]> to not equal <[1, 2, 3]>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(actualValue).toNot(equal(expectedValue!))
+                        }
+                    }
+                }
+            }
+            
+            describe("and the values are not equal") {
+                beforeEach {
+                    expectedValue = [1, 2, 5]
+                }
+                
+                describe("positive match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <[1, 2, 3]> to equal <[1, 2, 5]>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(actualValue).to(equal(expectedValue!))
+                        }
+                    }
+                }
+                
+                describe("negative match") {
+                    it("should pass") {
+                        expect(actualValue).toNot(equal(expectedValue!))
+                    }
+                }
+            }
+        }
+        
         describe("when the values are declared as a сustom object") {
             let actualValue = CustomObject(value: 42)
             var expectedValue: CustomObject?
