@@ -39,6 +39,7 @@ class SampleSpec : SleipnirSpec {
 ## Installation
 
 **Note** We are working on the solution to make it easier to install, e.g. [Cocoa Pods](http://cocoapods.org/)
+
 1. Clone the Sleipnir repository
 2. Add `Sleipnir.xcodeproj` to your test target
 3. Link `Sleipnir.framework`
@@ -51,6 +52,7 @@ See [LibrarySpec](https://github.com/railsware/Sleipnir/blob/master/Sample/Sampl
 ## Writing specs
 
 All spec classes should inherit from `SleipnirSpec`.
+
 Root ExampleGroups in a spec should be assigned to some void variable. This allows specs to initialize correctly:
 ```swift
 import Sleipnir
@@ -135,11 +137,10 @@ They will run once before or after all examples in the current group and all the
 
 ## Focused and excluded specs
 
-You can specify examples and example groups to be focused by placing `f` letter before declaration: `fdescribe`, `fcontext`, `fit`.
-In this case the spec runner will only run focused examples/example groups and ignore all the others.
+You can specify examples and example groups to be focused by placing `f` letter before declaration: `fdescribe`, `fcontext`, `fit`. In this case the spec runner will only run focused examples/example groups and ignore all the others.
 
-You can also mark an example or example group as `pending`. It won't run but will be printed along with the test results.
-To mark something as `pending` add an `x` letter before declaration: `xdescribe`, `xcontext`, `xit`.
+You can also mark an example or example group as `pending`. It won't run but will be printed along with the test results.<br> 
+To mark something as `pending` add an `x` letter before declaration: `xdescribe`, `xcontext`, `xit`.<br>
 Example can also be marked as `pending` by passing `PENDING` instead of spec block: 
 ```swift
 it("is pending", PENDING)
@@ -165,7 +166,7 @@ actual.should(equal(expected))
 [1, 2, 3].shouldNot(contain(4))
 ```
 
-### Available matchers
+## Available matchers
 
 #### Equal
 Values must be [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html), [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html) or derive from `NSObject`.
@@ -194,23 +195,23 @@ expect(1).to(beLessThan(3))
 ```
 
 #### Collections/String matchers
-Sleipnir supports some matchers on collections and strings. 
+Sleipnir supports some matchers on collections and strings:
 
-##### Contain
+#### Contain
 Matches if all items are in the container. Supports Swift collections with [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html) elements, `NSArrays`, `NSSets` and `Strings`.
 ```swift
 expect([1,2,3]).to(contain(1,3))
 expect("some string").toNot(contain("another"))
 ```
 
-##### BeginWith/EndWith
+#### BeginWith/EndWith
 Matches if the container begins/ends with the specified element. Supports Swift collections with `Equatable` elements, `NSArrays` and `Strings`.
 ```swift
 expect([1,2,3]).to(beginWith(1))
 expect("some string").to(endWith("string"))
 ```
 
-##### BeEmpty
+#### BeEmpty
 Matches if a container is empty.
 ```swift
 expect("").to(beEmpty())
