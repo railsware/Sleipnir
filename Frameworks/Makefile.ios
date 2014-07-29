@@ -1,10 +1,13 @@
 FRAMEWORK_PATH = ./iOS/Sleipnir.framework
-BUILD_DIR = ./build
+BUILD_DIR = ./build/ios
 SOURCE_DIR = ../Sleipnir/Sleipnir
 
 SWIFT_SOURCES = $(wildcard $(SOURCE_DIR)/**/*.swift)
 
-all: framework
+all: prepare framework
+
+prepare:
+	mkdir -p $(BUILD_DIR)
 
 framework: libSleipnir swift_module.arm64 swift_module.armv7 swift_module.i386 swift_module.x86_64
 	cp $(BUILD_DIR)/libSleipnir $(FRAMEWORK_PATH)/Versions/A/Sleipnir

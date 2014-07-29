@@ -9,7 +9,7 @@ osx: clean_osx
 clean: clean_osx clean_ios
 
 clean_ios:
-	make -f Makefile.ios
+	make -f Makefile.ios clean
 
 clean_osx: 
-	make -f Makefile.osx
+	make -f Makefile.osx clean
