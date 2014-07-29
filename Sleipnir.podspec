@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "BDD-style framework in Swift"
   s.description  = "Sleipnir is a BDD-style framework for Swift highly inspired by Cedar"
   s.homepage     = "https://github.com/railsware/Sleipnir"
-  s.license      = { :type => 'MIT' }
+  s.license      = { :type => 'MIT', :file => 'Sleipnir/LICENSE' }
   s.source       = { :http => "https://github.com/railsware/Sleipnir/releases/download/v#{s.version}/Sleipnir-#{s.version}.zip" }
   s.authors      =  {'AlexDenisov' => '1101.debian@gmail.com', 'Artur Termenji' => 'atermenji@gmail.com' }
   s.social_media_url = 'https://twitter.com/railsware'
