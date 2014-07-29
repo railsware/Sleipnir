@@ -1,0 +1,81 @@
+FRAMEWORK_PATH = ./iOS/Sleipnir.framework
+BUILD_DIR = ./build
+SOURCE_DIR = ../Sleipnir/Sleipnir
+
+SWIFT_SOURCES = $(wildcard $(SOURCE_DIR)/**/*.swift)
+
+all: framework
+
+framework: libSleipnir swift_module.arm64 swift_module.armv7 swift_module.i386 swift_module.x86_64
+	cp $(BUILD_DIR)/libSleipnir $(FRAMEWORK_PATH)/Versions/A/Sleipnir
+	cp $(BUILD_DIR)/arm64.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/arm64.swiftmodule
+	cp $(BUILD_DIR)/armv7.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/arm.swiftmodule
+	cp $(BUILD_DIR)/i386.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/i386.swiftmodule
+	cp $(BUILD_DIR)/x86_64.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/x86_64.swiftmodule
+
+swift_module.x86_64: fat_horse.swift
+	xcrun --sdk iphonesimulator swift -target x86_64-apple-ios8.0 -emit-module-path $(BUILD_DIR)/x86_64.swiftmodule -emit-module $(BUILD_DIR)/$< -module-name Sleipnir 
+
+swift_module.i386: fat_horse.swift
+	xcrun --sdk iphonesimulator swift -target i386-apple-ios8.0 -emit-module-path $(BUILD_DIR)/i386.swiftmodule -emit-module $(BUILD_DIR)/$< -module-name Sleipnir 
+
+swift_module.arm64: fat_horse.swift
+	xcrun --sdk iphoneos swift -target arm64-apple-ios8.0 -emit-module-path $(BUILD_DIR)/arm64.swiftmodule -emit-module $(BUILD_DIR)/$< -module-name Sleipnir 
+
+swift_module.armv7: fat_horse.swift
+	xcrun --sdk iphoneos swift -target armv7-apple-ios8.0 -emit-module-path $(BUILD_DIR)/armv7.swiftmodule -emit-module $(BUILD_DIR)/$< -module-name Sleipnir 
+
+libSleipnir: libSleipnir.arm64 libSleipnir.armv7 libSleipnir.i386 libSleipnir.x86_64
+	cd $(BUILD_DIR) && lipo -create $? -output $@
+
+libSleipnir.x86_64: fat_horse.x86_64.o sleipnir_loader.x86_64.o
+	cd $(BUILD_DIR) && ar rcs libSLeipnir.x86_64 $?
+
+libSleipnir.i386: fat_horse.i386.o sleipnir_loader.i386.o
+	cd $(BUILD_DIR) && ar rcs libSLeipnir.i386 $?
+
+libSleipnir.arm64: fat_horse.arm64.o sleipnir_loader.arm64.o
+	cd $(BUILD_DIR) && ar rcs libSLeipnir.arm64 $?
+
+libSleipnir.armv7: fat_horse.armv7.o sleipnir_loader.armv7.o
+	cd $(BUILD_DIR) && ar rcs libSLeipnir.armv7 $?
+
+sleipnir_loader.x86_64.o:
+	xcrun --sdk iphonesimulator clang -arch x86_64 -c $(SOURCE_DIR)/Internals/SleipnirLoader.m -o $(BUILD_DIR)/$@
+
+sleipnir_loader.i386.o:
+	xcrun --sdk iphonesimulator clang -arch i386 -c $(SOURCE_DIR)/Internals/SleipnirLoader.m -o $(BUILD_DIR)/$@
+
+sleipnir_loader.arm64.o:
+	xcrun --sdk iphoneos clang -arch arm64 -c $(SOURCE_DIR)/Internals/SleipnirLoader.m -o $(BUILD_DIR)/$@
+
+sleipnir_loader.armv7.o:
+	xcrun --sdk iphoneos clang -arch armv7 -c $(SOURCE_DIR)/Internals/SleipnirLoader.m -o $(BUILD_DIR)/$@
+
+fat_horse.x86_64.o: fat_horse.swift
+	xcrun --sdk iphonesimulator swift -target x86_64-apple-ios8.0 -emit-library -emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ -module-name Sleipnir
+
+fat_horse.i386.o: fat_horse.swift
+	xcrun --sdk iphonesimulator swift -target i386-apple-ios8.0 -emit-library -emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ -module-name Sleipnir
+
+fat_horse.arm64.o: fat_horse.swift
+	xcrun --sdk iphoneos swift -target arm64-apple-ios8.0 -emit-library -emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ -module-name Sleipnir
+
+fat_horse.armv7.o: fat_horse.swift
+	xcrun --sdk iphoneos swift -target armv7-apple-ios8.0 -emit-library -emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ -module-name Sleipnir
+
+fat_horse.swift:
+	echo "" > $(BUILD_DIR)/$@
+	for src in $(SWIFT_SOURCES); do \
+			cat $${src} >> $(BUILD_DIR)/$@; \
+			echo "\n" >> $(BUILD_DIR)/$@; \
+	done;
+
+clean:
+	rm -rf $(BUILD_DIR)/*
+	rm -f $(FRAMEWORK_PATH)/Versions/A/Sleipnir
+	rm -f $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/arm64.swiftmodule
+	rm -f $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/arm.swiftmodule
+	rm -f $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/i386.swiftmodule
+	rm -f $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/x86_64.swiftmodule
+

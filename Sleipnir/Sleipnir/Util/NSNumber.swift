@@ -13,7 +13,7 @@ extension NSNumber: Comparable, Equatable {
 }
 
 public func <(lhs: NSNumber, rhs: NSNumber) -> Bool {
-    return lhs.isLessThan(rhs)
+    return lhs.compare(rhs) == NSComparisonResult.OrderedAscending;
 }
 
 public func == (lhs: NSNumber, rhs: NSNumber) -> Bool {
