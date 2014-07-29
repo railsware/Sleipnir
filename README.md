@@ -47,7 +47,7 @@ class SampleSpec : SleipnirSpec {
 
 #### Via CocoaPods
 
-You can install statically built `Sleipnir.framework` into you project simpli by adding it to the `Podfile`
+You can install statically built `Sleipnir.framework` into you project simply by adding it to the `Podfile`
 
 ```
 pod 'Sleipnir'
