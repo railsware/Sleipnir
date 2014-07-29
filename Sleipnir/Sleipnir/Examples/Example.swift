@@ -8,6 +8,8 @@
 
 import Foundation
 
+public typealias SleipnirBlock = () -> ()
+
 public let PENDING : SleipnirBlock? = nil
 
 class Example : ExampleBase {

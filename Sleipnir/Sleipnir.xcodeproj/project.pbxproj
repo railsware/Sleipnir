@@ -134,7 +134,6 @@
 		4640EBDB1969445F00AE5952 /* Runner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFC1953101000421A59 /* Runner.swift */; };
 		4640EBDD1969445F00AE5952 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4640EBDE1969445F00AE5952 /* SpecFailure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31874421195C727000C23EAC /* SpecFailure.swift */; };
-		46718B5A194B6A2C006E8A18 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B59194B6A2C006E8A18 /* main.swift */; };
 		46718B84194B8AAF006E8A18 /* ExampleGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B83194B8AAF006E8A18 /* ExampleGroup.swift */; };
 		46718B86194B8AD2006E8A18 /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46718B85194B8AD2006E8A18 /* Example.swift */; };
 		46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -224,7 +223,6 @@
 		4640EBB81969440500AE5952 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4640EBB91969440500AE5952 /* Sleipnir-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sleipnir-OSX.h"; sourceTree = "<group>"; };
 		46718B56194B6A2C006E8A18 /* Sleipnir */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sleipnir; sourceTree = BUILT_PRODUCTS_DIR; };
-		46718B59194B6A2C006E8A18 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		46718B83194B8AAF006E8A18 /* ExampleGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleGroup.swift; sourceTree = "<group>"; };
 		46718B85194B8AD2006E8A18 /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		46718B9E194DF8B0006E8A18 /* SleipnirLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SleipnirLoader.m; sourceTree = "<group>"; };
@@ -449,7 +447,6 @@
 				318098B319545DC500ADEAF3 /* Matchers */,
 				46718B82194B8A5E006E8A18 /* Examples */,
 				46718B7F194B8A39006E8A18 /* Internals */,
-				46718B59194B6A2C006E8A18 /* main.swift */,
 			);
 			path = Sleipnir;
 			sourceTree = "<group>";
@@ -785,7 +782,6 @@
 				46718B9F194DF8B0006E8A18 /* SleipnirLoader.m in Sources */,
 				31F33F0019531B5B00421A59 /* Array.swift in Sources */,
 				31B53FC0197FCF61006F7066 /* NSContain.swift in Sources */,
-				46718B5A194B6A2C006E8A18 /* main.swift in Sources */,
 				314C79C7195995F400E52DF0 /* BeFalse.swift in Sources */,
 				31BB32A31959C6BC00BC30D0 /* Observable.swift in Sources */,
 				315A95131982906B00086A35 /* EndWith.swift in Sources */,

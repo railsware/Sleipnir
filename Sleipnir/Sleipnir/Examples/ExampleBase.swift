@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias SleipnirBlock = () -> ()
-
 enum ExampleState : Printable {
     case Incomplete
     case Skipped

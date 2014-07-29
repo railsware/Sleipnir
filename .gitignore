@@ -2,3 +2,6 @@ xcuserdata
 *.xcuserstate
 
 .DS_Store
+Frameworks/build
+Frameworks/OSX/Sleipnir.framework/Versions/A/Sleipnir
+Frameworks/OSX/Sleipnir.framework/Versions/A/Modules/Sleipnir.swiftmodule/x86_64.swiftmodule
