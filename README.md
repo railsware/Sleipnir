@@ -38,12 +38,25 @@ class SampleSpec : SleipnirSpec {
 
 ## Installation
 
-**Note** We are working on the solution to make it easier to install, e.g. [Cocoa Pods](http://cocoapods.org/)
+#### Manually (preferred way)
 
-1. Clone the Sleipnir repository
-2. Add `Sleipnir.xcodeproj` to your test target
+1. Add Sleipnir as a submodule: `git submodule add https://github.com/railsware/sleipnir ThirdParty/Sleipnir`
+2. Drag'n'drop `Sleipnir.xcodeproj` to your test target
 3. Link `Sleipnir.framework`
 4. Start writing specs!
+
+#### Via CocoaPods
+
+You can install statically built `Sleipnir.framework` into you project simpli by adding it to the `Podfile`
+
+```
+pod 'Sleipnir'
+```
+
+**Note: it is experimental way** 
+
+It will work well with pure Swift project, but it won't work in case you mix Swift and ObjC.
+Swift compiler recognizes custom built framework without any issues, but when you're including auto-generated header "ProjectName-Swift.h" it tries to include the framework into ObjC universe, which currently doesn't work.
 
 ## Usage sample
 
