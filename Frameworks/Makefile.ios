@@ -32,16 +32,16 @@ libSleipnir: libSleipnir.arm64 libSleipnir.armv7 libSleipnir.i386 libSleipnir.x8
 	cd $(BUILD_DIR) && lipo -create $? -output $@
 
 libSleipnir.x86_64: fat_horse.x86_64.o sleipnir_loader.x86_64.o
-	cd $(BUILD_DIR) && ar rcs libSLeipnir.x86_64 $?
+	cd $(BUILD_DIR) && ar rcs libSleipnir.x86_64 $?
 
 libSleipnir.i386: fat_horse.i386.o sleipnir_loader.i386.o
-	cd $(BUILD_DIR) && ar rcs libSLeipnir.i386 $?
+	cd $(BUILD_DIR) && ar rcs libSleipnir.i386 $?
 
 libSleipnir.arm64: fat_horse.arm64.o sleipnir_loader.arm64.o
-	cd $(BUILD_DIR) && ar rcs libSLeipnir.arm64 $?
+	cd $(BUILD_DIR) && ar rcs libSleipnir.arm64 $?
 
 libSleipnir.armv7: fat_horse.armv7.o sleipnir_loader.armv7.o
-	cd $(BUILD_DIR) && ar rcs libSLeipnir.armv7 $?
+	cd $(BUILD_DIR) && ar rcs libSleipnir.armv7 $?
 
 sleipnir_loader.x86_64.o:
 	xcrun --sdk iphonesimulator clang -arch x86_64 -c $(SOURCE_DIR)/Internals/SleipnirLoader.m -o $(BUILD_DIR)/$@
