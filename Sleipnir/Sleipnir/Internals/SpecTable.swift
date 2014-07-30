@@ -21,7 +21,6 @@ struct SpecTable {
             currentGroup = nil
         } else {
             currentGroup?.addChildGroup(group)
-            
             currentGroup = group
             currentGroup?.block()
             currentGroup = group.parent

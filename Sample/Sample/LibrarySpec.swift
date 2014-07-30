@@ -10,12 +10,26 @@ import Sleipnir
 
 class LibrarySpec : SleipnirSpec {
     
+    var nonNilObject : () = sharedExamplesFor("a non-nil object") { (sharedContext : SharedContext) in
+        
+        var object: AnyObject?
+        beforeEach {
+            object = sharedContext()["object"]
+        }
+        
+        it("should not be nil") {
+            expect(object).toNot(beNil())
+        }
+    }
+    
     var book : () = context("Book") {
         
-        var swiftBook: Book?
+        var swiftBook: Book! = nil
         beforeAll {
             swiftBook = Book(title: "Introduction to Swift", author: "Apple Inc.")
         }
+        
+        itShouldBehaveLike("a non-nil object", { ["object" : swiftBook] })
         
         it("has title") {
             expect(swiftBook!.title).to(equal("Introduction to Swift"))
@@ -28,7 +42,7 @@ class LibrarySpec : SleipnirSpec {
     
     var library : () = context("Library") {
         
-        var swiftLibrary: Library?
+        var swiftLibrary: Library! = nil
         beforeAll {
             swiftLibrary = Library()
         }
@@ -36,6 +50,8 @@ class LibrarySpec : SleipnirSpec {
         afterAll {
             swiftLibrary = nil
         }
+        
+        itShouldBehaveLike("a non-nil object", { ["object" : swiftLibrary] })
         
         describe("empty") {
             it("has no books") {
