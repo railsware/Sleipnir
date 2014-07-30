@@ -241,6 +241,10 @@ expect([1,2,3]).toNot(beEmpty())
 - [ ] ```should``` syntax support (In progress, see the corresponding [Pull request](https://github.com/railsware/Sleipnir/pull/5))
 - [ ] asynchronous matchers (```will```, ```willNot```, ```after```)
 
+## Projects use Sleipnir
+
+ - [SGL](https://github.com/AlexDenisov/sgl) - Swift Generic Library
+
 ## Contributing
 
 Please read the [Contributor Guide](https://github.com/railsware/Sleipnir/blob/master/CONTRIBUTING.md).
