@@ -55,9 +55,9 @@ pod 'Sleipnir'
 
 **Note: it is experimental way** 
 
-**Current build from CocoaPods does not work on iPhone Simulator, but works for OSX and iOS Devices**
+**Current build does not work on iPhone Simulator, but works for OSX and iOS Devices**
 
-It will work well with pure Swift project, but it won't work in case you mix Swift and ObjC.
+It will work well with pure Swift project, but it won't work in case you mix Swift and ObjC.<br>
 Swift compiler recognizes custom built framework without any issues, but when you're including auto-generated header "ProjectName-Swift.h" it tries to include the framework into ObjC universe, which currently does not work.
 
 ## Usage sample
@@ -162,8 +162,8 @@ it("is pending", PENDING)
 ```
 ## Shared example groups
 
-Sleipnir supports extracting common specs through shared example groups.
-They can include any number of `it`, `context`, `describe`, `before` and `after` blocks.
+Sleipnir supports extracting common specs through shared example groups.<br>
+They can include any number of `it`, `context`, `describe`, `before` and `after` blocks.<br>
 You can pass example-specific state into the shared example group through `sharedContext` dictionary.
 ```swift
 var nonNilObject : () =
