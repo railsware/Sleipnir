@@ -66,7 +66,7 @@ public struct Runner {
         if seed {
             specSeed = seed!
         } else {
-            specSeed = Int(arc4random())
+            specSeed = Int(arc4random_uniform(9999))
         }
         srandom(UInt32(specSeed))
         
