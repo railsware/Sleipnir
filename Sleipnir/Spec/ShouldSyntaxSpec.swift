@@ -81,14 +81,14 @@ class ShouldSyntaxSpec : SleipnirSpec {
             describe("when the values are declared as Arrays") {
                 it("should work with positive case") {
                     let value = [1, 2, 3]
-//                    value.should(equal([1, 2, 3]))
+                    value.should(equal([1, 2, 3]))
                 }
                 
                 it("should work with negative case") {
                     let failureMessage = "Expected <[1, 2, 3]> to equal <[1, 2, 4]>"
-//                    expectFailureWithMessage(failureMessage) {
-//                        [1, 2, 3].should(equal([1, 2, 4]))
-//                    }
+                    expectFailureWithMessage(failureMessage) {
+                        [1, 2, 3].should(equal([1, 2, 4]))
+                    }
                 }
             }
 

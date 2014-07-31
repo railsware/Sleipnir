@@ -78,9 +78,6 @@ extension Bool {
     
 }
 
-// Array extension won't work in XCode6-Beta3 due to compiler bug
-// https://devforums.apple.com/message/983747
-// Uncomment corresponding specs in 'ShouldSyntaxSpec' when bug is fixed
 extension Array {
     
     func should(matcher: BaseMatcher<[T]>, file: String = __FILE__, line: Int = __LINE__) {
