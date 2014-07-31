@@ -10,7 +10,7 @@ import Foundation
 
 class ExampleGroup : ExampleBase {
     
-    var block: SleipnirBlock
+    var block: SleipnirBlock!
     
     var childGroups: [ExampleGroup] = [ExampleGroup]()
     
@@ -21,9 +21,13 @@ class ExampleGroup : ExampleBase {
     var beforeAllBlocks: [SleipnirBlock] = [SleipnirBlock]()
     var afterAllBlocks: [SleipnirBlock] = [SleipnirBlock]()
     
-    init(_ label: String, _ block: SleipnirBlock) {
+    init(_ label: String, _ block: SleipnirBlock?) {
         self.block = block
         super.init(label)
+    }
+    
+    convenience init(_ label: String) {
+        self.init(label, nil)
     }
     
     override func hasChildren() -> Bool {

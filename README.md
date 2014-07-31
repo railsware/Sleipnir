@@ -55,10 +55,10 @@ pod 'Sleipnir'
 
 **Note: it is experimental way** 
 
-**Current build doesn't work on iPhone Simulator, but works for OSX and iOS Devices**
+**Current build from CocoaPods does not work on iPhone Simulator, but works for OSX and iOS Devices**
 
 It will work well with pure Swift project, but it won't work in case you mix Swift and ObjC.
-Swift compiler recognizes custom built framework without any issues, but when you're including auto-generated header "ProjectName-Swift.h" it tries to include the framework into ObjC universe, which currently doesn't work.
+Swift compiler recognizes custom built framework without any issues, but when you're including auto-generated header "ProjectName-Swift.h" it tries to include the framework into ObjC universe, which currently does not work.
 
 ## Usage sample
 
@@ -160,6 +160,42 @@ Example can also be marked as `pending` by passing `PENDING` instead of spec blo
 ```swift
 it("is pending", PENDING)
 ```
+## Shared example groups
+
+Sleipnir supports extracting common specs through shared example groups.
+They can include any number of `it`, `context`, `describe`, `before` and `after` blocks.
+You can pass example-specific state into the shared example group through `sharedContext` dictionary.
+```swift
+var nonNilObject : () =
+    sharedExamplesFor("a non-nil object") { (sharedContext : SharedContext) in
+        var object: AnyObject?
+        beforeEach {
+            object = sharedContext()["object"]
+        }
+        
+        it("should not be nil") {
+            expect(object).toNot(beNil())
+        }
+    }
+
+var spec : () = context("A non-nil object") {
+    let someObject: String = "Some Object"
+    itShouldBehaveLike("a non-nil object", { ["object" : someObject] })
+}
+```
+
+If you don't need any context, you can use closures without parameters:
+```swift
+sharedExamplesFor("some awesome stuff") {
+    it("should be awesome") {
+        //...
+    }
+}
+
+describe("Some stuff") {
+    itShouldBehaveLike("some awesome stuff")
+}
+```
 
 ## Expectations
 
@@ -237,7 +273,7 @@ expect([1,2,3]).toNot(beEmpty())
 
 - [ ] Ease of distribution (CocoaPods probably)
 - [ ] XCode templates
-- [ ] Shared examples support
+- [x] Shared examples support
 - [ ] ```should``` syntax support (In progress, see the corresponding [Pull request](https://github.com/railsware/Sleipnir/pull/5))
 - [ ] asynchronous matchers (```will```, ```willNot```, ```after```)
 
