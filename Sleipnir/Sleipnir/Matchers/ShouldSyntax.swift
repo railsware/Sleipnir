@@ -8,86 +8,105 @@
 
 import Foundation
 
-extension NSObject {
- 
-    func should(matcher: BaseMatcher<NSObject>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.to(matcher)
+class Should<T> {
+    
+    var value: T?
+    
+    init(value: T) {
+        self.value = value
     }
     
-    func shouldNot(matcher: BaseMatcher<NSObject>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.toNot(matcher)
+    func equal(expected: T, file: String = __FILE__, line: Int = __LINE__) {
+        ActualValue(value: value, fileName: file, lineNumber: line).to(equal(expected))
     }
-    
 }
 
 extension Int {
     
-    func should(matcher: BaseMatcher<Int>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.to(matcher)
-    }
-    
-    func shouldNot(matcher: BaseMatcher<Int>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.toNot(matcher)
-    }
+    var should: Should<Int> { return Should(value: self) }
     
 }
 
-extension Double {
-    
-    func should(matcher: BaseMatcher<Double>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.to(matcher)
-    }
-    
-    func shouldNot(matcher: BaseMatcher<Double>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.toNot(matcher)
-    }
-    
-}
+//extension NSObject {
+// 
+//    func should(matcher: BaseMatcher<NSObject>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.to(matcher)
+//    }
+//    
+//    func shouldNot(matcher: BaseMatcher<NSObject>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.toNot(matcher)
+//    }
+//    
+//}
 
-extension Float {
-    
-    func should(matcher: BaseMatcher<Float>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.to(matcher)
-    }
-    
-    func shouldNot(matcher: BaseMatcher<Float>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.toNot(matcher)
-    }
-    
-}
-
-extension Bool {
-    
-    func should(matcher: BaseMatcher<Bool>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.to(matcher)
-    }
-    
-    func shouldNot(matcher: BaseMatcher<Bool>, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
-        actualValue.toNot(matcher)
-    }
-    
-}
-
-extension Array {
-    
-    func should(matcher: BaseMatcher<[T]>, file: String = __FILE__, line: Int = __LINE__) {
-        let actual = ActualValue(value: self, fileName: file, lineNumber: line)
-        actual.to(matcher)
-    }
-
-    func shouldNot(matcher: BaseMatcher<[T]>, file: String = __FILE__, line: Int = __LINE__) {
-        let actual = ActualValue(value: self, fileName: file, lineNumber: line)
-        actual.toNot(matcher)
-    }
-    
-}
+//extension Int {
+//    
+//    func should(matcher: BaseMatcher<Int>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.to(matcher)
+//    }
+//    
+//    func shouldNot(matcher: BaseMatcher<Int>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.toNot(matcher)
+//    }
+//    
+//}
+//
+//extension Double {
+//    
+//    func should(matcher: BaseMatcher<Double>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.to(matcher)
+//    }
+//    
+//    func shouldNot(matcher: BaseMatcher<Double>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.toNot(matcher)
+//    }
+//    
+//}
+//
+//extension Float {
+//    
+//    func should(matcher: BaseMatcher<Float>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.to(matcher)
+//    }
+//    
+//    func shouldNot(matcher: BaseMatcher<Float>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.toNot(matcher)
+//    }
+//    
+//}
+//
+//extension Bool {
+//    
+//    func should(matcher: BaseMatcher<Bool>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.to(matcher)
+//    }
+//    
+//    func shouldNot(matcher: BaseMatcher<Bool>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actualValue.toNot(matcher)
+//    }
+//    
+//}
+//
+//extension Array {
+//    
+//    func should(matcher: BaseMatcher<[T]>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actual = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actual.to(matcher)
+//    }
+//
+//    func shouldNot(matcher: BaseMatcher<[T]>, file: String = __FILE__, line: Int = __LINE__) {
+//        let actual = ActualValue(value: self, fileName: file, lineNumber: line)
+//        actual.toNot(matcher)
+//    }
+//    
+//}
