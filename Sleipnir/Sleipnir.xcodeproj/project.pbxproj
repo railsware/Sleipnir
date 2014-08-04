@@ -84,6 +84,11 @@
 		31E278E419828097001A3B36 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E119828097001A3B36 /* BeginWith.swift */; };
 		31E278E519828097001A3B36 /* BeginWith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E119828097001A3B36 /* BeginWith.swift */; };
 		31E278E7198282EB001A3B36 /* BeginWithSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E278E6198282EB001A3B36 /* BeginWithSpec.swift */; };
+		31E34556198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */; };
+		31E34557198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */; };
+		31E34558198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */; };
+		31E34559198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */; };
+		31E3455B198FB6B70077107B /* BeGreaterThanOrEqualToSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E3455A198FB6B70077107B /* BeGreaterThanOrEqualToSpec.swift */; };
 		31E36CCF1981218600E7D654 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F33EFF19531B5B00421A59 /* Array.swift */; };
 		31E36CD0198121A400E7D654 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32A21959C6BC00BC30D0 /* Observable.swift */; };
 		31E36CD1198121AB00E7D654 /* DefaultReporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31BB32981959AB4300BC30D0 /* DefaultReporter.swift */; };
@@ -222,6 +227,8 @@
 		31C84BA1197E94700010AF3A /* ContainSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainSpec.swift; sourceTree = "<group>"; };
 		31E278E119828097001A3B36 /* BeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Container/BeginWith.swift; sourceTree = "<group>"; };
 		31E278E6198282EB001A3B36 /* BeginWithSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginWithSpec.swift; sourceTree = "<group>"; };
+		31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeGreaterThanOrEqualTo.swift; sourceTree = "<group>"; };
+		31E3455A198FB6B70077107B /* BeGreaterThanOrEqualToSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeGreaterThanOrEqualToSpec.swift; path = Matchers/BeGreaterThanOrEqualToSpec.swift; sourceTree = "<group>"; };
 		31F33EFC1953101000421A59 /* Runner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Runner.swift; sourceTree = "<group>"; };
 		31F33EFF19531B5B00421A59 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		4640EB84196942AF00AE5952 /* Sleipnir.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sleipnir.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -316,6 +323,7 @@
 				467B48A019828095008B8D02 /* BeGreaterThanSpec.swift */,
 				467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */,
 				467B48A919828686008B8D02 /* CustomObject.swift */,
+				31E3455A198FB6B70077107B /* BeGreaterThanOrEqualToSpec.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -332,6 +340,7 @@
 				317456A81976B38900028FB0 /* BeNil.swift */,
 				467B489B1982802D008B8D02 /* BeGreaterThan.swift */,
 				467B48A4198284E9008B8D02 /* BeLessThan.swift */,
+				31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 				315A9522198298C700086A35 /* SleipnirContainer.swift in Sources */,
 				315A9511198288F700086A35 /* NSBeginWith.swift in Sources */,
 				31E278E7198282EB001A3B36 /* BeginWithSpec.swift in Sources */,
+				31E34559198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */,
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
 				31E278E519828097001A3B36 /* BeginWith.swift in Sources */,
 				31A547F41981300700CA7984 /* Stringifier.swift in Sources */,
@@ -681,6 +691,7 @@
 				3162A6A219702411006A6786 /* BeTrueSpec.swift in Sources */,
 				31E278DF19827307001A3B36 /* BeEmpty.swift in Sources */,
 				31E278E01982730B001A3B36 /* NSContain.swift in Sources */,
+				31E3455B198FB6B70077107B /* BeGreaterThanOrEqualToSpec.swift in Sources */,
 				31E36CCF1981218600E7D654 /* Array.swift in Sources */,
 				314AE5C9196D793F00CA7ED7 /* ExampleSpec.swift in Sources */,
 				467B48A8198284E9008B8D02 /* BeLessThan.swift in Sources */,
@@ -726,6 +737,7 @@
 				313EE75B197EA7E1000C0F32 /* BeEmpty.swift in Sources */,
 				315A95191982921800086A35 /* NSEndWith.swift in Sources */,
 				314AE5B7196D6BD100CA7ED7 /* Dumper.swift in Sources */,
+				31E34557198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */,
 				46C560B5198299CD001C5444 /* NSNumber.swift in Sources */,
 				317456AA1976B38900028FB0 /* BeNil.swift in Sources */,
 				4640EBAE1969439100AE5952 /* SleipnirLoader.m in Sources */,
@@ -766,6 +778,7 @@
 				313EE75C197EA7E1000C0F32 /* BeEmpty.swift in Sources */,
 				315A951A1982921800086A35 /* NSEndWith.swift in Sources */,
 				314AE5B8196D6BD100CA7ED7 /* Dumper.swift in Sources */,
+				31E34558198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */,
 				46C560B6198299CD001C5444 /* NSNumber.swift in Sources */,
 				317456AB1976B38900028FB0 /* BeNil.swift in Sources */,
 				4640EBDD1969445F00AE5952 /* SleipnirLoader.m in Sources */,
@@ -806,6 +819,7 @@
 				467B48A5198284E9008B8D02 /* BeLessThan.swift in Sources */,
 				315A950E198288F700086A35 /* NSBeginWith.swift in Sources */,
 				315A95181982921800086A35 /* NSEndWith.swift in Sources */,
+				31E34556198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */,
 				31F33EFD1953101000421A59 /* Runner.swift in Sources */,
 				315A951F198298C700086A35 /* SleipnirContainer.swift in Sources */,
 				310644E219587965007629A0 /* BeTrue.swift in Sources */,
