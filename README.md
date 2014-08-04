@@ -224,6 +224,7 @@ Values must be [`Equatable`](https://developer.apple.com/library/prerelease/ios/
 ```swift
 expect([1,2,3]).to(equal(1,2,3))
 expect("some string").toNot(equal("another string"))
+expect(1) == 1
 ```
 
 #### BeNil
@@ -242,7 +243,22 @@ expect(false).to(beFalse())
 Values must be [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html).
 ```swift
 expect(3).to(beGreaterThan(1))
+expect(3) > 1
+
 expect(1).to(beLessThan(3))
+expect(1) < 3
+```
+
+#### BeGreaterThanOrEqualTo/BeLessThanOrEqualTo
+Values must be [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html).
+```swift
+expect(3).to(beGreaterThanOrEqualTo(1))
+expect(3) >= 1
+expect(1) >= 1
+
+expect(1).to(beLessThanOrEqualTo(3))
+expect(1) <= 3
+expect(1) <= 1
 ```
 
 #### Collections/String matchers
