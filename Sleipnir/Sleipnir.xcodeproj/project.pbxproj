@@ -62,6 +62,11 @@
 		31A547F21981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
 		31A547F31981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
 		31A547F41981300700CA7984 /* Stringifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A547F01981300700CA7984 /* Stringifier.swift */; };
+		31ABF256198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF255198FC15600F370E7 /* BeLessThanOrEqualTo.swift */; };
+		31ABF257198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF255198FC15600F370E7 /* BeLessThanOrEqualTo.swift */; };
+		31ABF258198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF255198FC15600F370E7 /* BeLessThanOrEqualTo.swift */; };
+		31ABF259198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF255198FC15600F370E7 /* BeLessThanOrEqualTo.swift */; };
+		31ABF25B198FC20700F370E7 /* BeLessThanOrEqualToSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31ABF25A198FC20700F370E7 /* BeLessThanOrEqualToSpec.swift */; };
 		31AC70C6196EDE39001D68E0 /* DefaultReporterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */; };
 		31B344B21989303B00027A0C /* SharedExampleGroupSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B344B11989303B00027A0C /* SharedExampleGroupSpec.swift */; };
 		31B53FBE197FC840006F7066 /* BeEmptySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B53FBD197FC840006F7066 /* BeEmptySpec.swift */; };
@@ -215,6 +220,8 @@
 		318098BA1954609B00ADEAF3 /* Equal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Equal.swift; sourceTree = "<group>"; };
 		31874421195C727000C23EAC /* SpecFailure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpecFailure.swift; sourceTree = "<group>"; };
 		31A547F01981300700CA7984 /* Stringifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stringifier.swift; sourceTree = "<group>"; };
+		31ABF255198FC15600F370E7 /* BeLessThanOrEqualTo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeLessThanOrEqualTo.swift; sourceTree = "<group>"; };
+		31ABF25A198FC20700F370E7 /* BeLessThanOrEqualToSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeLessThanOrEqualToSpec.swift; path = Matchers/BeLessThanOrEqualToSpec.swift; sourceTree = "<group>"; };
 		31AC70C5196EDE39001D68E0 /* DefaultReporterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultReporterSpec.swift; path = Reporters/DefaultReporterSpec.swift; sourceTree = "<group>"; };
 		31B344B11989303B00027A0C /* SharedExampleGroupSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SharedExampleGroupSpec.swift; path = Internals/SharedExampleGroupSpec.swift; sourceTree = "<group>"; };
 		31B53FBD197FC840006F7066 /* BeEmptySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeEmptySpec.swift; sourceTree = "<group>"; };
@@ -324,6 +331,7 @@
 				467B48A2198284CC008B8D02 /* BeLessThanSpec.swift */,
 				467B48A919828686008B8D02 /* CustomObject.swift */,
 				31E3455A198FB6B70077107B /* BeGreaterThanOrEqualToSpec.swift */,
+				31ABF25A198FC20700F370E7 /* BeLessThanOrEqualToSpec.swift */,
 			);
 			name = Matchers;
 			sourceTree = "<group>";
@@ -341,6 +349,7 @@
 				467B489B1982802D008B8D02 /* BeGreaterThan.swift */,
 				467B48A4198284E9008B8D02 /* BeLessThan.swift */,
 				31E34555198FB61C0077107B /* BeGreaterThanOrEqualTo.swift */,
+				31ABF255198FC15600F370E7 /* BeLessThanOrEqualTo.swift */,
 			);
 			path = Matchers;
 			sourceTree = "<group>";
@@ -662,6 +671,7 @@
 				31E36CD4198121B700E7D654 /* ActualValue.swift in Sources */,
 				31E36CDD198121D900E7D654 /* SleipnirSpec.swift in Sources */,
 				31C84BA2197E94700010AF3A /* ContainSpec.swift in Sources */,
+				31ABF259198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */,
 				3162A69E196FF95F006A6786 /* EqualSpec.swift in Sources */,
 				31E36CD7198121C200E7D654 /* BeTrue.swift in Sources */,
 				315A951B1982921800086A35 /* NSEndWith.swift in Sources */,
@@ -673,6 +683,7 @@
 				31E278E7198282EB001A3B36 /* BeginWithSpec.swift in Sources */,
 				31E34559198FB61C0077107B /* BeGreaterThanOrEqualTo.swift in Sources */,
 				314AE5CC196D799000CA7ED7 /* ExampleGroupSpec.swift in Sources */,
+				31ABF25B198FC20700F370E7 /* BeLessThanOrEqualToSpec.swift in Sources */,
 				31E278E519828097001A3B36 /* BeginWith.swift in Sources */,
 				31A547F41981300700CA7984 /* Stringifier.swift in Sources */,
 				31E36CDC198121D400E7D654 /* ExampleBase.swift in Sources */,
@@ -718,6 +729,7 @@
 				31B53FC1197FCF61006F7066 /* NSContain.swift in Sources */,
 				4640EBA41969439100AE5952 /* ActualValue.swift in Sources */,
 				4640EBA51969439100AE5952 /* BaseMatcher.swift in Sources */,
+				31ABF257198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */,
 				4640EBA61969439100AE5952 /* Equal.swift in Sources */,
 				31A547F21981300700CA7984 /* Stringifier.swift in Sources */,
 				467B489D1982802E008B8D02 /* BeGreaterThan.swift in Sources */,
@@ -759,6 +771,7 @@
 				31B53FC2197FCF61006F7066 /* NSContain.swift in Sources */,
 				4640EBD31969445F00AE5952 /* ActualValue.swift in Sources */,
 				4640EBD41969445F00AE5952 /* BaseMatcher.swift in Sources */,
+				31ABF258198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */,
 				4640EBD51969445F00AE5952 /* Equal.swift in Sources */,
 				31A547F31981300700CA7984 /* Stringifier.swift in Sources */,
 				467B489E1982802E008B8D02 /* BeGreaterThan.swift in Sources */,
@@ -800,6 +813,7 @@
 				467B489C1982802D008B8D02 /* BeGreaterThan.swift in Sources */,
 				31B7E4C81979B7020042E05C /* Contain.swift in Sources */,
 				318098BB1954609B00ADEAF3 /* Equal.swift in Sources */,
+				31ABF256198FC15600F370E7 /* BeLessThanOrEqualTo.swift in Sources */,
 				31874422195C727000C23EAC /* SpecFailure.swift in Sources */,
 				314AE5BA196D716A00CA7ED7 /* SpecTable.swift in Sources */,
 				313EE75A197EA7E1000C0F32 /* BeEmpty.swift in Sources */,

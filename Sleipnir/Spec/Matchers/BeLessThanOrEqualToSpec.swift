@@ -1,16 +1,16 @@
 //
-//  BeLessThanSpec.swift
+//  BeLessThanOrEqualToSpec.swift
 //  Sleipnir
 //
-//  Created by AlexDenisov on 7/25/14.
+//  Created by Artur Termenji on 8/4/14.
 //  Copyright (c) 2014 railsware. All rights reserved.
 //
 
 import Foundation
 
-class BeLessThanSpec : SleipnirSpec {
+class BeLessThanOrEqualToSpec : SleipnirSpec {
     
-    var beLessThanSpec : () = describe("BeLessThan matcher") {
+    var beLessThanSpec : () = describe("BeLessThanOrEqualToSpec matcher") {
         
         context("Int") {
             var value: Int = 5
@@ -20,19 +20,18 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(value).to(beLessThan(expected))
+                        expect(value).to(beLessThanOrEqualTo(expected))
                     }
                 }
                 
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <5> to not be less than <10>"
+                        let failureMessage = "Expected <5> to not be less than or equal to <10>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).toNot(beLessThan(expected))
+                            expect(value).toNot(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
-                
             }
             
             describe("which is not less than") {
@@ -40,23 +39,29 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <5> to be less than <1>"
+                        let failureMessage = "Expected <5> to be less than or equal to <1>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).to(beLessThan(expected))
+                            expect(value).to(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
                 
                 describe("negative match") {
                     it("should pass") {
-                        expect(value).toNot(beLessThan(expected))
+                        expect(value).toNot(beLessThanOrEqualTo(expected))
                     }
                 }
-                
             }
             
+            describe("which is equal to") {
+                var expected = 5
+                
+                it("should pass") {
+                    expect(value).to(beLessThanOrEqualTo(expected))
+                }
+            }
         }
-
+        
         context("Double") {
             var value: Double = 5.0
             
@@ -65,19 +70,18 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(value).to(beLessThan(expected))
+                        expect(value).to(beLessThanOrEqualTo(expected))
                     }
                 }
                 
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <5.0> to not be less than <10.0>"
+                        let failureMessage = "Expected <5.0> to not be less than or equal to <10.0>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).toNot(beLessThan(expected))
+                            expect(value).toNot(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
-                
             }
             
             describe("which is not less than") {
@@ -85,23 +89,21 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <5.0> to be less than <1.0>"
+                        let failureMessage = "Expected <5.0> to be less than or equal to <1.0>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).to(beLessThan(expected))
+                            expect(value).to(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
                 
                 describe("negative match") {
                     it("should pass") {
-                        expect(value).toNot(beLessThan(expected))
+                        expect(value).toNot(beLessThanOrEqualTo(expected))
                     }
                 }
-                
             }
-            
         }
-
+        
         context("CustomObject") {
             var value: CustomObject = CustomObject(value: 5)
             
@@ -110,19 +112,18 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(value).to(beLessThan(expected))
+                        expect(value).to(beLessThanOrEqualTo(expected))
                     }
                 }
                 
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <CustomObject(5)> to not be less than <CustomObject(10)>"
+                        let failureMessage = "Expected <CustomObject(5)> to not be less than or equal to <CustomObject(10)>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).toNot(beLessThan(expected))
+                            expect(value).toNot(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
-                
             }
             
             describe("which is not less than") {
@@ -130,21 +131,38 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <CustomObject(5)> to be less than <CustomObject(1)>"
+                        let failureMessage = "Expected <CustomObject(5)> to be less than or equal to <CustomObject(1)>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).to(beLessThan(expected))
+                            expect(value).to(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
                 
                 describe("negative match") {
                     it("should pass") {
-                        expect(value).toNot(beLessThan(expected))
+                        expect(value).toNot(beLessThanOrEqualTo(expected))
+                    }
+                }
+            }
+            
+            describe("which is equal to") {
+                var expected = CustomObject(value: 5)
+                
+                describe("positive match") {
+                    it("should pass") {
+                        expect(value).to(beLessThanOrEqualTo(expected))
                     }
                 }
                 
+                describe("negative match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <CustomObject(5)> to not be less than or equal to <CustomObject(5)>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(value).toNot(beLessThanOrEqualTo(expected))
+                        }
+                    }
+                }
             }
-            
         }
         
         context("NSNumber") {
@@ -155,19 +173,18 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(value).to(beLessThan(expected))
+                        expect(value).to(beLessThanOrEqualTo(expected))
                     }
                 }
                 
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <5> to not be less than <10>"
+                        let failureMessage = "Expected <5> to not be less than or equal to <10>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).toNot(beLessThan(expected))
+                            expect(value).toNot(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
-                
             }
             
             describe("which is not less than") {
@@ -175,38 +192,43 @@ class BeLessThanSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <5> to be less than <1>"
+                        let failureMessage = "Expected <5> to be less than or equal to <1>"
                         expectFailureWithMessage(failureMessage) {
-                            expect(value).to(beLessThan(expected))
+                            expect(value).to(beLessThanOrEqualTo(expected))
                         }
                     }
                 }
                 
                 describe("negative match") {
                     it("should pass") {
-                        expect(value).toNot(beLessThan(expected))
+                        expect(value).toNot(beLessThanOrEqualTo(expected))
                     }
                 }
-                
             }
             
         }
-
+        
     }
     
-    var operatorSpec : () = describe("< operator matcher") {
+    var operatorSpec : () = describe("<= operator matcher") {
         describe("when the actual value is less than expected value") {
             it("should pass") {
-                expect(1) < 3
+                expect(1) <= 3
             }
         }
         
         describe("when the actual value is not less than the expected value") {
             it("should fail with a sensible failure message") {
-                let failureMessage = "Expected <9> to be less than <3>"
+                let failureMessage = "Expected <9> to be less than or equal to <3>"
                 expectFailureWithMessage(failureMessage) {
-                    expect(9) < 3
+                    expect(9) <= 3
                 }
+            }
+        }
+        
+        describe("when the actual value is equal to expected value") {
+            it("should pass") {
+                expect(3) <= 3
             }
         }
     }
