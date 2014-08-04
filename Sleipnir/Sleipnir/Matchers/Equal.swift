@@ -26,3 +26,11 @@ public class Equal<T: Equatable> : BaseMatcher<T> {
 public func equal<T: Equatable>(expected: T?) -> Equal<T> {
     return Equal(expected: expected)
 }
+
+public func ==<T: Equatable>(actual: ActualValue<T>, expected: T?) {
+    actual.to(equal(expected))
+}
+
+public func !=<T: Equatable>(actual: ActualValue<T>, expected: T?) {
+    actual.toNot(equal(expected))
+}

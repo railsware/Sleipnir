@@ -348,4 +348,40 @@ class EqualSpec : SleipnirSpec {
         
     }
     
+    var operatorSpec : () = describe("operator matcher") {
+        context("== operator") {
+            describe("when the actual value is equal to expected value") {
+                it("should pass") {
+                    expect(3) == 3
+                }
+            }
+            
+            describe("when the actual value is not equal to the expected value") {
+                it("should fail with a sensible failure message") {
+                    let failureMessage = "Expected <1> to equal <3>"
+                    expectFailureWithMessage(failureMessage) {
+                        expect(1) == 3
+                    }
+                }
+            }
+        }
+        
+        context("!= operator") {
+            describe("when the actual value is equal to expected value") {
+                it("should fail with a sensible failure message") {
+                    let failureMessage = "Expected <3> to not equal <3>"
+                    expectFailureWithMessage(failureMessage) {
+                        expect(3) != 3
+                    }
+                }
+            }
+            
+            describe("when the actual value is not equal to the expected value") {
+                it("should pass") {
+                    expect(1) != 3
+                }
+            }
+        }
+    }
+    
 }

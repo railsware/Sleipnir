@@ -26,4 +26,3 @@ public class BeLessThan<T: Comparable> : BaseMatcher<T> {
 public func beLessThan<T: Comparable>(expected: T?) -> BeLessThan<T> {
     return BeLessThan(expected: expected)
 }
-
