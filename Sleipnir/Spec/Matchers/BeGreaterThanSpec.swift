@@ -194,4 +194,21 @@ class BeGreaterThanSpec : SleipnirSpec {
 
     }
     
+    var operatorSpec : () = describe("> operator matcher") {
+        describe("when the actual value is greater than expected value") {
+            it("should pass") {
+                expect(9) > 3
+            }
+        }
+        
+        describe("when the actual value is not greater than the expected value") {
+            it("should fail with a sensible failure message") {
+                let failureMessage = "Expected <1> to be greater than <3>"
+                expectFailureWithMessage(failureMessage) {
+                    expect(1) > 3
+                }
+            }
+        }
+    }
+    
 }

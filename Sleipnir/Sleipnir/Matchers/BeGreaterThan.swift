@@ -26,3 +26,7 @@ public class BeGreaterThan<T: Comparable> : BaseMatcher<T> {
 public func beGreaterThan<T: Comparable>(expected: T?) -> BeGreaterThan<T> {
     return BeGreaterThan(expected: expected)
 }
+
+public func ><T: Comparable>(actual: ActualValue<T>, expected: T?) {
+    actual.to(beGreaterThan(expected))
+}

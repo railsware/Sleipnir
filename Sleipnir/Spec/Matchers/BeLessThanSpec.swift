@@ -194,4 +194,21 @@ class BeLessThanSpec : SleipnirSpec {
 
     }
     
+    var operatorSpec : () = describe("< operator matcher") {
+        describe("when the actual value is less than expected value") {
+            it("should pass") {
+                expect(1) < 3
+            }
+        }
+        
+        describe("when the actual value is not less than the expected value") {
+            it("should fail with a sensible failure message") {
+                let failureMessage = "Expected <9> to be less than <3>"
+                expectFailureWithMessage(failureMessage) {
+                    expect(9) < 3
+                }
+            }
+        }
+    }
+    
 }
