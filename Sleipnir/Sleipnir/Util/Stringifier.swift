@@ -10,7 +10,7 @@ import Foundation
 
 func stringify<T>(object: T?) -> String {
     var result = "nil"
-    if object {
+    if object != nil {
         result = "\(object!)"
     }
     

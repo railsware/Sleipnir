@@ -10,7 +10,7 @@ import Foundation
 
 public class BeNil<T> : BaseMatcher<T> {
     
-    init() {
+    override init() {
         super.init()
     }
     
@@ -19,7 +19,7 @@ public class BeNil<T> : BaseMatcher<T> {
     }
     
     override func match(actual: T?) -> Bool {
-        if !actual {
+        if actual == nil {
             return true
         } else {
             return false

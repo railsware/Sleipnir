@@ -19,7 +19,7 @@ class Example : ExampleBase {
     var specFailure: SpecFailure?
     
     init(_ label: String, _ block: SleipnirBlock?) {
-        if block {
+        if block != nil {
             self.block = block!
         }
         self.state = Observable<ExampleState>(value: ExampleState.Incomplete)
@@ -34,10 +34,14 @@ class Example : ExampleBase {
         } else if isPending() {
             setState(ExampleState.Pending)
         } else {
-            if parent { parent!.runBeforeEach() }
+            if parent != nil {
+                parent!.runBeforeEach()
+            }
             Runner.currentExample = self
             block()
-            if parent { parent!.runAfterEach() }
+            if parent != nil {
+                parent!.runAfterEach()
+            }
             
             if !failed() {
                 setState(ExampleState.Passed)
@@ -65,7 +69,7 @@ class Example : ExampleBase {
     }
     
     func message() -> String {
-        if specFailure {
+        if specFailure != nil {
             return specFailure!.reason
         } else {
             return ""
@@ -73,7 +77,7 @@ class Example : ExampleBase {
     }
     
     func failure() -> String {
-        if specFailure {
+        if specFailure != nil {
             return specFailure!.failure()
         } else {
             return ""
@@ -81,7 +85,7 @@ class Example : ExampleBase {
     }
     
     func fullText() -> String {
-        if parent {
+        if parent != nil {
             return parent!.fullText() + " " + self.label
         } else {
             return self.label

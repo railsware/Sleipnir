@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class EndWith<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : BaseMatcher<S> {
+public class EndWith<S: SequenceType, T: Equatable where S.Generator.Element == T> : BaseMatcher<S> {
     
     init(items: S) {
         super.init(expected: items)
     }
     
     override func match(actual: S?) -> Bool  {
-        if !actual {
+        if actual == nil {
             return false
         }
         
@@ -32,7 +32,7 @@ public class EndWith<S: Sequence, T: Equatable where S.GeneratorType.Element == 
     
     private func matchString(actual: String, expected: String) -> Bool {
         let range = actual.rangeOfString(expected)
-        if !range {
+        if range == nil {
             return false
         }
         
@@ -53,7 +53,7 @@ public class EndWith<S: Sequence, T: Equatable where S.GeneratorType.Element == 
     }
 }
 
-public func endWith<S: Sequence, T: Equatable where S.GeneratorType.Element == T>(items: S) -> EndWith<S, T> {
+public func endWith<S: SequenceType, T: Equatable where S.Generator.Element == T>(items: S) -> EndWith<S, T> {
     return EndWith(items: items)
 }
 

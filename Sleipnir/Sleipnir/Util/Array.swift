@@ -22,5 +22,5 @@ extension Array {
 extension Array : Equatable { }
 
 public func ==<T>(lhs: Array<T>, rhs: Array<T>) -> Bool {
-    return lhs.bridgeToObjectiveC() == rhs.bridgeToObjectiveC()
+    return lhs._bridgeToObjectiveC() == rhs._bridgeToObjectiveC()
 }

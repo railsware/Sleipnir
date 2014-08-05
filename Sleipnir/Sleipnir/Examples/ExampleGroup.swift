@@ -26,7 +26,7 @@ class ExampleGroup : ExampleBase {
         super.init(label)
     }
     
-    convenience init(_ label: String) {
+    convenience override init(_ label: String) {
         self.init(label, nil)
     }
     
@@ -91,7 +91,7 @@ class ExampleGroup : ExampleBase {
     }
     
     func fullText() -> String {
-        if parent {
+        if (parent != nil) {
             return parent!.fullText() + " " + self.label
         } else {
             return self.label

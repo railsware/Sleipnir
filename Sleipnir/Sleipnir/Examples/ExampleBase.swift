@@ -53,6 +53,7 @@ class ExampleBase {
     
     func shouldRun() -> Bool {
         let shouldOnlyRunFocused = Runner.shouldOnlyRunFocused
-        return !shouldOnlyRunFocused || (self.focused || (parent && parent!.shouldRun()))
+        var parentShouldRun = parent != nil && parent!.shouldRun()
+        return !shouldOnlyRunFocused || (self.focused || parentShouldRun)
     }
 }

@@ -15,7 +15,7 @@ func expectFailureWithMessage(message: String, block: SleipnirBlock,
     Runner.currentExample = fakeExample
     
     func updateCurrentExample(state: ExampleState, specFailure: SpecFailure? = nil) {
-        if specFailure {
+        if specFailure != nil {
             currentExample!.specFailure = specFailure
         }
         currentExample!.setState(state)

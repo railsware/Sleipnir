@@ -63,7 +63,7 @@ public struct Runner {
     
     private static func setUpRandomSeed(seed: Int? = nil) -> Int {
         var specSeed: Int
-        if seed {
+        if seed != nil {
             specSeed = seed!
         } else {
             specSeed = Int(arc4random_uniform(9999))

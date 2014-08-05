@@ -62,8 +62,7 @@ public class ActualValue<T> {
     }
 }
 
-public func expect<T>(expression: @auto_closure () -> T?,
-        file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
+public func expect<T>(expression: @autoclosure () -> T?, file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
 

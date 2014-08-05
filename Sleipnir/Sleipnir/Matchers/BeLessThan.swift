@@ -10,7 +10,7 @@ import Foundation
 
 public class BeLessThan<T: Comparable> : BaseMatcher<T> {
     
-    init(expected: T?) {
+    override init(expected: T?) {
         super.init(expected: expected)
     }
     

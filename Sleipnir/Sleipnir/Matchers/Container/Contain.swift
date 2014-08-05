@@ -8,14 +8,14 @@
 
 import Foundation
 
-public class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T> : BaseMatcher<S> {
+public class Contain<S: SequenceType, T: Equatable where S.Generator.Element == T> : BaseMatcher<S> {
     
     init(items: S) {
         super.init(expected: items)
     }
     
     override func match(actual: S?) -> Bool  {
-        if !actual {
+        if actual == nil {
             return false
         }
         
@@ -47,7 +47,7 @@ public class Contain<S: Sequence, T: Equatable where S.GeneratorType.Element == 
     }
 }
 
-public func contain<S: Sequence, T: Equatable where S.GeneratorType.Element == T>(items: S) -> Contain<S, T> {
+public func contain<S: SequenceType, T: Equatable where S.Generator.Element == T>(items: S) -> Contain<S, T> {
     return Contain(items: items)
 }
 

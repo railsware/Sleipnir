@@ -10,7 +10,7 @@ import Foundation
 
 public class BeFalse<T>: BaseMatcher<T> {
     
-    init() {
+    override init() {
         super.init()
     }
     

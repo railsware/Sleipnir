@@ -14,7 +14,7 @@ struct SpecTable {
     static var currentGroup : ExampleGroup?
     
     static func handleGroup(group: ExampleGroup) {
-        if (!currentGroup) {
+        if (currentGroup == nil) {
             currentGroup = group
             topLevelGroups.append(currentGroup!)
             currentGroup?.block()

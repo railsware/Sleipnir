@@ -10,7 +10,7 @@ import Foundation
 
 public class Equal<T: Equatable> : BaseMatcher<T> {
     
-    init(expected: T?) {
+    override init(expected: T?) {
         super.init(expected: expected)
     }
     

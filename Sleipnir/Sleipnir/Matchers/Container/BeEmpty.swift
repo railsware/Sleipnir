@@ -8,19 +8,19 @@
 
 import Foundation
 
-public class BeEmpty<S: Sequence> : BaseMatcher<S> {
+public class BeEmpty<S: SequenceType> : BaseMatcher<S> {
     
-    init() {
+    override init() {
         super.init()
     }
     
     override func match(actual: S?) -> Bool  {
-        if !actual {
+        if actual == nil {
             return true
         }
 
         var generator = actual!.generate()
-        if generator.next() {
+        if (generator.next() != nil) {
             return false
         } else {
             return true
@@ -32,6 +32,6 @@ public class BeEmpty<S: Sequence> : BaseMatcher<S> {
     }
 }
 
-public func beEmpty<S: Sequence>() -> BeEmpty<S> {
+public func beEmpty<S: SequenceType>() -> BeEmpty<S> {
     return BeEmpty()
 }
