@@ -102,7 +102,7 @@ Finished in 0.0075 seconds
 8 examples, 1 failures
 ```
 
-### Seeded random specs run
+#### Seeded random specs run
 
 All examples would run in random order with the random seed specified in output. If you would like to re-run tests in the same order you should pass a seed to `run()` method:
 ```swift
@@ -219,7 +219,7 @@ actual.should(equal(expected))
 
 ## Available matchers
 
-#### Equal
+##### Equal
 Values must be [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html), [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html) or derive from `NSObject`.
 ```swift
 expect([1,2,3]).to(equal(1,2,3))
@@ -227,19 +227,19 @@ expect("some string").toNot(equal("another string"))
 expect(1) == 1
 ```
 
-#### BeNil
+##### BeNil
 ```swift
 expect(nil).to(beNil())
 expect("some string").toNot(beNil())
 ```
 
-#### BeTrue/BeFalse
+##### BeTrue/BeFalse
 ```swift
 expect(true).to(beTrue())
 expect(false).to(beFalse())
 ```
 
-#### BeGreaterThan/BeLessThan
+##### BeGreaterThan/BeLessThan
 Values must be [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html).
 ```swift
 expect(3).to(beGreaterThan(1))
@@ -249,7 +249,7 @@ expect(1).to(beLessThan(3))
 expect(1) < 3
 ```
 
-#### BeGreaterThanOrEqualTo/BeLessThanOrEqualTo
+##### BeGreaterThanOrEqualTo/BeLessThanOrEqualTo
 Values must be [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html).
 ```swift
 expect(3).to(beGreaterThanOrEqualTo(1))
@@ -261,24 +261,24 @@ expect(1) <= 3
 expect(1) <= 1
 ```
 
-#### Collections/String matchers
+##### Collections/String matchers
 Sleipnir supports some matchers on collections and strings:
 
-#### Contain
+##### Contain
 Matches if all items are in the container. Supports Swift collections with [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html) elements, `NSArrays`, `NSSets` and `Strings`.
 ```swift
 expect([1,2,3]).to(contain(1,3))
 expect("some string").toNot(contain("another"))
 ```
 
-#### BeginWith/EndWith
+##### BeginWith/EndWith
 Matches if the container begins/ends with the specified element. Supports Swift collections with `Equatable` elements, `NSArrays` and `Strings`.
 ```swift
 expect([1,2,3]).to(beginWith(1))
 expect("some string").to(endWith("string"))
 ```
 
-#### BeEmpty
+##### BeEmpty
 Matches if a container is empty.
 ```swift
 expect("").to(beEmpty())
