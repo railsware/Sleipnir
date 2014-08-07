@@ -1,6 +1,7 @@
 FRAMEWORK_PATH = ./OSX/Sleipnir.framework
 BUILD_DIR = ./build/osx
 SOURCE_DIR = ../Sleipnir/Sleipnir
+SWIFTC = swiftc
 
 SWIFT_SOURCES = $(wildcard $(SOURCE_DIR)/**/*.swift)
 
@@ -14,7 +15,7 @@ framework: libSleipnir swift_module
 	cp $(BUILD_DIR)/Sleipnir.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/x86_64.swiftmodule
 
 swift_module: fat_horse.swift
-	xcrun --sdk macosx swift -emit-module-path $(BUILD_DIR)/ -emit-module $(BUILD_DIR)/$< -module-name Sleipnir 
+	xcrun --sdk macosx $(SWIFTC) -emit-module-path $(BUILD_DIR)/ -emit-module $(BUILD_DIR)/$< -module-name Sleipnir 
 
 libSleipnir: fat_horse.o sleipnir_loader.o
 	cd $(BUILD_DIR) && ar rcs libSleipnir $?
@@ -23,7 +24,7 @@ sleipnir_loader.o:
 	 xcrun clang -c $(SOURCE_DIR)/Internals/SleipnirLoader.m -o $(BUILD_DIR)/$@
 
 fat_horse.o: fat_horse.swift
-	xcrun --sdk macosx swift -emit-library -emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ -module-name Sleipnir
+	xcrun --sdk macosx $(SWIFTC) -emit-library -emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ -module-name Sleipnir
 
 fat_horse.swift:
 	echo "" > $(BUILD_DIR)/$@
