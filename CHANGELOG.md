@@ -1,6 +1,17 @@
 Change Log
 ==========
 
+Version 0.3.0 *(2014-08-07)*
+----------------------------
+
+* Support for XCode6-Beta5.
+* Distribution as a framework through CocoaPods (experimental)
+* New: shared example groups
+* New: operator syntax for some matchers: `expect(3) == 3`
+* New matchers:
+  * BeGreaterThanOrEqualTo/BeLessThanOrEqualTo
+* Fix: Shorten random seed to 4 digits
+
 Version 0.2.0 *(2014-07-29)*
 ----------------------------
 
