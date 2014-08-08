@@ -14,7 +14,7 @@ prepare:
 	mkdir -p $(FRAMEWORK_DIR)
 	cp -R $(FRAMEWORK_TEMPLATE_PATH) $(FRAMEWORK_PATH)
 
-framework: libSleipnir swift_module.arm64 swift_module.armv7 swift_module.i386 swift_module.x86_64
+framework: libSleipnir swift_module.arm64 swift_module.armv7 swift_module.i386 swift_module.x86_64 swift_header
 	cp $(BUILD_DIR)/libSleipnir $(FRAMEWORK_PATH)/Versions/A/Sleipnir
 	cp $(BUILD_DIR)/arm64.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/arm64.swiftmodule
 	cp $(BUILD_DIR)/armv7.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/arm.swiftmodule
@@ -82,7 +82,6 @@ fat_horse.x86_64.o: fat_horse.swift
 		-target x86_64-apple-ios8.0 \
 		-emit-library \
 		-emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ \
-		-emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
 		-module-name Sleipnir
 
 fat_horse.i386.o: fat_horse.swift
@@ -90,7 +89,6 @@ fat_horse.i386.o: fat_horse.swift
 		-target i386-apple-ios8.0 \
 		-emit-library \
 		-emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ \
-		-emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
 		-module-name Sleipnir
 
 fat_horse.arm64.o: fat_horse.swift
@@ -98,7 +96,6 @@ fat_horse.arm64.o: fat_horse.swift
 		-target arm64-apple-ios8.0 \
 		-emit-library \
 		-emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ \
-		-emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
 		-module-name Sleipnir
 
 fat_horse.armv7.o: fat_horse.swift
@@ -106,7 +103,14 @@ fat_horse.armv7.o: fat_horse.swift
 		-target armv7-apple-ios8.0 \
 		-emit-library \
 		-emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ \
+		-module-name Sleipnir
+
+swift_header: fat_horse.swift
+	xcrun --sdk iphoneos $(SWIFTC) \
+		-target arm64-apple-ios8.0 \
 		-emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
+		-emit-module-path $(BUILD_DIR)/\
+		$(BUILD_DIR)/$<\
 		-module-name Sleipnir
 
 fat_horse.swift:

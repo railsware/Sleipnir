@@ -35,10 +35,11 @@ fat_horse.o: fat_horse.swift
 		-module-name Sleipnir
 
 swift_header: fat_horse.swift
-	 xcrun --sdk macosx $(SWIFTC) \
-		 -emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
-		 $(BUILD_DIR)/$<
-
+	xcrun --sdk macosx $(SWIFTC) \
+		-emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
+		-emit-module-path $(BUILD_DIR)/\
+		$(BUILD_DIR)/$<\
+		-module-name Sleipnir
 
 fat_horse.swift:
 	echo "" > $(BUILD_DIR)/$@
