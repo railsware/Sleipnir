@@ -41,6 +41,9 @@ public struct Runner {
         }
         
         dispatcher.runDidComplete()
+        
+        let result = dispatcher.result()
+        exit(Int32(result))
     }
     
     private static func shuffleExamples(inout groups: [ExampleGroup]) {

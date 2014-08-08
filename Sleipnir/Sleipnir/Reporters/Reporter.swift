@@ -21,4 +21,6 @@ protocol Reporter {
     func runWillStartExample(example: Example)
     
     func runDidFinishExample(example: Example)
+    
+    func result() -> Int
 }

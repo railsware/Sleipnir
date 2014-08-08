@@ -51,4 +51,14 @@ class ReportDispatcher {
             reporter.runDidFinishExample(example)
         }
     }
+    
+    func result() -> Int {
+        var result = 0
+        
+        for reporter in reporters {
+            result |= reporter.result()
+        }
+        
+        return result
+    }
 }

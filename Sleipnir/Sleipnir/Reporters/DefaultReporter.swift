@@ -53,6 +53,14 @@ class DefaultReporter : Reporter {
     func runDidFinishExample(example: Example) {
     }
     
+    func result() -> Int {
+        if Runner.shouldOnlyRunFocused || failureMessages.count > 0 {
+            return 1
+        } else {
+            return 0
+        }
+    }
+    
     private func successToken() -> String {
         return "."
     }
