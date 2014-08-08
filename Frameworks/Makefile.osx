@@ -1,17 +1,20 @@
-FRAMEWORK_PATH = ./OSX/Sleipnir.framework
+FRAMEWORK_TEMPLATE_PATH = ./iOS/Sleipnir.framework
 BUILD_DIR = ./build/osx
+FRAMEWORK_DIR = ./build/Sleipnir/OSX
+FRAMEWORK_PATH = $(FRAMEWORK_DIR)/Sleipnir.framework
 SOURCE_DIR = ../Sleipnir/Sleipnir
 SWIFTC = swiftc
 SWIFT_HEADER = Sleipnir-Swift.h
-
 SWIFT_SOURCES = $(wildcard $(SOURCE_DIR)/**/*.swift)
 
 all: prepare framework
 
 prepare:
 	mkdir -p $(BUILD_DIR)
+	mkdir -p $(FRAMEWORK_DIR)
+	cp -R $(FRAMEWORK_TEMPLATE_PATH) $(FRAMEWORK_PATH)
 
-framework: libSleipnir swift_module
+framework: libSleipnir swift_module swift_header
 	cp $(BUILD_DIR)/libSleipnir $(FRAMEWORK_PATH)/Versions/A/Sleipnir
 	cp $(BUILD_DIR)/Sleipnir.swiftmodule $(FRAMEWORK_PATH)/Versions/A/Modules/Sleipnir.swiftmodule/x86_64.swiftmodule
 	cp $(BUILD_DIR)/$(SWIFT_HEADER) $(FRAMEWORK_PATH)/Versions/A/Headers/$(SWIFT_HEADER)
@@ -29,8 +32,13 @@ fat_horse.o: fat_horse.swift
 	xcrun --sdk macosx $(SWIFTC) \
 		-emit-library \
 		-emit-object $(BUILD_DIR)/$< -o $(BUILD_DIR)/$@ \
-		-emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
 		-module-name Sleipnir
+
+swift_header: fat_horse.swift
+	 xcrun --sdk macosx $(SWIFTC) \
+		 -emit-objc-header-path $(BUILD_DIR)/$(SWIFT_HEADER) \
+		 $(BUILD_DIR)/$<
+
 
 fat_horse.swift:
 	echo "" > $(BUILD_DIR)/$@
@@ -41,6 +49,4 @@ fat_horse.swift:
 
 clean:
 	rm -rf $(BUILD_DIR)/*
-	rm -rf $(FRAMEWORK_PATH)/Versions/A/Sleipnir
-	rm -rf $(FRAMEWORK_PATh)/Versions/A/Modules/Sleipnir.swiftmodule/x86_64.swiftmodule
 

@@ -1,3 +1,4 @@
 framework module Sleipnir {
+    header "Sleipnir-Swift.h"
 }
 
