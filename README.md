@@ -54,9 +54,7 @@ pod 'Sleipnir'
 ```
 
 **Note: it is experimental way** 
-
-It will work well with pure Swift project, but it won't work in case you mix Swift and ObjC.<br>
-Swift compiler recognizes custom built framework without any issues, but when you're including auto-generated header "ProjectName-Swift.h" it tries to include the framework into ObjC universe, which currently does not work.
+**Current build does not work on iPhone Simulator, but works for OSX and iOS Devices**
 
 ## Usage sample
 
