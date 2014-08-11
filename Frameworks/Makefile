@@ -1,4 +1,5 @@
 all: ios osx
+	cp ../LICENSE ./build/Sleipnir
 
 ios: clean_ios
 	make -f Makefile.ios
