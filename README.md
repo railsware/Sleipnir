@@ -53,7 +53,7 @@ You can install statically built `Sleipnir.framework` into you project simply by
 pod 'Sleipnir'
 ```
 
-**Note: it is experimental way** 
+**Note: it is experimental way**<br>
 **Current build does not work on iPhone Simulator, but works for OSX and iOS Devices**
 
 ## Usage sample

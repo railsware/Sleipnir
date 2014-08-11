@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+Version 0.3.1 *(2014-08-11)*
+----------------------------
+
+* Fix: Update for OSX and iOS frameworks. They now work in project with both Swift and ObjC code
+* Fix: Return correct result after specs run.
+
 Version 0.3.0 *(2014-08-07)*
 ----------------------------
 
