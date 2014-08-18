@@ -21,7 +21,7 @@ class EndWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail") {
-                    let failureMessage = "Expected <nil> to end with <[1]>"
+                    let failureMessage = "Expected <nil> to end with <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(endWith(1))
                     }
@@ -34,7 +34,7 @@ class EndWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <[]> to end with <[1]>"
+                    let failureMessage = "Expected <[]> to end with <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(endWith(1))
                     }
@@ -58,7 +58,7 @@ class EndWithSpec : SleipnirSpec {
                     let element = 5
                     
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not end with <[5]>"
+                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not end with <5>"
                         expectFailureWithMessage(failureMessage) {
                             expect(container).toNot(endWith(element))
                         }

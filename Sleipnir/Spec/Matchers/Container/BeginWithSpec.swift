@@ -21,7 +21,7 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail") {
-                    let failureMessage = "Expected <nil> to begin with <[1]>"
+                    let failureMessage = "Expected <nil> to begin with <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(beginWith(1))
                     }
@@ -34,14 +34,14 @@ class BeginWithSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <[]> to begin with <[1]>"
+                    let failureMessage = "Expected <[]> to begin with <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(beginWith(1))
                     }
                 }
             }
             
-            context("and it contains elements") {
+            context("and it contains element") {
                 beforeEach {
                     container = [1, 2, 3, 4, 5]
                 }
@@ -58,7 +58,7 @@ class BeginWithSpec : SleipnirSpec {
                     let element = 1
                         
                     it("should fail with a sensible failure message") {
-                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not begin with <[1]>"
+                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not begin with <1>"
                         expectFailureWithMessage(failureMessage) {
                             expect(container).toNot(beginWith(element))
                         }
@@ -113,7 +113,7 @@ class BeginWithSpec : SleipnirSpec {
                 }
             }
             
-            context("and it contains elements") {
+            context("and it contains element") {
                 beforeEach {
                     container = NSArray(array: [1, 2, 3, 4, 5])
                 }

@@ -10,8 +10,17 @@ import Foundation
 
 public class BeginWith<S: SequenceType, T: Equatable where S.Generator.Element == T> : BaseMatcher<S> {
 
-    init(items: S) {
-        super.init(expected: items)
+    var item: T?
+    var stringItem: String?
+    
+    init(item: T) {
+        self.item = item
+        super.init()
+    }
+    
+    init(stringItem: String) {
+        self.stringItem = stringItem
+        super.init()
     }
     
     override func match(actual: S?) -> Bool  {
@@ -19,19 +28,20 @@ public class BeginWith<S: SequenceType, T: Equatable where S.Generator.Element =
             return false
         }
         
-        if (actual is String && expected is String) {
-            return matchString(actual as String, expected: expected as String)
+        if (actual is String && stringItem != nil) {
+            return matchString(actual as String, item: stringItem!)
         } else {
-            return matchSequence(actual!, expected: expected!)
+            return matchSequence(actual!, item: item!)
         }
     }
     
     override func failureMessageEnd() -> String {
-        return "begin with <\(stringify(expected))>"
+        var textItem = (item != nil) ? stringify(item) : stringify(stringItem)
+        return "begin with <\(textItem)>"
     }
     
-    private func matchString(actual: String, expected: String) -> Bool {
-        let range = actual.rangeOfString(expected)
+    private func matchString(actual: String, item: String) -> Bool {
+        let range = actual.rangeOfString(item)
         if range == nil {
             return false
         }
@@ -39,17 +49,16 @@ public class BeginWith<S: SequenceType, T: Equatable where S.Generator.Element =
         return range!.startIndex == actual.startIndex
     }
     
-    private func matchSequence(actual: S, expected: S) -> Bool {
+    private func matchSequence(actual: S, item: T) -> Bool {
         var actualGenerator = actual.generate()
-        var expectedGenerator = expected.generate()
-        return actualGenerator.next() == expectedGenerator.next()
+        return actualGenerator.next() == item
     }
 }
 
-public func beginWith<S: SequenceType, T: Equatable where S.Generator.Element == T>(items: S) -> BeginWith<S, T> {
-    return BeginWith(items: items)
+public func beginWith<S: SequenceType, T: Equatable where S.Generator.Element == T>(item: T) -> BeginWith<S, T> {
+    return BeginWith(item: item)
 }
 
-public func beginWith<T: Equatable>(items: T...) -> BeginWith<[T], T> {
-    return BeginWith(items: items)
+public func beginWith(item: String) -> BeginWith<String, Character> {
+    return BeginWith(stringItem: item)
 }

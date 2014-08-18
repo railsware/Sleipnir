@@ -10,8 +10,17 @@ import Foundation
 
 public class EndWith<S: SequenceType, T: Equatable where S.Generator.Element == T> : BaseMatcher<S> {
     
-    init(items: S) {
-        super.init(expected: items)
+    var item: T?
+    var stringItem: String?
+    
+    init(item: T) {
+        self.item = item
+        super.init()
+    }
+    
+    init(stringItem: String) {
+        self.stringItem = stringItem
+        super.init()
     }
     
     override func match(actual: S?) -> Bool  {
@@ -19,19 +28,20 @@ public class EndWith<S: SequenceType, T: Equatable where S.Generator.Element == 
             return false
         }
         
-        if (actual is String && expected is String) {
-            return matchString(actual as String, expected: expected as String)
+        if (actual is String && stringItem != nil) {
+            return matchString(actual as String, item: stringItem!)
         } else {
-            return matchSequence(actual!, expected: expected!)
+            return matchSequence(actual!, item: item!)
         }
     }
     
     override func failureMessageEnd() -> String {
-        return "end with <\(stringify(expected))>"
+        var textItem = (item != nil) ? stringify(item) : stringify(stringItem)
+        return "end with <\(textItem)>"
     }
     
-    private func matchString(actual: String, expected: String) -> Bool {
-        let range = actual.rangeOfString(expected)
+    private func matchString(actual: String, item: String) -> Bool {
+        let range = actual.rangeOfString(item)
         if range == nil {
             return false
         }
@@ -39,24 +49,22 @@ public class EndWith<S: SequenceType, T: Equatable where S.Generator.Element == 
         return range!.endIndex == actual.endIndex
     }
     
-    private func matchSequence(actual: S, expected: S) -> Bool {
+    private func matchSequence(actual: S, item: T) -> Bool {
         var actualGenerator = actual.generate()
-        var expectedGenerator = expected.generate()
         
-        var expectedLastItem = expectedGenerator.next()
         var lastItem: T?
         while let item = actualGenerator.next() {
             lastItem = item
         }
         
-        return lastItem == expectedLastItem
+        return lastItem == item
     }
 }
 
-public func endWith<S: SequenceType, T: Equatable where S.Generator.Element == T>(items: S) -> EndWith<S, T> {
-    return EndWith(items: items)
+public func endWith<S: SequenceType, T: Equatable where S.Generator.Element == T>(item: T) -> EndWith<S, T> {
+    return EndWith(item: item)
 }
 
-public func endWith<T: Equatable>(items: T...) -> EndWith<[T], T> {
-    return EndWith(items: items)
+public func endWith(item: String) -> EndWith<String, Character> {
+    return EndWith(stringItem: item)
 }
