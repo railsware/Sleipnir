@@ -10,47 +10,49 @@ import Foundation
 
 public class Contain<S: SequenceType, T: Equatable where S.Generator.Element == T> : BaseMatcher<S> {
     
-    init(items: S) {
-        super.init(expected: items)
+    var item: T?
+    var stringItem: String?
+    
+    init(item: T) {
+        self.item = item
+        super.init()
     }
     
+    init(stringItem: String) {
+        self.stringItem = stringItem
+        super.init()
+    }
+
     override func match(actual: S?) -> Bool  {
         if actual == nil {
             return false
         }
         
-        if (actual is String && expected is String) {
-            return matchString(actual as String, expected: expected as String)
+        if (actual is String && stringItem != nil) {
+            return matchString(actual as String, item: stringItem!)
         } else {
-            return matchSequence(actual!, expected: expected!)
+            return matchSequence(actual!, item: item!)
         }
     }
     
     override func failureMessageEnd() -> String {
-        return "contain <\(stringify(expected))>"
+        var textItem = (item != nil) ? stringify(item) : stringify(stringItem)
+        return "contain <\(textItem)>"
     }
     
-    private func matchString(actual: String, expected: String) -> Bool {
-        return actual.rangeOfString(expected) != nil
+    private func matchString(actual: String, item: String) -> Bool {
+        return actual.rangeOfString(item) != nil
     }
     
-    private func matchSequence(actual: S, expected: S) -> Bool {
-        var result = true
-        
-        for item in expected {
-            if !(contains(actual, item)) {
-                result = false
-            }
-        }
-        
-        return result
+    private func matchSequence(actual: S, item: T) -> Bool {
+        return contains(actual, item)
     }
 }
 
-public func contain<S: SequenceType, T: Equatable where S.Generator.Element == T>(items: S) -> Contain<S, T> {
-    return Contain(items: items)
+public func contain<S: SequenceType, T: Equatable where S.Generator.Element == T>(item: T) -> Contain<S, T> {
+    return Contain(item: item)
 }
 
-public func contain<T: Equatable>(items: T...) -> Contain<[T], T> {
-    return Contain(items: items)
+public func contain(item: String) -> Contain<String, Character> {
+    return Contain(stringItem: item)
 }

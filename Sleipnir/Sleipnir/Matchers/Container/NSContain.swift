@@ -10,30 +10,22 @@ import Foundation
 
 public class NSContain<T: AnyObject> : BaseMatcher<SleipnirContainer> {
     
-    var items: [T]
+    var item: T
     
-    init(items: [T]) {
-        self.items = items
+    init(item: T) {
+        self.item = item
         super.init()
     }
     
     override func match(actual: SleipnirContainer?) -> Bool {
-        var result = true
-        
-        for item in items {
-            if !(actual!.containsObject(item)) {
-                result = false
-            }
-        }
-        
-        return result
+        return actual!.containsObject(item)
     }
     
     override func failureMessageEnd() -> String {
-        return "contain <\(items)>"
+        return "contain <\(item)>"
     }
 }
 
-public func contain(items: AnyObject...) -> NSContain<AnyObject> {
-    return NSContain(items: items)
+public func contain(item: AnyObject) -> NSContain<AnyObject> {
+    return NSContain(item: item)
 }

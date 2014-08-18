@@ -21,7 +21,7 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 it("should fail") {
-                    let failureMessage = "Expected <nil> to contain <[1]>"
+                    let failureMessage = "Expected <nil> to contain <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(contain(1))
                     }
@@ -34,7 +34,7 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <[]> to contain <[1]>"
+                    let failureMessage = "Expected <[]> to contain <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(contain(1))
                     }
@@ -47,45 +47,20 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 describe("positive match") {
-                    context("for a single value") {
-                        let element = 1
+                    let element = 1
                         
-                        it("should pass") {
-                            expect(container).to(contain(element))
-                        }
-                    }
-                    
-                    context("for multiple values") {
-                        let elementOne = 1
-                        let elementTwo = 3
-                        
-                        it("should pass") {
-                            expect(container).to(contain(elementOne, elementTwo))
-                        }
+                    it("should pass") {
+                        expect(container).to(contain(element))
                     }
                 }
                 
                 describe("negative match") {
-                    context("for a single value") {
-                        let element = 1
-                        
-                        it("should fail with a sensible failure message") {
-                            let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not contain <[1]>"
-                            expectFailureWithMessage(failureMessage) {
-                                expect(container).toNot(contain(element))
-                            }
-                        }
-                    }
+                    let element = 1
                     
-                    context("for multiple values") {
-                        let elementOne = 1
-                        let elementTwo = 3
-                        
-                        it("should fail with a sensible failure message") {
-                            let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not contain <[1, 3]>"
-                            expectFailureWithMessage(failureMessage) {
-                                expect(container).toNot(contain(elementOne, elementTwo))
-                            }
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <[1, 2, 3, 4, 5]> to not contain <1>"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(container).toNot(contain(element))
                         }
                     }
                 }
@@ -131,7 +106,7 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <()> to contain <[1]>"
+                    let failureMessage = "Expected <()> to contain <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(contain(1))
                     }
@@ -144,21 +119,10 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 describe("positive match") {
-                    context("for a single value") {
-                        let element = 1
+                    let element = 1
                         
-                        it("should pass") {
-                            expect(container).to(contain(element))
-                        }
-                    }
-                    
-                    context("for multiple values") {
-                        let elementOne = 1
-                        let elementTwo = 3
-                        
-                        it("should pass") {
-                            expect(container).to(contain(elementOne, elementTwo))
-                        }
+                    it("should pass") {
+                        expect(container).to(contain(element))
                     }
                 }
             }
@@ -173,7 +137,7 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 it("should fail with a sensible failure message") {
-                    let failureMessage = "Expected <{()}> to contain <[1]>"
+                    let failureMessage = "Expected <{()}> to contain <1>"
                     expectFailureWithMessage(failureMessage) {
                         expect(container).to(contain(1))
                     }
@@ -186,21 +150,10 @@ class ContainSpec : SleipnirSpec {
                 }
                 
                 describe("positive match") {
-                    context("for a single value") {
-                        let element = 1
+                    let element = 1
                         
-                        it("should pass") {
-                            expect(container).to(contain(element))
-                        }
-                    }
-                    
-                    context("for multiple values") {
-                        let elementOne = 1
-                        let elementTwo = 3
-                        
-                        it("should pass") {
-                            expect(container).to(contain(elementOne, elementTwo))
-                        }
+                    it("should pass") {
+                        expect(container).to(contain(element))
                     }
                 }
             }

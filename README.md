@@ -261,9 +261,9 @@ expect(1) <= 1
 Sleipnir supports some matchers on collections and strings:
 
 ##### Contain
-Matches if all items are in the container. Supports Swift collections with [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html) elements, `NSArrays`, `NSSets` and `Strings`.
+Matches if an item is in the container. Supports Swift collections with [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html) elements, `NSArrays`, `NSSets` and `Strings`.
 ```swift
-expect([1,2,3]).to(contain(1,3))
+expect([1,2,3]).to(contain(1))
 expect("some string").toNot(contain("another"))
 ```
 
