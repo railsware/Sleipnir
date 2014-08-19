@@ -61,7 +61,7 @@ class Example : ExampleBase {
     }
     
     func isPending() -> Bool {
-        if !block {
+        if block == nil {
             return true
         }
         

@@ -12,14 +12,23 @@ public protocol SleipnirContainer {
     
     var count: Int { get }
     
-    func containsObject(anObject: AnyObject!) -> Bool
+    func containsObject(anObject: AnyObject) -> Bool
     
 }
 
 public protocol SleipnirOrderedContainer : SleipnirContainer {
     
-    func indexOfObject(object: AnyObject!) -> Int
+    func indexOfObject(object: AnyObject) -> Int
     
+}
+
+extension NSSet {
+
+    public func containsObject(anObject: AnyObject) -> Bool {
+        let nsArray : NSArray = NSArray(array: self.allObjects)
+        return nsArray.containsObject(anObject)
+    }
+
 }
 
 extension NSArray : SleipnirOrderedContainer { }

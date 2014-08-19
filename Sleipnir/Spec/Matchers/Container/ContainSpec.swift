@@ -125,6 +125,20 @@ class ContainSpec : SleipnirSpec {
                         expect(container).to(contain(element))
                     }
                 }
+                
+                context("when elements are Strings") {
+                    beforeEach {
+                        container = NSArray(array: ["test", "string"])
+                    }
+                    
+                    describe("positive match") {
+                        let element = "test"
+                        
+                        it("should pass") {
+                            expect(container).to(contain(element))
+                        }
+                    }
+                }
             }
         }
         

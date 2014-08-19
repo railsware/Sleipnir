@@ -102,7 +102,7 @@ class DefaultReporter : Reporter {
     }
     
     private func printStats() {
-        let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime))
+        let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime!))
         println("\nFinished in \(time) seconds\n")
         print("\(examplesCount) examples, \(failureMessages.count) failures")
         
