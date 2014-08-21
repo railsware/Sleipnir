@@ -395,8 +395,8 @@ class ShouldSyntaxSpec : SleipnirSpec {
             describe("Equal matcher") {
                 context("positive match") {
                     it("should pass") {
-                        let actual = "3"
-                        let expected = "3"
+                        let actual : String = "3"
+                        let expected : String = "3"
                         actual.should.equal(expected)
                     }
                 }
