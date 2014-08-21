@@ -18,7 +18,7 @@ class LibrarySpec : SleipnirSpec {
         }
         
         it("should not be nil") {
-            expect(object).toNot(beNil())
+            object.shouldNot.beNil()
         }
     }
     
@@ -36,7 +36,7 @@ class LibrarySpec : SleipnirSpec {
         }
        
         it("has author") {
-            expect(swiftBook!.author).to(equal("Apple Inc."))
+            swiftBook!.author.should.equal("Apple Inc.")
         }
     }
     
@@ -73,7 +73,7 @@ class LibrarySpec : SleipnirSpec {
             }
             
             it("is not empty") {
-                expect(swiftLibrary!.hasBooks()).to(beTrue())
+                swiftLibrary!.hasBooks().should.beTrue()
             }
             
             it("has correct number of books") {

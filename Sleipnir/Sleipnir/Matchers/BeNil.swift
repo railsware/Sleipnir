@@ -19,11 +19,7 @@ public class BeNil<T> : BaseMatcher<T> {
     }
     
     override func match(actual: T?) -> Bool {
-        if actual == nil {
-            return true
-        } else {
-            return false
-        }
+        return actual == nil
     }
     
     override func failureMessageEnd() -> String {

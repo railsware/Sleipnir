@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class NSEndWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
+public class NSEndWith<T: AnyObject, S: SleipnirOrderedContainer> : BaseMatcher<S> {
     
     var item: T
     
@@ -17,7 +17,7 @@ public class NSEndWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
         super.init()
     }
     
-    override func match(actual: SleipnirOrderedContainer?) -> Bool {
+    override func match(actual: S?) -> Bool {
         return actual!.indexOfObject(item) == actual!.count - 1
     }
     
@@ -26,6 +26,6 @@ public class NSEndWith<T: AnyObject> : BaseMatcher<SleipnirOrderedContainer> {
     }
 }
 
-public func endWith(item: AnyObject) -> NSEndWith<AnyObject> {
+public func endWith<S: SleipnirOrderedContainer>(item: AnyObject) -> NSEndWith<AnyObject, S> {
     return NSEndWith(item: item)
 }

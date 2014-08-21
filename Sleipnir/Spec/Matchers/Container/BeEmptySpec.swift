@@ -102,7 +102,7 @@ class BeEmptySpec : SleipnirSpec {
             }
         }
         
-        describe("when the value is a NSArray") {
+        describe("when the value is NSArray") {
             context("which is empty") {
                 let container: NSArray = NSArray(array: [])
                 
@@ -141,6 +141,38 @@ class BeEmptySpec : SleipnirSpec {
                 }
             }
         }
+        
+        describe("when the value is NSSet") {
+            context("which is empty") {
+                let container: NSSet = NSSet(array: [])
+                
+                describe("positive match") {
+                    it("should pass") {
+                        expect(container).to(beEmpty())
+                    }
+                }
+                
+                describe("negative match") {
+                    it("should fail with a sensible failure message") {
+                        let failureMessage = "Expected <{()}> to not be empty"
+                        expectFailureWithMessage(failureMessage) {
+                            expect(container).toNot(beEmpty())
+                        }
+                    }
+                }
+            }
+            
+            context("which is not empty") {
+                let container: NSSet = NSSet(array: [1, 2, 3])
+                
+                describe("negative match") {
+                    it("should pass") {
+                        expect(container).toNot(beEmpty())
+                    }
+                }
+            }
+        }
+
     }
     
 }
