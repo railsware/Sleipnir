@@ -1,6 +1,16 @@
 Change Log
 ==========
 
+Version 0.4.0 *(2014-08-21)*
+----------------------------
+
+* Support for XCode6-Beta6
+* New: Should syntax implementation. [Documentation](https://github.com/railsware/Sleipnir/blob/master/ShouldSyntax.md)
+```swift
+actual.should.equal(expected)
+```
+* Change: Drop support for multiple items in Contain matcher.
+
 Version 0.3.1 *(2014-08-11)*
 ----------------------------
 

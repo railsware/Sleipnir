@@ -14,7 +14,7 @@ class SampleSpec : SleipnirSpec {
         context("usual") {
             it("is not awesome") {
                 let usualHorse = UsualHorse()
-                usualHorse.legsCount.should(equal(4))
+                usualHorse.legsCount.should.equal(4)
                 expect(usualHorse.isAwesome()).to(beFalse())
             }
         }
@@ -22,7 +22,7 @@ class SampleSpec : SleipnirSpec {
         context("Sleipnir") {
             it("is awesome") {
                 let sleipnirHorse = Sleipnir()
-                sleipnirHorse.legsCount.should(equal(8))
+                sleipnirHorse.legsCount.should.equal(8)
                 expect(sleipnirHorse.isAwesome()).to(beTrue())
             }
         }
@@ -207,18 +207,22 @@ expect {
     return x
 }.to(equal(2))
 ```
-We are also [working](https://github.com/railsware/Sleipnir/pull/5) on `should` syntax support. This syntax provides `should` and `shouldNot` methods to define expectations on any object:
+
+### `Should` syntax
+
+In addition to the `expect` syntax, Sleipnir supports the `should` syntax:
 ```swift
-actual.should(equal(expected))
-[1, 2, 3].shouldNot(contain(4))
+actual.should.equal(expected)
+[1, 2, 3].shouldNot.contain(4)
 ```
+[See detailed information on the `should` syntax and its usage](https://github.com/railsware/Sleipnir/blob/master/ShouldSyntax.md)
 
 ## Available matchers
 
 ##### Equal
 Values must be [`Equatable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Equatable.html), [`Comparable`](https://developer.apple.com/library/prerelease/ios/documentation/General/Reference/SwiftStandardLibraryReference/Comparable.html) or derive from `NSObject`.
 ```swift
-expect([1,2,3]).to(equal(1,2,3))
+expect([1,2,3]).to(equal([1,2,3]))
 expect("some string").toNot(equal("another string"))
 expect(1) == 1
 ```
