@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Sleipnir"
-  s.version      = "0.3.1"
+  s.version      = "0.4.0"
   s.summary      = "BDD-style framework in Swift"
   s.description  = "Sleipnir is a BDD-style framework for Swift highly inspired by Cedar"
   s.homepage     = "https://github.com/railsware/Sleipnir"

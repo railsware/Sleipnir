@@ -5,7 +5,7 @@ FRAMEWORK_PATH = $(FRAMEWORK_DIR)/Sleipnir.framework
 SOURCE_DIR = ../Sleipnir/Sleipnir
 SWIFTC = swiftc
 SWIFT_HEADER = Sleipnir-Swift.h
-SWIFT_SOURCES = $(wildcard $(SOURCE_DIR)/**/*.swift)
+SWIFT_SOURCES = $(wildcard $(SOURCE_DIR)/**/**.swift)
 
 all: prepare framework
 
