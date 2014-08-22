@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.applicationBase</string>
+		<string>com.apple.dt.unit.iosBase</string>
+  </array>
+  <key>Concrete</key>
+  <true />
+	<key>Components</key>
+	<array>
+		<dict>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:iPhone</key>
+		<string>&lt;key&gt;LSRequiresIPhoneOS&lt;/key&gt;
+&lt;true/&gt;
+&lt;key&gt;UIRequiredDeviceCapabilities&lt;/key&gt;
+&lt;array&gt;
+	&lt;string&gt;armv7&lt;/string&gt;
+&lt;/array&gt;</string>
+		<key>Info.plist:statusBarTintForNavBar</key>
+		<string>&lt;key&gt;UIStatusBarTintParameters&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;UINavigationBar&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;Style&lt;/key&gt;
+        &lt;string&gt;UIBarStyleDefault&lt;/string&gt;
+        &lt;key&gt;Translucent&lt;/key&gt;
+        &lt;false/&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+</string>
+	</dict>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.cocoaTouchApplicationBase</string>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Nodes</key>
+	<array>
+		<string>Info.plist:iPhone</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Default</key>
+			<string>iPhone</string>
+			<key>Description</key>
+			<string>Which device family to create a project for</string>
+			<key>Identifier</key>
+			<string>universalDeviceFamily</string>
+			<key>Name</key>
+			<string>Devices:</string>
+			<key>SortOrder</key>
+			<integer>1</integer>
+			<key>Units</key>
+			<dict>
+				<key>iPhone</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+					</dict>
+					<key>Nodes</key>
+					<array>
+						<string>Info.plist:UISupportedInterfaceOrientations~iPhone</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+      <string>languageChoice</string>
+      <key>Default</key>
+      <string>Swift</string>
+			<key>Units</key>
+			<dict>
+				<key>Swift</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>main.swift:comments</string>
+						<string>main.swift:include</string>
+            <string>Frameworks/Sleipnir.framework</string>
+						<string>main.swift:main:content</string>
+            <string>ExampleSpec.swift</string>
+					</array>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>Project</key>
+	<dict>
+		<key>SharedSettings</key>
+		<dict>
+			<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+			<string>iPhone Developer</string>
+      <key>OTHER_LDFLAGS</key>
+      <string>-all_load</string>                                
+		</dict>
+	</dict>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>SharedSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
+				<string>LaunchImage</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+			</dict>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.cocoaTouchApplicationTarget</string>
+		</dict>
+  </array>
+  <key>Definitions</key>
+  <dict>
+    <key>main.swift:include</key>
+    <string>import Foundation
+import Sleipnir
+</string>
+    <key>main.swift:main</key>
+    <dict>
+        <key>Beginning</key>
+        <string></string>
+        <key>End</key>
+        <string></string>
+    </dict>
+    <key>main.swift:main:content</key>
+    <string>Runner.run()
+</string>
+    <key>Frameworks/Sleipnir.framework</key>
+    <dict>
+      <key>Path</key>
+      <string>Sleipnir.framework</string>
+    </dict>
+    <key>ExampleSpec.swift</key>
+    <dict>
+      <key>Path</key>
+      <string>ExampleSpec.swift</string>
+    </dict>
+  </dict>  
+</dict>
+</plist>
+
