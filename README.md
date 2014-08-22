@@ -296,10 +296,10 @@ expect([1,2,3]).toNot(beEmpty())
 
 ## TODO
 
-- [ ] Ease of distribution (CocoaPods probably)
-- [ ] XCode templates
+- [x] Ease of distribution (CocoaPods probably)
+- [x] XCode templates
 - [x] Shared examples support
-- [ ] ```should``` syntax support (In progress, see the corresponding [Pull request](https://github.com/railsware/Sleipnir/pull/5))
+- [x] ```should``` syntax support
 - [ ] asynchronous matchers (```will```, ```willNot```, ```after```)
 
 ## Who uses Sleipnir
