@@ -45,6 +45,15 @@ class SampleSpec : SleipnirSpec {
 3. Link `Sleipnir.framework`
 4. Start writing specs!
 
+#### Manually (from XCode Project template)
+
+1. Clone `Sleipnir` repo `git clone https://github.com/railsware/sleipnir /tmp/Sleipnir`
+2. Execute the following command `cd /tmp/Sleipnir && make install_templates`
+
+The command will install templates for OSX and iOS projects and Spec file template as well.
+
+**Note:** this way you should manage framework updates on your own. Try to reinstall templates before creating new project/target from "old" ones
+
 #### Via CocoaPods
 
 You can install statically built `Sleipnir.framework` into you project simply by adding it to the `Podfile`
