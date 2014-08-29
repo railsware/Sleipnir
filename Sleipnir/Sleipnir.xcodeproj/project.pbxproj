@@ -214,7 +214,7 @@
 		3162A6A119702411006A6786 /* BeTrueSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeTrueSpec.swift; path = Matchers/BeTrueSpec.swift; sourceTree = "<group>"; };
 		3162A6A319702427006A6786 /* BeFalseSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeFalseSpec.swift; path = Matchers/BeFalseSpec.swift; sourceTree = "<group>"; };
 		3166FA8719753E1700B1CD32 /* ShouldSyntax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldSyntax.swift; sourceTree = "<group>"; };
-		3166FA8B19756C3000B1CD32 /* ShouldSyntaxSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShouldSyntaxSpec.swift; sourceTree = "<group>"; };
+		3166FA8B19756C3000B1CD32 /* ShouldSyntaxSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShouldSyntaxSpec.swift; path = Matchers/ShouldSyntaxSpec.swift; sourceTree = "<group>"; };
 		317456A81976B38900028FB0 /* BeNil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeNil.swift; sourceTree = "<group>"; };
 		317456AC1976B54A00028FB0 /* BeNilSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeNilSpec.swift; path = Matchers/BeNilSpec.swift; sourceTree = "<group>"; };
 		318098B419545DD700ADEAF3 /* ActualValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActualValue.swift; sourceTree = "<group>"; };
@@ -254,13 +254,13 @@
 		467B48A919828686008B8D02 /* CustomObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomObject.swift; path = Matchers/CustomObject.swift; sourceTree = "<group>"; };
 		46C560B3198299CD001C5444 /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
 		46C8AC3C19A6361800BEDEC1 /* BeEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeEmpty.swift; sourceTree = "<group>"; };
-		46C8AC3D19A6361800BEDEC1 /* BeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeginWith.swift; sourceTree = "<group>"; };
-		46C8AC3E19A6361800BEDEC1 /* Contain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contain.swift; sourceTree = "<group>"; };
-		46C8AC3F19A6361800BEDEC1 /* EndWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndWith.swift; sourceTree = "<group>"; };
-		46C8AC4019A6361800BEDEC1 /* NSBeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSBeginWith.swift; sourceTree = "<group>"; };
-		46C8AC4119A6361800BEDEC1 /* NSContain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSContain.swift; sourceTree = "<group>"; };
-		46C8AC4219A6361800BEDEC1 /* NSEndWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSEndWith.swift; sourceTree = "<group>"; };
-		46C8AC4319A6361800BEDEC1 /* SleipnirContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleipnirContainer.swift; sourceTree = "<group>"; };
+		46C8AC3D19A6361800BEDEC1 /* BeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BeginWith.swift; path = Container/BeginWith.swift; sourceTree = "<group>"; };
+		46C8AC3E19A6361800BEDEC1 /* Contain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Contain.swift; path = Container/Contain.swift; sourceTree = "<group>"; };
+		46C8AC3F19A6361800BEDEC1 /* EndWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndWith.swift; path = Container/EndWith.swift; sourceTree = "<group>"; };
+		46C8AC4019A6361800BEDEC1 /* NSBeginWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSBeginWith.swift; path = Container/NSBeginWith.swift; sourceTree = "<group>"; };
+		46C8AC4119A6361800BEDEC1 /* NSContain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSContain.swift; path = Container/NSContain.swift; sourceTree = "<group>"; };
+		46C8AC4219A6361800BEDEC1 /* NSEndWith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSEndWith.swift; path = Container/NSEndWith.swift; sourceTree = "<group>"; };
+		46C8AC4319A6361800BEDEC1 /* SleipnirContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SleipnirContainer.swift; path = Container/SleipnirContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,14 +347,8 @@
 		318098B319545DC500ADEAF3 /* Matchers */ = {
 			isa = PBXGroup;
 			children = (
+				31FB47CD19B0DF82004ABFAD /* Container */,
 				46C8AC3C19A6361800BEDEC1 /* BeEmpty.swift */,
-				46C8AC3D19A6361800BEDEC1 /* BeginWith.swift */,
-				46C8AC3E19A6361800BEDEC1 /* Contain.swift */,
-				46C8AC3F19A6361800BEDEC1 /* EndWith.swift */,
-				46C8AC4019A6361800BEDEC1 /* NSBeginWith.swift */,
-				46C8AC4119A6361800BEDEC1 /* NSContain.swift */,
-				46C8AC4219A6361800BEDEC1 /* NSEndWith.swift */,
-				46C8AC4319A6361800BEDEC1 /* SleipnirContainer.swift */,
 				318098B419545DD700ADEAF3 /* ActualValue.swift */,
 				318098B71954605200ADEAF3 /* BaseMatcher.swift */,
 				318098BA1954609B00ADEAF3 /* Equal.swift */,
@@ -409,6 +403,20 @@
 			);
 			name = Container;
 			path = Matchers/Container;
+			sourceTree = "<group>";
+		};
+		31FB47CD19B0DF82004ABFAD /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				46C8AC4319A6361800BEDEC1 /* SleipnirContainer.swift */,
+				46C8AC4219A6361800BEDEC1 /* NSEndWith.swift */,
+				46C8AC4119A6361800BEDEC1 /* NSContain.swift */,
+				46C8AC3F19A6361800BEDEC1 /* EndWith.swift */,
+				46C8AC4019A6361800BEDEC1 /* NSBeginWith.swift */,
+				46C8AC3E19A6361800BEDEC1 /* Contain.swift */,
+				46C8AC3D19A6361800BEDEC1 /* BeginWith.swift */,
+			);
+			name = Container;
 			sourceTree = "<group>";
 		};
 		4640EB85196942AF00AE5952 /* Sleipnir-iOS */ = {
