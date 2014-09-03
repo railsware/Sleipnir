@@ -22,14 +22,5 @@ public protocol SleipnirOrderedContainer : SleipnirContainer {
     
 }
 
-extension NSSet {
-
-    public func containsObject(anObject: AnyObject) -> Bool {
-        let nsArray : NSArray = NSArray(array: self.allObjects)
-        return nsArray.containsObject(anObject)
-    }
-
-}
-
 extension NSArray : SleipnirOrderedContainer { }
 extension NSSet : SleipnirContainer { }
