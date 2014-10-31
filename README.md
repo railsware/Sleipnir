@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="300" width="300" src="https://raw.githubusercontent.com/railsware/Sleipnir/master/logo.png?token=1188140__eyJzY29wZSI6IlJhd0Jsb2I6cmFpbHN3YXJlL1NsZWlwbmlyL21hc3Rlci9sb2dvLnBuZyIsImV4cGlyZXMiOjE0MDUwOTM4OTV9--254f257f306a84328943af0ef0f2b94d1d286c0f" />
+  <img height="300" width="300" src="logo.png" />
 </p>
 
 # Sleipnir
