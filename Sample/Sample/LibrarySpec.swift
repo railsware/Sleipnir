@@ -18,7 +18,7 @@ class LibrarySpec : SleipnirSpec {
         }
         
         it("should not be nil") {
-            object.shouldNot.beNil()
+            expect(object).toNot(beNil());
         }
     }
     
