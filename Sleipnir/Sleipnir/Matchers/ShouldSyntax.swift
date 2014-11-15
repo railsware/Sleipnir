@@ -24,7 +24,7 @@ public extension NSObject {
     }
 }
 
-public extension Array {
+extension Array {
     
     var should: ArrayMatch<T, NSArray> { return ArrayMatch(value: self, positive: true) }
     var shouldNot: ArrayMatch<T, NSArray> { return ArrayMatch(value: self, positive: false) }
@@ -38,7 +38,7 @@ public extension String {
     
 }
 
-public extension Optional  {
+extension Optional  {
     
     var should: OptionalMatch { return OptionalMatch(value: self, positive: true) }
     var shouldNot: OptionalMatch { return OptionalMatch(value: self, positive: false) }
