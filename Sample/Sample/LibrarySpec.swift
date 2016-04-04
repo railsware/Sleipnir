@@ -29,7 +29,7 @@ class LibrarySpec : SleipnirSpec {
             swiftBook = Book(title: "Introduction to Swift", author: "Apple Inc.")
         }
         
-        itShouldBehaveLike("a non-nil object", { ["object" : swiftBook] })
+        itShouldBehaveLike("a non-nil object", sharedContext: { ["object" : swiftBook] })
         
         it("has title") {
             expect(swiftBook!.title).to(equal("Introduction to Swift"))
@@ -51,7 +51,7 @@ class LibrarySpec : SleipnirSpec {
             swiftLibrary = nil
         }
         
-        itShouldBehaveLike("a non-nil object", { ["object" : swiftLibrary] })
+        itShouldBehaveLike("a non-nil object", sharedContext: { ["object" : swiftLibrary] })
         
         describe("empty") {
             it("has no books") {

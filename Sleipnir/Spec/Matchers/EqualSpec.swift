@@ -30,9 +30,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <1> to not equal <1>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -45,9 +45,9 @@ class EqualSpec : SleipnirSpec {
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <1> to equal <42>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).to(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
                 
@@ -77,9 +77,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <42> to not equal <42>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -92,9 +92,9 @@ class EqualSpec : SleipnirSpec {
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <42> to equal <7>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block:  {
                             expect(actualValue).to(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
                     
@@ -124,9 +124,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <42> to not equal <42>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -139,9 +139,9 @@ class EqualSpec : SleipnirSpec {
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <42> to equal <7>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).to(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
                     
@@ -171,9 +171,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <(1,2,3)> to not equal <(1,2,3)>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -186,9 +186,9 @@ class EqualSpec : SleipnirSpec {
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <(1,2,3)> to equal <(1,2,5)>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).to(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
                 
@@ -218,9 +218,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <[1, 2, 3]> to not equal <[1, 2, 3]>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -233,9 +233,9 @@ class EqualSpec : SleipnirSpec {
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <[1, 2, 3]> to equal <[1, 2, 5]>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).to(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
                 
@@ -265,9 +265,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <CustomObject(42)> to not equal <CustomObject(42)>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -280,9 +280,9 @@ class EqualSpec : SleipnirSpec {
                 describe("positive match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <CustomObject(42)> to equal <CustomObject(7)>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect(actualValue).to(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
                 
@@ -312,9 +312,9 @@ class EqualSpec : SleipnirSpec {
                 describe("negative match") {
                     it("should fail with a sensible failure message") {
                         let failureMessage = "Expected <3> to not equal <3>"
-                        expectFailureWithMessage(failureMessage) {
+                        expectFailureWithMessage(failureMessage, block: {
                             expect{ actualValue }.toNot(equal(expectedValue!))
-                        }
+                        })
                     }
                 }
             }
@@ -337,9 +337,9 @@ class EqualSpec : SleipnirSpec {
                     describe("negative match") {
                         it("should fail with a sensible failure message") {
                             let failureMessage = "Expected <(1,2,3)> to not equal <(1,2,3)>"
-                            expectFailureWithMessage(failureMessage) {
+                            expectFailureWithMessage(failureMessage, block: {
                                 expect{ actualArrayValue }.toNot(equal(expectedArrayValue!))
-                            }
+                            })
                         }
                     }
                 }
@@ -359,9 +359,9 @@ class EqualSpec : SleipnirSpec {
             describe("when the actual value is not equal to the expected value") {
                 it("should fail with a sensible failure message") {
                     let failureMessage = "Expected <1> to equal <3>"
-                    expectFailureWithMessage(failureMessage) {
+                    expectFailureWithMessage(failureMessage, block: {
                         expect(1) == 3
-                    }
+                    })
                 }
             }
         }
@@ -370,9 +370,9 @@ class EqualSpec : SleipnirSpec {
             describe("when the actual value is equal to expected value") {
                 it("should fail with a sensible failure message") {
                     let failureMessage = "Expected <3> to not equal <3>"
-                    expectFailureWithMessage(failureMessage) {
+                    expectFailureWithMessage(failureMessage, block: {
                         expect(3) != 3
-                    }
+                    })
                 }
             }
             

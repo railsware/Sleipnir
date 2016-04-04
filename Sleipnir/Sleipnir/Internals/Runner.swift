@@ -20,7 +20,7 @@ public struct Runner {
     static var shouldOnlyRunFocused = false
     
     public static func run(runOrder: RunOrder = RunOrder.Random, seed: Int? = nil) {
-        let specSeed = setUpRandomSeed(seed: seed)
+        let specSeed = setUpRandomSeed(seed)
         
         if (runOrder == RunOrder.Random) {
             shuffleExamples(&SpecTable.topLevelGroups)

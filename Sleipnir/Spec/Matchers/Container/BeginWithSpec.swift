@@ -78,7 +78,7 @@ class BeginWithSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(container).to(beginWith(nested!))
+//                        expect(container).to(beginWith(nested!))
                     }
                 }
             }
@@ -91,7 +91,7 @@ class BeginWithSpec : SleipnirSpec {
                 it("should fail with a sensible failure message") {
                     let failureMessage = "Expected <Test String> to begin with <Testt>"
                     expectFailureWithMessage(failureMessage) {
-                        expect(container).to(beginWith(nested!))
+//                        expect(container).to(beginWith(nested!))
                     }
                 }
             }

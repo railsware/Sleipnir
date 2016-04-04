@@ -94,16 +94,16 @@ class Example : ExampleBase {
 }
 
 public func it(label: String, block: SleipnirBlock?) {
-    var example = Example(label, block)
+    let example = Example(label, block)
     SpecTable.handleExample(example)
 }
 
 public func fit(label: String, block: SleipnirBlock) {
-    var example = Example(label, block)
+    let example = Example(label, block)
     example.focused = true
     SpecTable.handleExample(example)
 }
 
 public func xit(label: String, block: SleipnirBlock) {
-    it(label, PENDING)
+    it(label, block: PENDING)
 }

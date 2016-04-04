@@ -28,14 +28,14 @@ public struct Dumper {
         printWithPadding("examples: \(group.examples.count)", level: level)
         
         for exampleGroup in group.childGroups {
-            println()
+            print("", terminator: "")
             dumpExampleGroup(exampleGroup, level: level + 1)
         }
     }
     
     private static func printWithPadding(string: String, level: Int) {
-        var spaces = level * 2
-        var padding = String(count: spaces, repeatedValue: Character(" "))
-        println(padding + string)
+        let spaces = level * 2
+        let padding = String(count: spaces, repeatedValue: Character(" "))
+        print(padding + string, terminator: "")
     }
 }

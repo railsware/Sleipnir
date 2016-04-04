@@ -35,7 +35,7 @@ public func sharedExamplesFor(label: String, block: SleipnirBlock) {
 }
 
 public func sharedExamplesFor(label: String, block: SharedExampleBlock) {
-    SharedExampleGroup.handleSharedExampleGroup(label, block)
+    SharedExampleGroup.handleSharedExampleGroup(label, block: block)
 }
 
 public func itShouldBehaveLike(label: String, sharedContext: SharedContext) {

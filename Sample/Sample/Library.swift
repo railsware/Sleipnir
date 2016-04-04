@@ -36,11 +36,11 @@ class Library {
         return size() > 0
     }
     
-    func filterBy(#author: String) -> [Book] {
+    func filterBy(author author: String) -> [Book] {
         return books.filter { $0.author == author }
     }
     
-    func filterBy(#title: String) -> [Book] {
+    func filterBy(title title: String) -> [Book] {
         return books.filter {
             $0.title.rangeOfString(title) != nil
         }

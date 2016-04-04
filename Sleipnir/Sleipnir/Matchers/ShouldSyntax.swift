@@ -26,8 +26,8 @@ public extension NSObject {
 
 extension Array {
     
-    var should: ArrayMatch<T, NSArray> { return ArrayMatch(value: self, positive: true) }
-    var shouldNot: ArrayMatch<T, NSArray> { return ArrayMatch(value: self, positive: false) }
+    var should: ArrayMatch<Element, NSArray> { return ArrayMatch(value: self, positive: true) }
+    var shouldNot: ArrayMatch<Element, NSArray> { return ArrayMatch(value: self, positive: false) }
     
 }
 
@@ -83,7 +83,7 @@ public class StringMatch {
         self.positive = positive
     }
     
-    public func equal(expected: String, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: String, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -92,7 +92,7 @@ public class StringMatch {
         }
     }
 
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -101,41 +101,41 @@ public class StringMatch {
         }
     }
 
-    public func contain(item: String, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
-        if positive {
-            actualValue.to(Contain(stringItem: item))
-        } else {
-            actualValue.toNot(Contain(stringItem: item))
-        }
-    }
-    
-    public func beginWith(item: String, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
-        if positive {
-            actualValue.to(BeginWith(stringItem: item))
-        } else {
-            actualValue.toNot(BeginWith(stringItem: item))
-        }
-    }
-    
-    public func endWith(item: String, file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
-        if positive {
-            actualValue.to(EndWith(stringItem: item))
-        } else {
-            actualValue.toNot(EndWith(stringItem: item))
-        }
-    }
-    
-    public func beEmpty(file: String = __FILE__, line: Int = __LINE__) {
-        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
-        if positive {
-            actualValue.to(BeEmpty())
-        } else {
-            actualValue.toNot(BeEmpty())
-        }
-    }
+//    public func contain(item: String, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
+//        if positive {
+//            actualValue.to(Contain(stringItem: item))
+//        } else {
+//            actualValue.toNot(Contain(stringItem: item))
+//        }
+//    }
+//    
+//    public func beginWith(item: String, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
+//        if positive {
+//            actualValue.to(BeginWith(stringItem: item))
+//        } else {
+//            actualValue.toNot(BeginWith(stringItem: item))
+//        }
+//    }
+//    
+//    public func endWith(item: String, file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
+//        if positive {
+//            actualValue.to(EndWith(stringItem: item))
+//        } else {
+//            actualValue.toNot(EndWith(stringItem: item))
+//        }
+//    }
+//    
+//    public func beEmpty(file: String = __FILE__, line: Int = __LINE__) {
+//        let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
+//        if positive {
+//            actualValue.to(BeEmpty())
+//        } else {
+//            actualValue.toNot(BeEmpty())
+//        }
+//    }
 }
 
 public class OptionalMatch {
@@ -148,7 +148,7 @@ public class OptionalMatch {
         self.positive = positive
     }
     
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue<Any>(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -168,7 +168,7 @@ public class IntMatch {
         self.positive = positive
     }
     
-    public func equal(expected: Int, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: Int, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -177,7 +177,7 @@ public class IntMatch {
         }
     }
     
-    public func beGreaterThan(expected: Int, file: String = __FILE__, line: Int = __LINE__) {
+    public func beGreaterThan(expected: Int, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeGreaterThan(expected: expected))
@@ -186,7 +186,7 @@ public class IntMatch {
         }
     }
     
-    public func beGreaterThanOrEqualTo(expected: Int, file: String = __FILE__, line: Int = __LINE__) {
+    public func beGreaterThanOrEqualTo(expected: Int, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeGreaterThanOrEqualTo(expected: expected))
@@ -195,7 +195,7 @@ public class IntMatch {
         }
     }
     
-    public func beLessThan(expected: Int, file: String = __FILE__, line: Int = __LINE__) {
+    public func beLessThan(expected: Int, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeLessThan(expected: expected))
@@ -204,7 +204,7 @@ public class IntMatch {
         }
     }
     
-    public func beLessThanOrEqualTo(expected: Int, file: String = __FILE__, line: Int = __LINE__) {
+    public func beLessThanOrEqualTo(expected: Int, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeLessThanOrEqualTo(expected: expected))
@@ -213,7 +213,7 @@ public class IntMatch {
         }
     }
     
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -222,7 +222,7 @@ public class IntMatch {
         }
     }
     
-    public func beTrue(file: String = __FILE__, line: Int = __LINE__) {
+    public func beTrue(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeTrue())
@@ -231,7 +231,7 @@ public class IntMatch {
         }
     }
     
-    public func beFalse(file: String = __FILE__, line: Int = __LINE__) {
+    public func beFalse(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeFalse())
@@ -251,7 +251,7 @@ public class DoubleMatch {
         self.positive = positive
     }
     
-    public func equal(expected: Double, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: Double, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -260,7 +260,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beGreaterThan(expected: Double, file: String = __FILE__, line: Int = __LINE__) {
+    public func beGreaterThan(expected: Double, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeGreaterThan(expected: expected))
@@ -269,7 +269,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beGreaterThanOrEqualTo(expected: Double, file: String = __FILE__, line: Int = __LINE__) {
+    public func beGreaterThanOrEqualTo(expected: Double, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeGreaterThanOrEqualTo(expected: expected))
@@ -278,7 +278,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beLessThan(expected: Double, file: String = __FILE__, line: Int = __LINE__) {
+    public func beLessThan(expected: Double, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeLessThan(expected: expected))
@@ -287,7 +287,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beLessThanOrEqualTo(expected: Double, file: String = __FILE__, line: Int = __LINE__) {
+    public func beLessThanOrEqualTo(expected: Double, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeLessThanOrEqualTo(expected: expected))
@@ -296,7 +296,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -305,7 +305,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beTrue(file: String = __FILE__, line: Int = __LINE__) {
+    public func beTrue(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeTrue())
@@ -314,7 +314,7 @@ public class DoubleMatch {
         }
     }
     
-    public func beFalse(file: String = __FILE__, line: Int = __LINE__) {
+    public func beFalse(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeFalse())
@@ -334,7 +334,7 @@ public class FloatMatch {
         self.positive = positive
     }
     
-    public func equal(expected: Float, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: Float, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -343,7 +343,7 @@ public class FloatMatch {
         }
     }
     
-    public func beGreaterThan(expected: Float, file: String = __FILE__, line: Int = __LINE__) {
+    public func beGreaterThan(expected: Float, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeGreaterThan(expected: expected))
@@ -352,7 +352,7 @@ public class FloatMatch {
         }
     }
     
-    public func beGreaterThanOrEqualTo(expected: Float, file: String = __FILE__, line: Int = __LINE__) {
+    public func beGreaterThanOrEqualTo(expected: Float, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeGreaterThanOrEqualTo(expected: expected))
@@ -361,7 +361,7 @@ public class FloatMatch {
         }
     }
     
-    public func beLessThan(expected: Float, file: String = __FILE__, line: Int = __LINE__) {
+    public func beLessThan(expected: Float, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeLessThan(expected: expected))
@@ -370,7 +370,7 @@ public class FloatMatch {
         }
     }
     
-    public func beLessThanOrEqualTo(expected: Float, file: String = __FILE__, line: Int = __LINE__) {
+    public func beLessThanOrEqualTo(expected: Float, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeLessThanOrEqualTo(expected: expected))
@@ -379,7 +379,7 @@ public class FloatMatch {
         }
     }
     
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -388,7 +388,7 @@ public class FloatMatch {
         }
     }
     
-    public func beTrue(file: String = __FILE__, line: Int = __LINE__) {
+    public func beTrue(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeTrue())
@@ -397,7 +397,7 @@ public class FloatMatch {
         }
     }
     
-    public func beFalse(file: String = __FILE__, line: Int = __LINE__) {
+    public func beFalse(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeFalse())
@@ -417,7 +417,7 @@ public class BoolMatch {
         self.positive = positive
     }
     
-    public func equal(expected: Bool, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: Bool, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -426,7 +426,7 @@ public class BoolMatch {
         }
     }
     
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -435,7 +435,7 @@ public class BoolMatch {
         }
     }
     
-    public func beTrue(file: String = __FILE__, line: Int = __LINE__) {
+    public func beTrue(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeTrue())
@@ -444,7 +444,7 @@ public class BoolMatch {
         }
     }
     
-    public func beFalse(file: String = __FILE__, line: Int = __LINE__) {
+    public func beFalse(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeFalse())
@@ -464,7 +464,7 @@ public class ArrayMatch<T, S: SleipnirOrderedContainer> {
         self.positive = positive
     }
 
-    public func equal(expected: Array<T>, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: Array<T>, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -473,7 +473,7 @@ public class ArrayMatch<T, S: SleipnirOrderedContainer> {
         }
     }
     
-    public func contain(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func contain(item: AnyObject, file: String = #file, line: Int = #line) {
         let nsValue : NSArray = value._bridgeToObjectiveC()
         let actualValue = ActualValue(value: nsValue as? S, fileName: file, lineNumber: line)
         
@@ -484,7 +484,7 @@ public class ArrayMatch<T, S: SleipnirOrderedContainer> {
         }
     }
 
-    public func beginWith(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func beginWith(item: AnyObject, file: String = #file, line: Int = #line) {
         let nsValue : NSArray = value._bridgeToObjectiveC()
         let actualValue = ActualValue(value: nsValue as? S, fileName: file, lineNumber: line)
         
@@ -495,7 +495,7 @@ public class ArrayMatch<T, S: SleipnirOrderedContainer> {
         }
     }
     
-    public func endWith(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func endWith(item: AnyObject, file: String = #file, line: Int = #line) {
         let nsValue : NSArray = value._bridgeToObjectiveC()
         let actualValue = ActualValue(value: nsValue as? S, fileName: file, lineNumber: line)
         
@@ -506,7 +506,7 @@ public class ArrayMatch<T, S: SleipnirOrderedContainer> {
         }
     }
 
-    public func beEmpty(file: String = __FILE__, line: Int = __LINE__) {
+    public func beEmpty(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeEmpty())
@@ -526,7 +526,7 @@ public class NSObjectMatch {
         self.positive = positive
     }
     
-    public func equal(expected: NSObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func equal(expected: NSObject, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? NSObject, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(Equal(expected: expected))
@@ -535,7 +535,7 @@ public class NSObjectMatch {
         }
     }
     
-    public func beNil(file: String = __FILE__, line: Int = __LINE__) {
+    public func beNil(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeNil())
@@ -544,7 +544,7 @@ public class NSObjectMatch {
         }
     }
     
-    public func beTrue(file: String = __FILE__, line: Int = __LINE__) {
+    public func beTrue(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeTrue())
@@ -553,7 +553,7 @@ public class NSObjectMatch {
         }
     }
     
-    public func beFalse(file: String = __FILE__, line: Int = __LINE__) {
+    public func beFalse(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeFalse())
@@ -562,19 +562,19 @@ public class NSObjectMatch {
         }
     }
 
-    public func contain(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func contain(item: AnyObject, file: String = #file, line: Int = #line) {
         fail("Not implemented!", file: file, line: line)
     }
 
-    public func beginWith(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func beginWith(item: AnyObject, file: String = #file, line: Int = #line) {
         fail("Not implemented!", file: file, line: line)
     }
 
-    public func endWith(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    public func endWith(item: AnyObject, file: String = #file, line: Int = #line) {
         fail("Not implemented!", file: file, line: line)
     }
     
-    public func beEmpty(file: String = __FILE__, line: Int = __LINE__) {
+    public func beEmpty(file: String = #file, line: Int = #line) {
         fail("Not implemented!", file: file, line: line)
     }
 }
@@ -585,7 +585,7 @@ public class SleipnirContainerMatch<S: SleipnirContainer> : NSObjectMatch {
         super.init(value: value, positive: positive)
     }
     
-    override public func contain(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    override public func contain(item: AnyObject, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? S, fileName: file, lineNumber: line)
         
         if positive {
@@ -595,7 +595,7 @@ public class SleipnirContainerMatch<S: SleipnirContainer> : NSObjectMatch {
         }
     }
     
-    override public func beEmpty(file: String = __FILE__, line: Int = __LINE__) {
+    override public func beEmpty(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? S, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeEmpty())
@@ -611,7 +611,7 @@ public class SleipnirOrderedContainerMatch<S: SleipnirOrderedContainer> : NSObje
         super.init(value: value, positive: positive)
     }
     
-    override public func contain(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    override public func contain(item: AnyObject, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? S, fileName: file, lineNumber: line)
         
         if positive {
@@ -621,7 +621,7 @@ public class SleipnirOrderedContainerMatch<S: SleipnirOrderedContainer> : NSObje
         }
     }
 
-    override public func beginWith(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    override public func beginWith(item: AnyObject, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? S, fileName: file, lineNumber: line)
         
         if positive {
@@ -631,7 +631,7 @@ public class SleipnirOrderedContainerMatch<S: SleipnirOrderedContainer> : NSObje
         }
     }
 
-    override public func endWith(item: AnyObject, file: String = __FILE__, line: Int = __LINE__) {
+    override public func endWith(item: AnyObject, file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? S, fileName: file, lineNumber: line)
         
         if positive {
@@ -641,7 +641,7 @@ public class SleipnirOrderedContainerMatch<S: SleipnirOrderedContainer> : NSObje
         }
     }
     
-    override public func beEmpty(file: String = __FILE__, line: Int = __LINE__) {
+    override public func beEmpty(file: String = #file, line: Int = #line) {
         let actualValue = ActualValue(value: value as? S, fileName: file, lineNumber: line)
         if positive {
             actualValue.to(BeEmpty())

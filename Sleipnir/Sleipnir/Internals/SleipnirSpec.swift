@@ -8,6 +8,6 @@
 
 import Foundation
 
-@objc public class SleipnirSpec {
+public class SleipnirSpec {
     public init() {}
 }

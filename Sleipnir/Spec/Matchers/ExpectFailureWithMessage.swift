@@ -8,8 +8,8 @@
 
 import Foundation
 
-func expectFailureWithMessage(message: String, block: SleipnirBlock,
-        file: String = __FILE__, line: Int = __LINE__) {
+func expectFailureWithMessage(message: String,
+                              file: String = #file, line: Int = #line, block: SleipnirBlock) {
     let currentExample = Runner.currentExample
     let fakeExample = Example("I am fake", {})
     Runner.currentExample = fakeExample

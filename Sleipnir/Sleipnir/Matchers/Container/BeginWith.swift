@@ -29,14 +29,14 @@ public class BeginWith<S: SequenceType, T: Equatable where S.Generator.Element =
         }
         
         if (actual is String && stringItem != nil) {
-            return matchString(actual as String, item: stringItem!)
+            return matchString(actual as! String, item: stringItem!)
         } else {
             return matchSequence(actual!, item: item!)
         }
     }
     
     override func failureMessageEnd() -> String {
-        var textItem = (item != nil) ? stringify(item) : stringify(stringItem)
+        let textItem = (item != nil) ? stringify(item) : stringify(stringItem)
         return "begin with <\(textItem)>"
     }
     
@@ -59,6 +59,6 @@ public func beginWith<S: SequenceType, T: Equatable where S.Generator.Element ==
     return BeginWith(item: item)
 }
 
-public func beginWith(item: String) -> BeginWith<String, Character> {
-    return BeginWith(stringItem: item)
-}
+//public func beginWith(item: String) -> BeginWith<String, Character> {
+//    return BeginWith(stringItem: item)
+//}

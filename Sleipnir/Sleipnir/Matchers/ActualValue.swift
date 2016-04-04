@@ -52,7 +52,7 @@ public class ActualValue<T> {
     }
     
     private func fail(reason: String) {
-        var specFailure = SpecFailure(reasonRaw: reason, fileName: fileName, lineNumber: lineNumber)
+        let specFailure = SpecFailure(reasonRaw: reason, fileName: fileName, lineNumber: lineNumber)
         Runner.currentExample!.specFailure = specFailure
         Runner.currentExample!.setState(ExampleState.Failed)
     }
@@ -62,15 +62,15 @@ public class ActualValue<T> {
     }
 }
 
-public func expect<T>(expression: @autoclosure () -> T?, file: String = __FILE__, line: Int = __LINE__) -> ActualValue<T> {
+public func expect<T>(@autoclosure expression:  () -> T?, file: String = #file, line: Int = #line) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
 
-public func expect<T>(file: String = __FILE__, line: Int = __LINE__, expression: () -> T?) -> ActualValue<T> {
+public func expect<T>(file: String = #file, line: Int = #line, expression: () -> T?) -> ActualValue<T> {
     return ActualValue(value: expression(), fileName: file, lineNumber: line)
 }
 
-public func fail(message: String, file: String = __FILE__, line: Int = __LINE__) {
+public func fail(message: String, file: String = #file, line: Int = #line) {
     let specFailure = SpecFailure(reasonRaw: message, fileName: file, lineNumber: line)
     Runner.currentExample!.specFailure = specFailure
     Runner.currentExample!.setState(ExampleState.Failed)

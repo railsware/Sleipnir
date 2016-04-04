@@ -29,14 +29,14 @@ public class EndWith<S: SequenceType, T: Equatable where S.Generator.Element == 
         }
         
         if (actual is String && stringItem != nil) {
-            return matchString(actual as String, item: stringItem!)
+            return matchString(actual as! String, item: stringItem!)
         } else {
             return matchSequence(actual!, item: item!)
         }
     }
     
     override func failureMessageEnd() -> String {
-        var textItem = (item != nil) ? stringify(item) : stringify(stringItem)
+        let textItem = (item != nil) ? stringify(item) : stringify(stringItem)
         return "end with <\(textItem)>"
     }
     
@@ -65,6 +65,6 @@ public func endWith<S: SequenceType, T: Equatable where S.Generator.Element == T
     return EndWith(item: item)
 }
 
-public func endWith(item: String) -> EndWith<String, Character> {
-    return EndWith(stringItem: item)
-}
+//public func endWith(item: String) -> EndWith<String, Character> {
+//    return EndWith(stringItem: item)
+//}

@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSNumber: Comparable, Equatable {
+extension NSNumber: Comparable {
     
 }
 

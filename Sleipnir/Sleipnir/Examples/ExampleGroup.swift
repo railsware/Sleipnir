@@ -142,33 +142,33 @@ public func afterEach(block: SleipnirBlock) {
 }
 
 public func describe(label: String, block: SleipnirBlock) {
-    var group = ExampleGroup(label, block)
+    let group = ExampleGroup(label, block)
     SpecTable.handleGroup(group)
 }
 
 public func fdescribe(label: String, block: SleipnirBlock) {
-    var group = ExampleGroup(label, block)
+    let group = ExampleGroup(label, block)
     group.focused = true
     SpecTable.handleGroup(group)
 }
 
 public func xdescribe(label: String, block: SleipnirBlock) {
-    var group = ExampleGroup(label, { it("is pending", PENDING) })
+    let group = ExampleGroup(label, { it("is pending", block: PENDING) })
     SpecTable.handleGroup(group)
 }
 
 public func context(label: String, block: SleipnirBlock) {
-    var group = ExampleGroup(label, block)
+    let group = ExampleGroup(label, block)
     SpecTable.handleGroup(group)
 }
 
 public func fcontext(label: String, block: SleipnirBlock) {
-    var group = ExampleGroup(label, block)
+    let group = ExampleGroup(label, block)
     group.focused = true
     SpecTable.handleGroup(group)
 }
 
 public func xcontext(label: String, block: SleipnirBlock) {
-    var group = ExampleGroup(label, { it("is pending", PENDING) })
+    let group = ExampleGroup(label, { it("is pending", block: PENDING) })
     SpecTable.handleGroup(group)
 }

@@ -62,7 +62,7 @@ class SharedExampleGroupSpec : SleipnirSpec {
         }
         
         describe("that passes a value to the shared example context") {
-            itShouldBehaveLike("a shared example group that receives a value in the context", { ["value" : "Some String"] })
+            itShouldBehaveLike("a shared example group that receives a value in the context", sharedContext: { ["value" : "Some String"] })
         }
         
         itShouldBehaveLike("a shared example group that contains a failing spec")
