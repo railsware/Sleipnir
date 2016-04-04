@@ -42,6 +42,6 @@ class SpecFailure {
         var lines: [String] = (reason as NSString).componentsSeparatedByString("\n") as [String]
         let whitespace = NSCharacterSet.whitespaceAndNewlineCharacterSet()
         lines = lines.map { line in line.stringByTrimmingCharactersInSet(whitespace) }
-        return  "".join(lines)
+        return  lines.joinWithSeparator("")
     }
 }

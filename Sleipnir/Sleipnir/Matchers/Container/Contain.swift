@@ -29,14 +29,14 @@ public class Contain<S: SequenceType, T: Equatable where S.Generator.Element == 
         }
         
         if (actual is String && stringItem != nil) {
-            return matchString(actual as String, item: stringItem!)
+            return matchString(actual as! String, item: stringItem!)
         } else {
             return matchSequence(actual!, item: item!)
         }
     }
     
     override func failureMessageEnd() -> String {
-        var textItem = (item != nil) ? stringify(item) : stringify(stringItem)
+        let textItem = (item != nil) ? stringify(item) : stringify(stringItem)
         return "contain <\(textItem)>"
     }
     
@@ -45,7 +45,7 @@ public class Contain<S: SequenceType, T: Equatable where S.Generator.Element == 
     }
     
     private func matchSequence(actual: S, item: T) -> Bool {
-        return contains(actual, item)
+        return actual.contains(item)
     }
 }
 
@@ -53,6 +53,6 @@ public func contain<S: SequenceType, T: Equatable where S.Generator.Element == T
     return Contain(item: item)
 }
 
-public func contain(item: String) -> Contain<String, Character> {
-    return Contain(stringItem: item)
-}
+//public func contain(item: String) -> Contain<String, Character> {
+//    return Contain(stringItem: item)
+//}

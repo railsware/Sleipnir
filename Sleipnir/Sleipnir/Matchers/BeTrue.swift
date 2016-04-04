@@ -15,7 +15,7 @@ public class BeTrue<T>: BaseMatcher<T> {
     }
     
     override func match(actual: T?) -> Bool {
-        return actual as Bool
+        return actual as? Bool ?? false
     }
     
     override func failureMessageEnd() -> String {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CustomObject : Equatable, Printable, Comparable {
+class CustomObject : Equatable, CustomStringConvertible, Comparable {
     
     var value: Int
     

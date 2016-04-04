@@ -101,7 +101,7 @@ class ExampleSpec : SleipnirSpec {
                 context("for an example that was focused") {
                     beforeEach {
                         example!.focused = true
-                        runInFocusedSpecsMode(example!, dispatcher)
+                        runInFocusedSpecsMode(example!, dispatcher: dispatcher)
                     }
                     
                     it("should be Passed") {
@@ -121,7 +121,7 @@ class ExampleSpec : SleipnirSpec {
                             parentGroup.focused = true
                             example!.parent = parentGroup
                             
-                            runInFocusedSpecsMode(example!, dispatcher)
+                            runInFocusedSpecsMode(example!, dispatcher: dispatcher)
                         }
                         
                         it("should be Passed") {
@@ -138,7 +138,7 @@ class ExampleSpec : SleipnirSpec {
                             parentGroup!.focused = false
                             example!.parent = parentGroup
                             
-                            runInFocusedSpecsMode(example!, dispatcher)
+                            runInFocusedSpecsMode(example!, dispatcher: dispatcher)
                         }
                         
                         it("should be Skipped") {
@@ -152,7 +152,7 @@ class ExampleSpec : SleipnirSpec {
                                 parentsParentGroup.focused = true
                                 parentGroup!.parent = parentsParentGroup
                                 
-                                runInFocusedSpecsMode(example!, dispatcher)
+                                runInFocusedSpecsMode(example!, dispatcher: dispatcher)
                             }
                             
                             it("should be Passed") {
@@ -224,7 +224,7 @@ class ExampleSpec : SleipnirSpec {
             describe("for a skipped example") {
                 beforeEach {
                     example!.focused = false
-                    runInFocusedSpecsMode(example!, dispatcher)
+                    runInFocusedSpecsMode(example!, dispatcher: dispatcher)
                 }
                 
                 it("should return an empty string") {

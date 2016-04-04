@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ExampleState : Printable {
+enum ExampleState : CustomStringConvertible {
     case Incomplete
     case Skipped
     case Pending
@@ -24,7 +24,6 @@ enum ExampleState : Printable {
         case .Passed: return "Passed"
         case .Failed: return "Failed"
         case .Error: return "Error"
-        default: return "ExampleState"
         }
     }
 }
@@ -53,7 +52,7 @@ class ExampleBase {
     
     func shouldRun() -> Bool {
         let shouldOnlyRunFocused = Runner.shouldOnlyRunFocused
-        var parentShouldRun = parent != nil && parent!.shouldRun()
+        let parentShouldRun = parent != nil && parent!.shouldRun()
         return !shouldOnlyRunFocused || (self.focused || parentShouldRun)
     }
 }

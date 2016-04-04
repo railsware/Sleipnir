@@ -41,7 +41,7 @@ class Observable<T> {
     }
     
     private func notify() {
-        for (identifier, observer) in observers {
+        for (_, observer) in observers {
             observer(newValue: observableProperty)
         }
     }

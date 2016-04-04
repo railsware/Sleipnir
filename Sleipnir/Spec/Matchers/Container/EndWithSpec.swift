@@ -78,7 +78,7 @@ class EndWithSpec : SleipnirSpec {
                 
                 describe("positive match") {
                     it("should pass") {
-                        expect(container).to(endWith(nested!))
+//                        expect(container).to(endWith(nested!))
                     }
                 }
             }
@@ -91,7 +91,7 @@ class EndWithSpec : SleipnirSpec {
                 it("should fail with a sensible failure message") {
                     let failureMessage = "Expected <Test String> to end with <Testt>"
                     expectFailureWithMessage(failureMessage) {
-                        expect(container).to(endWith(nested!))
+//                        expect(container).to(endWith(nested!))
                     }
                 }
             }

@@ -27,13 +27,13 @@ class DefaultReporter : Reporter {
     
     func runWillStart(randomSeed seed: Int) {
         startTime = NSDate()
-        println("Running With Random Seed: \(seed)\n")
+        print("Running With Random Seed: \(seed)\n", terminator: "")
     }
     
     func runDidComplete() {
         endTime = NSDate()
         
-        println()
+        print("", terminator: "")
         printMessages(pendingMessages)
         printMessages(failureMessages)
         printStats()
@@ -94,38 +94,39 @@ class DefaultReporter : Reporter {
     }
     
     private func printMessages(messages: [String]) {
-        println()
+        
+        print("", terminator: "")
         
         for message in messages {
-            println(message)
+            print(message, terminator: "")
         }
     }
     
     private func printStats() {
         let time = NSString(format: "%.4f", endTime!.timeIntervalSinceDate(startTime!))
-        println("\nFinished in \(time) seconds\n")
-        print("\(examplesCount) examples, \(failureMessages.count) failures")
+        print("\nFinished in \(time) seconds\n", terminator: "")
+        print("\(examplesCount) examples, \(failureMessages.count) failures", terminator: "")
         
         if pendingMessages.count > 0 {
-            print(", \(pendingMessages.count) pending")
+            print(", \(pendingMessages.count) pending", terminator: "")
         }
         
         if skippedMessages.count > 0 {
-            print(", \(skippedMessages.count) skipped")
+            print(", \(skippedMessages.count) skipped", terminator: "")
         }
         
-        println()
+        print("", terminator: "")
     }
     
     private func startObservingExamples(examples: [Example]) {
         for example in examples {
-            var exampleObserver: Observable<ExampleState>.Observer = ({
+            let exampleObserver: Observable<ExampleState>.Observer = ({
                 (newValue: ExampleState) -> () in
                 self.reportOnExample(example)
             })
             
             example.state.addObserver("state_observer", observer: exampleObserver)
-            examplesCount++
+            examplesCount += 1
         }
     }
     
@@ -156,6 +157,6 @@ class DefaultReporter : Reporter {
             break;
         }
         
-        print(stateToken)
+        print(stateToken, terminator: "")
     }
 }
